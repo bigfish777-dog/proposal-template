@@ -90,8 +90,8 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:#fff;
 .dot.active{background:var(--pink);transform:scale(1.5);}
 .footer{background:#060F1C;color:rgba(255,255,255,.4);text-align:center;padding:28px 24px;font-size:12px;line-height:1.8;}
 .footer a{color:rgba(255,255,255,.5);}
-.share-bar{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:rgba(6,15,28,.95);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:99px;padding:9px 18px;display:flex;align-items:center;gap:14px;z-index:100;font-size:12px;color:rgba(255,255,255,.6);white-space:nowrap;}
-.share-btn{background:var(--pink);color:white;border:none;border-radius:99px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block;}
+
+
 .fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
 .fi.vis{opacity:1;transform:translateY(0);}
 @media(max-width:768px){
@@ -99,7 +99,14 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:#fff;
   .sec{padding:64px 24px;min-height:auto;}
   .about-wrap{grid-template-columns:1fr;gap:36px;}
   .nav-dots{display:none;}
-  .share-bar{font-size:11px;padding:8px 14px;gap:10px;bottom:12px;}
+  
+}
+
+@media(max-width:520px){
+  .price-box{padding:24px 20px;}
+  .price-row{flex-direction:column;gap:2px;padding:10px 0;}
+  .price-row .val{font-size:16px;}
+  .price-row .lbl{font-size:13px;}
 }
 </style>
 </head>
@@ -246,9 +253,9 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:#fff;
     <div class="body"><p>Given that you've described this as a test phase - and given your sensible instinct to prove the model before scaling it - I'd suggest a focused 90-day engagement rather than an open-ended retainer. Defined scope, clear budget, and a point at which to evaluate before committing further.</p></div>
     <div class="price-box">
       <h3>90-Day Engagement</h3>
-      <div class="price-row"><span class="lbl">Month 1 (Strategy, Messaging and Foundation)</span><span class="val">£2,995 + VAT</span></div>
-      <div class="price-row"><span class="lbl">Months 2-3 (Execution and Testing)</span><span class="val">£2,495 + VAT / month</span></div>
-      <div class="price-row"><span class="lbl" style="font-weight:600;">Total 90-day investment</span><span class="val" style="color:var(--teal);">£7,985 + VAT</span></div>
+      <div class="price-row"><span class="lbl">Month 1 — Strategy, Messaging & Foundation</span><span class="val">£2,995+VAT</span></div>
+      <div class="price-row"><span class="lbl">Months 2-3 — Execution & Testing</span><span class="val">£2,495+VAT/mo</span></div>
+      <div class="price-row"><span class="lbl" style="font-weight:600;">Total (90 days)</span><span class="val" style="color:var(--teal);">£7,985+VAT</span></div>
       <p class="price-note">For context: this is less than you'd pay a mid-level marketing manager for three months - and you get a team, not an individual. No recruitment, no notice period, no HR headaches. You told me you don't want to open the door on hiring a marketing manager because "soon as I open that door, they need an assistant, then someone else, then a specialist." This avoids all of that.</p>
     </div>
   </div>
@@ -402,14 +409,11 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:#fff;
 </section>
 
 <footer class="footer">
-  <p>TEST TUBE MARKETING - Prepared exclusively for Ian Lowes / Autocalls.uk</p>
-  <p style="margin-top:6px;"><a href="https://testtube.marketing">testtube.marketing</a></p>
+  <p>Test Tube Marketing Ltd - Prepared exclusively for Ian Lowes / Autocalls.uk</p>
+  <p style="margin-top:6px;"><a href="https://www.testtubemarketing.com">www.testtubemarketing.com</a></p>
 </footer>
 
-<div class="share-bar">
-  <span>Ian Lowes - TTM Proposal</span>
-  <a href="mailto:?subject=Test Tube Marketing Proposal&body=View your proposal: https://bigfish777-dog.github.io/proposal-ian-lowes/" class="share-btn">Share</a>
-</div>
+
 
 <script>
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')}),{threshold:.08});
