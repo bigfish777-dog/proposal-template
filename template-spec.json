@@ -1,0 +1,102 @@
+{
+  "_note": "Canonical TTM proposal template spec. Update this file whenever the team, testimonials, or branding changes. This is the source of truth for all generated proposals.",
+
+  "branding": {
+    "logo_drive_id": "1vFi1WHTNNyw5gMAFkUKGQ9czvEiHC_m2",
+    "primary_colour": "#E8185A",
+    "secondary_colour": "#4DD9D0",
+    "cover_gradient": "radial-gradient(ellipse at 65% 75%, #1A5C6B 0%, #0B2A45 45%, #060F1C 100%)",
+    "heading_font": "Poppins",
+    "body_font": "Inter",
+    "company_name": "Test Tube Marketing Ltd",
+    "website": "www.testtubemarketing.com",
+    "email": "bigfish@testtubemarking.com"
+  },
+
+  "style_rules": [
+    "No em or en dashes - use single hyphen (-) throughout",
+    "Currency: use £ for GBP, $ for USD",
+    "Pricing values format: £X,XXX+VAT or £X,XXX+VAT/mo",
+    "No share bar",
+    "Footer: Test Tube Marketing Ltd + www.testtubemarketing.com",
+    "Sign-off: Fish (Nick Fisher) bold, then company + email in italic below"
+  ],
+
+  "team": [
+    { "name": "Adam Ashburn", "role": "Co-Founder", "image_key": "Adam.jpg" },
+    { "name": "Nick 'Big Fish' Fisher", "role": "Co-Founder", "image_key": "Fish.jpg" },
+    { "name": "Grace Harrold", "role": "Head of Client Happiness", "image_key": "Grace.png" },
+    { "name": "Gabriella Neocleous", "role": "Head of Copywriting", "image_key": "Gabriella.jpeg" },
+    { "name": "Wayne Naldo", "role": "Head of Design", "image_key": "Wayne.jpeg" },
+    { "name": "Emma Garcia", "role": "Head of Finance", "image_key": "Emma_Garcia.jpg" },
+    { "name": "Dante Nyugen", "role": "Head of Video", "image_key": "Dante.png" },
+    { "name": "Cooper", "role": "Head of Security", "image_key": "Cooper_fixed.jpg", "note": "rotated 90deg clockwise" },
+    { "name": "Thula", "role": "Head of Treats", "image_key": "Thula_correct.jpg" }
+  ],
+
+  "testimonials": [
+    {
+      "result": "\"$6K PER MONTH\"",
+      "quote": "\"When I heard the guys were starting a marketing agency, I KNEW I wanted to work with them. They've not only helped provide me with the strategic insights I was looking for, but helped me launch my membership programme which now generates over $6,000 per month - Thanks Ad and Fish!\"",
+      "name": "Mike Maher",
+      "company": "Take A Deep Breath",
+      "image_key": "Mike_Maher.png"
+    },
+    {
+      "result": "\"£30K IN RECURRING REVENUE\"",
+      "quote": "\"On my first launch, Fish's emails performed so well, we not only had to open up more spots, we also had to 'close doors' early due to selling out. A few months later, the guys helped me launch my mobile app, and within 30 days, we'd signed up over 1,000 members paying £29.99 each.\"",
+      "name": "Steve Keane",
+      "company": "Kraft Coaching",
+      "image_key": "Steve_Keane.jpg"
+    },
+    {
+      "result": "\"OVER £130,000 IN NEW BUSINESS\"",
+      "quote": "\"I turned to Ad and Fish when my marketing manager took a new role, because I wanted to keep up my regular emails. I was stunned when the first 4 emails they wrote generated more calls and replies than anything we'd done previously! Since then, they've helped me generated over £130,000 in sales I can't recommend them enough.\"",
+      "name": "Kirsty Darkins",
+      "company": "KD Commercial",
+      "image_key": "Kirsty_Darkins.jpeg"
+    },
+    {
+      "result": "\"THEY JUST GET IT\"",
+      "quote": "\"It's safe to say that our 'basement pump' business isn't the most exciting, and is quite technical in its nature. But the team at TTM have been able to rapidly understand our offering, and craft compelling marketing that makes people take action. In fact, we had more replies to the first couple of emails they sent, than we'd had in all the emails in the entire 2 years prior.\"",
+      "name": "Ian Davies",
+      "company": "PPS Pumps",
+      "image_key": "Ian_Davis.webp"
+    },
+    {
+      "result": "\"40% GROWTH YEAR ON YEAR\"",
+      "quote": "\"I came to the Test Tube Marketing team not because I was struggling, but because I wanted to have a clearly defined marketing strategy in place. We've been working together almost 2 years now, and my revenue grew 40% vs last year, and I've just surpassed 7 figures for the first time ever. Thank you, TTM team!\"",
+      "name": "Tess Cope",
+      "company": "The Transformation Agency",
+      "image_key": "Tess_Cope.jpg"
+    },
+    {
+      "result": "\"6 FIGURES IN REVENUE\"",
+      "quote": "\"The first launch Ad, Fish and the team worked on with us generated over £30,000 in sales from a 5-Day Facebook Challenge. Better yet, we were able to leverage the assets they created and re-run the challenge multiple times, and generate a total of 6 figures in revenue.\"",
+      "name": "Aran Curry",
+      "company": "Insight Education",
+      "image_key": "Aran_Curry.png"
+    },
+    {
+      "result": "\"250 CALLS BOOKED!\"",
+      "quote": "\"On the first campaign Fish and Ad ran for us, we'd set a target of booking 50 calls. The first 2 emails they sent exceeded our target, and we had over 250 calls booked in total. Plus we've been able to re-run the campaign since, and get even more calls booked!\"",
+      "name": "Michelle Clarke",
+      "company": "Veblen Directors",
+      "image_key": "Michelle_Walker.jpg"
+    },
+    {
+      "result": "\"AN ABSOLUTE JOY TO WORK WITH\"",
+      "quote": "\"What an amazing impact the Test Tube Marketing team has had on our business and more importantly on our thinking. Ad, Fish and Grace have been a total joy to work with and we all feel very inspired walking away from a session with these guys. We love their copywriting style and they get our tone of voice absolutely right. We're only a few months into working together, but we can't wait to see what the next few years look like with them onboard!\"",
+      "name": "Richard Parsons",
+      "company": "Platinum Commercial Academy",
+      "image_key": "Richard_Parsons.jpg"
+    },
+    {
+      "result": "\"I'VE NEVER HAD A RESPONSE LIKE THIS\"",
+      "quote": "\"We've been sending emails to our database pretty consistently for years, but when the TTM team took over, we saw a difference in response almost immediately. More opens, more replies, and more prospects moving towards us - one of which has now turned into a massive contract for us!! No small feat when you're selling something as boring as voice recordings!\"",
+      "name": "Steve Hindley",
+      "company": "iNarrator",
+      "image_key": "Steve_Hindley.png"
+    }
+  ]
+}
