@@ -7,13 +7,26 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0f0f1a;
+  }
+
   body {
     font-family: 'Inter', 'DM Sans', -apple-system, sans-serif;
-    background: #0f0f1a;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scale-wrap {
     width: 1920px;
     height: 1080px;
-    overflow: hidden;
+    transform-origin: top left;
+    flex-shrink: 0;
   }
 
   .slide {
@@ -245,6 +258,7 @@
 </style>
 </head>
 <body>
+<div class="scale-wrap" id="scaleWrap">
 <div class="slide">
   <div class="title">
     <h1>How <span>The Lab</span> Changes the Way We Work</h1>
@@ -383,5 +397,19 @@
 
   </div>
 </div>
+</div>
+<script>
+  function scaleToFit() {
+    var wrap = document.getElementById('scaleWrap');
+    var scaleX = window.innerWidth / 1920;
+    var scaleY = window.innerHeight / 1080;
+    var scale = Math.min(scaleX, scaleY);
+    var offsetX = (window.innerWidth - 1920 * scale) / 2;
+    var offsetY = (window.innerHeight - 1080 * scale) / 2;
+    wrap.style.transform = 'translate(' + offsetX + 'px, ' + offsetY + 'px) scale(' + scale + ')';
+  }
+  scaleToFit();
+  window.addEventListener('resize', scaleToFit);
+</script>
 </body>
 </html>
