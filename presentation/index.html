@@ -266,13 +266,19 @@
           </div>
         </div>
         <div>
-          <div class="card" style="background:rgba(255,13,100,0.04);border-color:rgba(255,13,100,0.2);padding:22px 28px;margin-bottom:16px;">
-            <p class="body-sm" style="color:var(--text);font-weight:600;margin-bottom:10px;">The real problem</p>
-            <p class="body-sm">Different members of the team have different approaches, different levels of effectiveness in prompting, different amounts of context they provide. And the quality of the output varies dramatically — not because of talent, but because <strong style="color:var(--text);">nobody has the same picture.</strong></p>
+          <div class="card" style="background:rgba(255,13,100,0.04);border-color:rgba(255,13,100,0.2);padding:20px 24px;margin-bottom:14px;">
+            <p class="body-sm" style="color:var(--text);font-weight:600;margin-bottom:8px;">The hidden overhead nobody talks about</p>
+            <p class="body-sm" style="margin-bottom:8px;">Before any actual work starts, there's 20-40 minutes of overhead on <em>every task</em> — finding the right Fathom call (15 min), uploading context into a fresh AI session, reprompting when the output misses the mark. That's not in anyone's timesheet. It's just... gone.</p>
+            <p class="body-sm">And none of it is fun. It's not what anyone on this team is good at or enjoys. It's the tax we pay to get to the real work.</p>
           </div>
-          <div class="card" style="padding:22px 28px;">
-            <p class="body-sm" style="color:var(--text);font-weight:600;margin-bottom:10px;">And this only gets worse at scale</p>
-            <p class="body-sm">Candace's agency — bigger team, more people, all using ChatGPT differently. Some on Pro, some on free. Every single one doing it their own way. The variation in output quality is enormous. We're heading in the same direction if we don't fix this now.</p>
+          <div class="card" style="padding:20px 24px;">
+            <p class="body-sm" style="color:var(--text);font-weight:600;margin-bottom:8px;">We're leaking time everywhere</p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:6px;">
+              <li style="display:flex; gap:8px; align-items:flex-start; font-size:14px; color:var(--muted);"><span style="color:var(--pink); flex-shrink:0;">·</span>Grace chasing clients repeatedly for approvals they've already given mentally</li>
+              <li style="display:flex; gap:8px; align-items:flex-start; font-size:14px; color:var(--muted);"><span style="color:var(--pink); flex-shrink:0;">·</span>Files living in 3 places — nobody knows which version is current</li>
+              <li style="display:flex; gap:8px; align-items:flex-start; font-size:14px; color:var(--muted);"><span style="color:var(--pink); flex-shrink:0;">·</span>Nobody knows if the client's even seen the update</li>
+              <li style="display:flex; gap:8px; align-items:flex-start; font-size:14px; color:var(--muted);"><span style="color:var(--pink); flex-shrink:0;">·</span>Each of these is 5-15 minutes. They happen dozens of times a week. That's where the days go.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -510,43 +516,36 @@
           </li>
         </ul>
 
-        <!-- Portal mockup -->
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:14px; overflow:hidden;">
-          <div style="background:rgba(0,0,0,0.3); padding:10px 16px; display:flex; align-items:center; gap:7px; border-bottom:1px solid var(--border);">
-            <div style="width:9px; height:9px; border-radius:50%; background:#FF5F57;"></div>
-            <div style="width:9px; height:9px; border-radius:50%; background:#FEBC2E;"></div>
-            <div style="width:9px; height:9px; border-radius:50%; background:#28C840;"></div>
-            <span style="font-size:10px; color:rgba(255,255,255,0.25); margin-left:6px;">thelab.testtube.marketing</span>
-          </div>
-          <div style="display:flex; height:210px;">
-            <div style="width:130px; background:rgba(0,0,0,0.25); padding:14px 10px; border-right:1px solid var(--border); flex-shrink:0;">
-              <p style="font-size:12px; font-weight:800; color:var(--text); margin-bottom:1px;">The Lab</p>
-              <p style="font-size:9px; color:rgba(255,255,255,0.25); margin-bottom:18px;">by Test Tube Marketing</p>
-              <div style="display:flex; flex-direction:column; gap:3px;">
-                <div style="padding:5px 7px; border-radius:5px; background:rgba(255,13,100,0.1); color:var(--pink); font-size:10px; font-weight:600;">Dashboard</div>
-                <div style="padding:5px 7px; color:rgba(255,255,255,0.35); font-size:10px; display:flex; justify-content:space-between;">Project Timeline <span style="background:rgba(255,167,26,0.2); color:var(--amber); border-radius:3px; padding:0 4px; font-size:9px;">1</span></div>
-                <div style="padding:5px 7px; color:rgba(255,255,255,0.35); font-size:10px; display:flex; justify-content:space-between;">Assets & Files <span style="background:rgba(255,167,26,0.2); color:var(--amber); border-radius:3px; padding:0 4px; font-size:9px;">4</span></div>
-                <div style="padding:5px 7px; color:rgba(255,255,255,0.35); font-size:10px;">Onboarding</div>
-                <div style="padding:5px 7px; color:rgba(255,255,255,0.35); font-size:10px;">Settings</div>
-              </div>
+        <ul class="check-list">
+          <li class="check-item">
+            <div class="check-icon good">✓</div>
+            <div>
+              <div class="check-text">For the client — self-serve, no chasing</div>
+              <div class="check-sub">They open the portal, see everything, submit what's needed, and approve in one place. No email chains.</div>
             </div>
-            <div style="flex:1; padding:14px 18px; overflow:hidden;">
-              <p style="font-size:13px; font-weight:700; color:var(--text); margin-bottom:3px;">Welcome back, Katie</p>
-              <p style="font-size:10px; color:var(--muted); margin-bottom:12px;">Tuesday, 17 March 2026</p>
-              <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
-                <div style="background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:7px; padding:9px;">
-                  <p style="font-size:9px; color:var(--muted); margin-bottom:3px;">Open Rate</p>
-                  <p style="font-size:17px; font-weight:800; color:var(--teal);">47.3%</p>
-                </div>
-                <div style="background:rgba(255,255,255,0.04); border:1px solid var(--border); border-radius:7px; padding:9px;">
-                  <p style="font-size:9px; color:var(--muted); margin-bottom:3px;">Cost Per Lead</p>
-                  <p style="font-size:17px; font-weight:800; color:var(--pink);">£19.68</p>
-                </div>
-              </div>
-              <div style="background:rgba(255,13,100,0.06); border:1px solid rgba(255,13,100,0.15); border-radius:7px; padding:8px 10px; font-size:10px; color:var(--pink); font-weight:600;">🎯 Thrive Live — 11 days · 142/200 registrations</div>
+          </li>
+          <li class="check-item">
+            <div class="check-icon good">✓</div>
+            <div>
+              <div class="check-text">For the team — one shared view of every client</div>
+              <div class="check-sub">No more "what's the status?", no more digging through Drive, no more briefing each other across Slack.</div>
             </div>
-          </div>
-        </div>
+          </li>
+          <li class="check-item">
+            <div class="check-icon good">✓</div>
+            <div>
+              <div class="check-text">For Fishtail — full context, always</div>
+              <div class="check-sub">Every brief, call, asset, approval and action item in one place. Fishtail has access to all of it — and gets smarter with every project.</div>
+            </div>
+          </li>
+          <li class="check-item">
+            <div class="check-icon good">✓</div>
+            <div>
+              <div class="check-text">Agency view — team sees everything across all clients</div>
+              <div class="check-sub">Capacity, status, what's overdue, what's waiting on the client. One dashboard to run the whole operation.</div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -570,49 +569,107 @@
     </div>
   </div>
 
-  <!-- SLIDE 7: Team roles — what they STOP doing -->
+  <!-- SLIDE 7a: What changes — Gabriella -->
   <div class="slide accent-blob">
     <div class="z1 full-width">
-      <div class="label">What Changes For You</div>
-      <h2>Here's what you<br/><span class="pink">stop doing</span>.</h2>
-      <p class="body mt-4" style="max-width:600px;">This isn't about doing less. It's about stopping the things that waste your talent — so you can do more of what you're actually good at.</p>
-      <div class="grid-3 mt-8">
-        <div class="role-card">
-          <div class="role-name" style="margin-bottom:12px;">Gabriella</div>
-          <div style="background:rgba(255,13,100,0.06); border:1px solid rgba(255,13,100,0.15); border-radius:8px; padding:12px 14px; margin-bottom:12px;">
-            <p style="font-size:11px; font-weight:700; color:var(--pink); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;">Stops doing</p>
-            <p class="role-now" style="padding:0; border:none;">Jumping on a Zoom call every month just to ask a client what they want in their newsletter</p>
-          </div>
-          <div style="background:rgba(63,234,206,0.06); border:1px solid rgba(63,234,206,0.15); border-radius:8px; padding:12px 14px;">
-            <p style="font-size:11px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;">Starts doing</p>
-            <p class="role-then" style="padding:0;">Opening the portal, seeing the client's submitted content, and publishing it — no call needed</p>
-          </div>
-        </div>
-        <div class="role-card">
-          <div class="role-name" style="margin-bottom:12px;">Grace</div>
-          <div style="background:rgba(255,13,100,0.06); border:1px solid rgba(255,13,100,0.15); border-radius:8px; padding:12px 14px; margin-bottom:12px;">
-            <p style="font-size:11px; font-weight:700; color:var(--pink); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;">Stops doing</p>
-            <p class="role-now" style="padding:0; border:none;">Spending hours building a project timeline in Google Sheets for every single new client from scratch</p>
-          </div>
-          <div style="background:rgba(63,234,206,0.06); border:1px solid rgba(63,234,206,0.15); border-radius:8px; padding:12px 14px;">
-            <p style="font-size:11px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;">Starts doing</p>
-            <p class="role-then" style="padding:0;">Reviewing an auto-generated timeline, adjusting the dates, and approving — 10 minutes not 2 hours</p>
+      <div class="label">What Changes For You — Gabriella</div>
+      <h2>Stop doing the<br/><span class="pink">boring, repetitive stuff.</span></h2>
+      <p class="body mt-4" style="max-width:600px;">This isn't about working harder. It's about stopping the things that drain your time and talent so you can spend it on the work that actually matters.</p>
+      <div class="grid-2 mt-8" style="gap:32px; align-items:start;">
+        <div>
+          <div style="background:rgba(255,13,100,0.06); border:1px solid rgba(255,13,100,0.2); border-radius:12px; padding:20px 24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--pink); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;">Stops doing</p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Jumping on a Zoom every month just to ask what a client wants in their newsletter</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Chasing clients multiple times to get basic content back so a campaign can progress</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Digging through Fathom manually to find the right call recording — that alone takes 15+ minutes</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Prompting AI from scratch, providing all the context again, hoping the output matches the client's tone</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Sending files to Grace to update the project plan — or just forgetting to</span></li>
+            </ul>
           </div>
         </div>
-        <div class="role-card">
-          <div class="role-name" style="margin-bottom:12px;">Ad</div>
-          <div style="background:rgba(255,13,100,0.06); border:1px solid rgba(255,13,100,0.15); border-radius:8px; padding:12px 14px; margin-bottom:12px;">
-            <p style="font-size:11px; font-weight:700; color:var(--pink); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;">Stops doing</p>
-            <p class="role-now" style="padding:0; border:none;">Prompting Claude from scratch, copy-pasting output, reformatting it, dropping it into Drive, briefing Grace and Wayne separately</p>
-          </div>
-          <div style="background:rgba(63,234,206,0.06); border:1px solid rgba(63,234,206,0.15); border-radius:8px; padding:12px 14px;">
-            <p style="font-size:11px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;">Starts doing</p>
-            <p class="role-then" style="padding:0;">Opening a draft that already has full client context, reading it, making it better, approving it. Everything else is automatic.</p>
+        <div>
+          <div style="background:rgba(63,234,206,0.06); border:1px solid rgba(63,234,206,0.2); border-radius:12px; padding:20px 24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;">Starts doing</p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Opening the portal and seeing the client's submitted content, already in the right format</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Reviewing an AI-drafted campaign that already knows the client's voice, goals, and history</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Asking Fishtail "what's outstanding on the Thrive account?" and getting a full answer in seconds</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Spending your time on creative direction and client relationships — not admin and chasing</span></li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="card mt-5" style="padding:16px 24px;">
-        <p class="body-sm white">Wayne gets better briefs, automatically, exactly when he needs them. He doesn't change at all — he just stops chasing.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 7b: What changes — Grace -->
+  <div class="slide accent-blob">
+    <div class="z1 full-width">
+      <div class="label">What Changes For You — Grace</div>
+      <h2>Stop rebuilding the<br/><span class="pink">same thing from scratch.</span></h2>
+      <p class="body mt-4" style="max-width:600px;">Every new client currently means the same manual process, all over again. This is how that changes.</p>
+      <div class="grid-2 mt-8" style="gap:32px; align-items:start;">
+        <div>
+          <div style="background:rgba(255,13,100,0.06); border:1px solid rgba(255,13,100,0.2); border-radius:12px; padding:20px 24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--pink); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;">Stops doing</p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Manually building project timelines in Google Sheets for every new client — 2-4 hours, from scratch, every time</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Chasing clients repeatedly for approvals they've already given in their head but haven't clicked "confirm"</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Updating the project plan manually every time something changes — or finding out too late that it has</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Trying to keep track of what's with the client, what's with the team, what's overdue — across multiple spreadsheets</span></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div style="background:rgba(63,234,206,0.06); border:1px solid rgba(63,234,206,0.2); border-radius:12px; padding:20px 24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;">Starts doing</p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Reviewing an auto-generated project plan from onboarding data — 10 minutes to approve, not 3 hours to build</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Fishtail automatically spots when something changes on a call and amends the project plan — you just confirm</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">One dashboard shows the status of every client — what's overdue, what's waiting, what needs a nudge</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Clients are notified automatically when something's ready for them — you don't have to chase</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7c: What changes — Ad -->
+  <div class="slide accent-blob">
+    <div class="z1 full-width">
+      <div class="label">What Changes For You — Ad</div>
+      <h2>Stop spending 40 minutes<br/><span class="pink">explaining context to AI.</span></h2>
+      <p class="body mt-4" style="max-width:640px;">Every task currently starts with the same overhead: finding the right call, uploading the context, prompting from scratch. That's 20-40 minutes gone before the real work begins. Every single time.</p>
+      <div class="grid-2 mt-8" style="gap:32px; align-items:start;">
+        <div>
+          <div style="background:rgba(255,13,100,0.06); border:1px solid rgba(255,13,100,0.2); border-radius:12px; padding:20px 24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--pink); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;">Stops doing</p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Opening Claude, explaining who the client is, uploading the brief, hoping the output is on-brand</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Hunting Fathom for the right call recording — find it, download it, summarise it manually: 15+ minutes every time</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Reformatting output, dropping it into Drive, then separately briefing Grace and Wayne on what needs doing</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Guessing whether a client's seen the latest version — or whether anyone remembered to tell them there was an update</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Jumping on Zoom to walk a client through something that could have been a portal update</span></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div style="background:rgba(63,234,206,0.06); border:1px solid rgba(63,234,206,0.2); border-radius:12px; padding:20px 24px;">
+            <p style="font-size:12px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;">Starts doing</p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Opening a draft that already knows the client, their tone, their history, and exactly what they asked for</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Reading it, making it better, approving it. That's the whole job — not the prep, not the formatting, not the chasing</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Asking Fishtail "where's the brief for the Chairman campaign?" and getting a direct Drive link immediately</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Focusing on strategy and relationships while the infrastructure handles the repetitive, time-consuming bits</span></li>
+            </ul>
+          </div>
+          <div class="card mt-4" style="padding:14px 18px; background:rgba(63,234,206,0.04); border-color:rgba(63,234,206,0.2);">
+            <p class="body-sm white" style="font-weight:700; margin-bottom:4px;">And Wayne?</p>
+            <p class="body-sm">Gets better briefs, automatically, exactly when he needs them. He doesn't change — he just stops chasing.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
