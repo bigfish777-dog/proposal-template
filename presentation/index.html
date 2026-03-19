@@ -120,6 +120,19 @@
   /* Cards */
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px 32px; }
 
+
+  /* Fishtail logo — fixed corner on all slides */
+  .fishtail-corner {
+    position: fixed;
+    bottom: 76px;
+    right: 40px;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    opacity: 0.75;
+    z-index: 50;
+    pointer-events: none;
+  }
   /* Tags */
   .tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 99px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; }
   .tag-pink { background: rgba(255,13,100,0.12); color: var(--pink); }
@@ -254,7 +267,7 @@
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
             <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,13,100,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--pink);flex-shrink:0;">3</div>
-            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Ad or Gabriella picks up the work <span style="font-size:12px; font-weight:400; color:var(--pink);">variable</span></p><p class="body-sm">Each opens their own AI. Different tools, different accounts, different prompts, different context. <span style="color:var(--pink);font-weight:600;">Different output — every time.</span></p></div>
+            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Ad or Gabriella picks up the work <span style="font-size:12px; font-weight:400; color:var(--pink);">30-90 min per task</span></p><p class="body-sm">Each opens their own AI. Different tools, different accounts, different prompts, different context. <span style="color:var(--pink);font-weight:600;">Different output — every time.</span></p></div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
             <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,13,100,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--pink);flex-shrink:0;">4</div>
@@ -598,6 +611,10 @@
               <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Spending your time on creative direction and client relationships — not admin and chasing</span></li>
             </ul>
           </div>
+          <div class="card mt-4" style="padding:14px 18px; background:rgba(63,234,206,0.05); border-color:rgba(63,234,206,0.25);">
+            <p class="body-sm teal" style="font-weight:700; margin-bottom:4px;">What this actually means for Gabriella</p>
+            <p class="body-sm">Less time on repetitive production work means more space for the strategic stuff — brand direction, creative thinking, client consultancy. That's where your career grows. And as the business scales, the role grows with it.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -614,10 +631,10 @@
           <div style="background:rgba(255,13,100,0.06); border:1px solid rgba(255,13,100,0.2); border-radius:12px; padding:20px 24px;">
             <p style="font-size:12px; font-weight:700; color:var(--pink); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;">Stops doing</p>
             <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
-              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Manually building project timelines in Google Sheets for every new client — 2-4 hours, from scratch, every time</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Chasing clients repeatedly for approvals they've already given in their head but haven't clicked "confirm"</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Updating the project plan manually every time something changes — or finding out too late that it has</span></li>
-              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Trying to keep track of what's with the client, what's with the team, what's overdue — across multiple spreadsheets</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Ad or clients asking the same status questions over and over — because the answer isn't easy to find</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Manually building project timelines from scratch for every new client — 2-4 hours, every time</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Chasing clients for approvals they've already given mentally but haven't clicked</span></li>
+              <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--pink); flex-shrink:0; font-weight:700; margin-top:1px;">✗</span><span class="body-sm">Keeping track of what's with the client, what's with the team, what's overdue — across multiple spreadsheets</span></li>
             </ul>
           </div>
         </div>
@@ -630,6 +647,10 @@
               <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">One dashboard shows the status of every client — what's overdue, what's waiting, what needs a nudge</span></li>
               <li style="display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--teal); flex-shrink:0; font-weight:700; margin-top:1px;">✓</span><span class="body-sm">Clients are notified automatically when something's ready for them — you don't have to chase</span></li>
             </ul>
+          </div>
+          <div class="card mt-4" style="padding:14px 18px; background:rgba(63,234,206,0.05); border-color:rgba(63,234,206,0.25);">
+            <p class="body-sm teal" style="font-weight:700; margin-bottom:4px;">What this actually means for Grace</p>
+            <p class="body-sm">When information is always accessible and clients can self-serve the basics, the questions stop. You get to focus on what you're genuinely great at — client relationships, keeping projects running smoothly, and making sure the business delivers. That's a very different kind of job.</p>
           </div>
         </div>
       </div>
@@ -796,6 +817,39 @@
     </div>
   </div>
 
+  <!-- SLIDE 12b: What scaling means for the team -->
+  <div class="slide" style="justify-content:center; align-items:center;">
+    <div class="z1" style="max-width:820px; width:100%;">
+      <div class="label">Why this matters for all of us</div>
+      <h2>More revenue.<br/><span class="teal">Same team size. Better pay.</span></h2>
+      <p class="body mt-4" style="max-width:640px;">The infrastructure we're building doesn't just help the business scale — it directly changes what's possible for everyone in this room.</p>
+
+      <div class="grid-2 mt-8" style="gap:28px; align-items:start;">
+        <div class="card" style="padding:24px 28px; background:rgba(255,13,100,0.04); border-color:rgba(255,13,100,0.2);">
+          <p class="body-sm white" style="font-weight:700; font-size:16px; margin-bottom:12px;">Without this</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:var(--muted);"><span style="color:var(--pink); flex-shrink:0;">→</span>More clients = more team = more overhead = same margins</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:var(--muted);"><span style="color:var(--pink); flex-shrink:0;">→</span>Growth is capped by what the team can manually handle</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:var(--muted);"><span style="color:var(--pink); flex-shrink:0;">→</span>Everyone stays stretched — no room to focus on the interesting work</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:24px 28px; background:rgba(63,234,206,0.04); border-color:rgba(63,234,206,0.25);">
+          <p class="body-sm teal" style="font-weight:700; font-size:16px; margin-bottom:12px;">With this</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:var(--text);"><span style="color:var(--teal); flex-shrink:0;">→</span>More clients, same team, higher margins</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:var(--text);"><span style="color:var(--teal); flex-shrink:0;">→</span>The efficiency gains go back into the business — and into salaries</li>
+            <li style="display:flex; gap:10px; align-items:flex-start; font-size:15px; color:var(--text);"><span style="color:var(--teal); flex-shrink:0;">→</span>Everyone's role evolves — more strategic, more interesting, better rewarded</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mt-6" style="padding:20px 28px; background:rgba(63,234,206,0.06); border-color:rgba(63,234,206,0.3);">
+        <p class="body-sm white" style="font-weight:700; margin-bottom:4px;">The goal is a business where everyone wins.</p>
+        <p class="body-sm">When TTM can handle 40 clients without hiring — that revenue goes further. We want Gabriella and Grace to share in that success. This is how we make that possible.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- SLIDE 13: Closing — let's decide -->
   <div class="slide" style="justify-content:center; align-items:center; text-align:center;">
     <div class="z1" style="display:flex; flex-direction:column; align-items:center; max-width:800px;">
@@ -826,6 +880,8 @@
   </div>
 
 </div>
+
+<img src="/presentation/fishtail-logo.png" class="fishtail-corner" alt="Fishtail" />
 
 <!-- Navigation -->
 <div class="nav">
