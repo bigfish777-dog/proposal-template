@@ -100,7 +100,7 @@
   h3 { font-size: 22px; font-weight: 700; }
   .body { font-size: 18px; color: var(--muted); line-height: 1.6; }
   .body-sm { font-size: 15px; color: var(--muted); line-height: 1.6; }
-  .body-xs { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .body-xs { font-size: 15px; color: var(--muted); line-height: 1.5; }
   .pink { color: var(--pink); }
   .teal { color: var(--teal); }
   .amber { color: var(--amber); }
@@ -197,12 +197,36 @@
 
   <!-- SLIDE 1: Title — voice memo hook -->
   <div class="slide accent-blob active">
-    <div class="z1">
+    <div class="z1" style="width:100%;">
       <div class="label">TTM Quarterly Planning — March 2026</div>
       <h1>We've integrated AI.<br/>We're more efficient.<br/><span class="pink">Sort of.</span></h1>
       <p class="body mt-6" style="max-width:620px;">Over the past 18 months we've integrated AI into our workflows. Claude, ChatGPT, Fathom. Things are better than they were. But here's the honest truth: the improvement has come almost entirely from the models getting smarter — not from us using them smarter.</p>
       <p class="body mt-4" style="max-width:620px; color:var(--text);">We're still siloed. We're still inconsistent. And we're still the bottleneck. Today is about fixing that.</p>
-      <div class="pill-row mt-8">
+
+      <!-- Progress visualisation: how far we've come vs how far we could go -->
+      <div style="margin-top:36px; max-width:700px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="font-size:12px; font-weight:700; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase;">Where we started</span>
+          <span style="font-size:12px; font-weight:700; color:var(--teal); letter-spacing:0.06em; text-transform:uppercase;">Full potential</span>
+        </div>
+        <div style="position:relative; height:12px; background:rgba(255,255,255,0.06); border-radius:99px; overflow:visible;">
+          <div style="position:absolute; left:0; top:0; height:12px; width:18%; background:linear-gradient(90deg, rgba(255,13,100,0.5), rgba(255,13,100,0.8)); border-radius:99px;"></div>
+          <!-- Marker at 18% -->
+          <div style="position:absolute; left:18%; top:50%; transform:translate(-50%,-50%); width:20px; height:20px; background:var(--pink); border-radius:50%; border:3px solid var(--darker); box-shadow:0 0 0 2px var(--pink); z-index:2; display:flex; align-items:center; justify-content:center;">
+            <div style="width:6px;height:6px;background:white;border-radius:50%;"></div>
+          </div>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-top:10px; align-items:flex-start;">
+          <div style="font-size:12px; color:var(--muted); max-width:180px;">Manual processes, no consistency</div>
+          <div style="text-align:center; transform:translateX(-40%);">
+            <div style="font-size:13px; font-weight:700; color:var(--pink);">We are here</div>
+            <div style="font-size:12px; color:var(--muted); margin-top:2px;">Better tools. Same chaos.</div>
+          </div>
+          <div style="font-size:12px; color:var(--teal); text-align:right; max-width:200px;">AI infrastructure. Consistent output. Self-serve clients.</div>
+        </div>
+      </div>
+
+      <div class="pill-row mt-6">
         <span class="tag tag-pink">Human Oversight</span>
         <span class="tag tag-teal">The Lab</span>
         <span class="tag tag-amber">Friday 20 March 2026</span>
@@ -219,23 +243,23 @@
         <div style="display:flex;flex-direction:column;gap:14px;">
           <div style="display:flex;gap:12px;align-items:flex-start;">
             <div style="width:26px;height:26px;border-radius:50%;background:rgba(136,145,168,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--muted);flex-shrink:0;">1</div>
-            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">New client meeting</p><p class="body-xs">Recorded on Fathom. 4 hours, in person. Deliverables agreed.</p></div>
+            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">New client meeting <span style="font-size:12px; font-weight:400; color:var(--amber);">~4 hrs</span></p><p class="body-sm">Recorded on Fathom. In person. Deliverables agreed. Everyone leaves with a different version of the plan in their head.</p></div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
             <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,13,100,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--pink);flex-shrink:0;">2</div>
-            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Grace builds the project plan</p><p class="body-xs">Uploads recording to Claude or ChatGPT. Manually builds a Google Sheet with deliverables, owners, due dates.</p></div>
+            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Grace builds the project plan <span style="font-size:12px; font-weight:400; color:var(--pink);">~2-3 hrs</span></p><p class="body-sm">Uploads recording to Claude or ChatGPT. Manually builds a Google Sheet with deliverables, owners, due dates. Done from scratch every time.</p></div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
             <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,13,100,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--pink);flex-shrink:0;">3</div>
-            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Ad or Gabriella picks up the work</p><p class="body-xs">Each opens their own AI. Provides whatever context they remember or happen to have. Different tools, different accounts, different prompts. <span style="color:var(--pink);font-weight:600;">Different output.</span></p></div>
+            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Ad or Gabriella picks up the work <span style="font-size:12px; font-weight:400; color:var(--pink);">variable</span></p><p class="body-sm">Each opens their own AI. Different tools, different accounts, different prompts, different context. <span style="color:var(--pink);font-weight:600;">Different output — every time.</span></p></div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
             <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,13,100,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--pink);flex-shrink:0;">4</div>
-            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Output copied into Google Docs</p><p class="body-xs">Each person formats it differently. Grace adds the link to the project sheet. Hopefully notifies the client. Hopefully updates the status.</p></div>
+            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Output collated and sent to client <span style="font-size:12px; font-weight:400; color:var(--pink);">~30-60 min</span></p><p class="body-sm">Copied into Google Docs, formatted differently by whoever's on. Grace updates the project sheet. Hopefully. Client gets an email. Maybe.</p></div>
           </div>
           <div style="display:flex;gap:12px;align-items:flex-start;">
             <div style="width:26px;height:26px;border-radius:50%;background:rgba(255,13,100,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--pink);flex-shrink:0;">5</div>
-            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Client feedback comes back</p><p class="body-xs">Via email. Or WhatsApp. Or inside the doc. Or to Grace. Or directly to Ad. We don't know where it'll land. <span style="color:var(--pink);font-weight:600;">It's all disjointed.</span></p></div>
+            <div><p class="body-sm white" style="font-weight:600;margin-bottom:2px;">Client feedback and chasing <span style="font-size:12px; font-weight:400; color:var(--pink);">~46 min avg per call</span></p><p class="body-sm">Via email. Or WhatsApp. Or inside the doc. Or to Grace. Or directly to Ad. We don't know where it'll land. And then they book a call to ask what's next. <span style="color:var(--pink);font-weight:600;">Every single time.</span></p></div>
           </div>
         </div>
         <div>
@@ -252,70 +276,58 @@
     </div>
   </div>
 
-  <!-- SLIDE 2b: 100% stat — full screen moment -->
-  <div class="slide" style="justify-content:center; align-items:center; text-align:center;">
-    <div class="z1" style="display:flex; flex-direction:column; align-items:center;">
-      <div style="font-size:180px; font-weight:800; letter-spacing:-0.05em; line-height:1; color:var(--pink);">100%</div>
-      <p style="font-size:28px; font-weight:700; color:var(--text); margin-top:16px; max-width:700px; line-height:1.3;">of our client calls included a "what's next?" conversation.</p>
-      <p class="body mt-6" style="max-width:560px;">Every single one. Not most. Not almost all. Every call we've had with a client in the last 17 months included a question that a project timeline in a portal would have answered before they even picked up the phone.</p>
-      <p class="body-xs mt-8" style="color:rgba(136,145,168,0.4);">Source: 36 TTM client call transcripts analysed via Fathom</p>
-    </div>
-  </div>
-
-  <!-- SLIDE 3: Data — what clients actually need -->
+  <!-- SLIDE 3: Data — what clients actually need (100% stat integrated) -->
   <div class="slide">
     <div class="full-width">
       <div class="label">Built on Evidence</div>
-      <h2>We know exactly what<br/>clients need from us.<br/><span class="pink">We're not delivering it efficiently.</span></h2>
+      <h2>Every gap has a fix.<br/><span class="pink">The AI infrastructure addresses all of it.</span></h2>
 
       <div class="grid-2 mt-8" style="gap:32px; align-items:start;">
         <div>
-          <p class="body-sm white" style="font-weight:700; margin-bottom:16px;">What clients ask about in calls</p>
+          <p class="body-sm white" style="font-weight:700; margin-bottom:16px;">What clients ask about <span style="color:var(--muted);font-weight:400;">— and what fixes it</span></p>
           <div style="display:flex; flex-direction:column; gap:10px;">
             <div>
-              <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:baseline;">
                 <span class="body-sm white">"What's next / what are we working on?"</span>
-                <span style="font-size:13px; font-weight:700; color:var(--pink);">100%</span>
+                <span style="font-size:13px; font-weight:700; color:var(--pink); flex-shrink:0; margin-left:8px;">100%</span>
               </div>
-              <div class="progress-wrap"><div class="progress-bar" style="width:100%; background:var(--pink);"></div></div>
+              <div class="progress-wrap" style="margin-bottom:4px;"><div class="progress-bar" style="width:100%; background:var(--pink);"></div></div>
+              <div style="font-size:12px; color:var(--teal); padding-left:4px;">→ Project timeline in The Lab, always live</div>
             </div>
             <div>
-              <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
-                <span class="body-sm white">Review or approve materials</span>
-                <span style="font-size:13px; font-weight:700; color:var(--pink);">81%</span>
-              </div>
-              <div class="progress-wrap"><div class="progress-bar" style="width:81%; background:var(--pink);"></div></div>
-            </div>
-            <div>
-              <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:baseline;">
                 <span class="body-sm white">Strategy — "what should we do next?"</span>
-                <span style="font-size:13px; font-weight:700; color:var(--amber);">92%</span>
+                <span style="font-size:13px; font-weight:700; color:var(--amber); flex-shrink:0; margin-left:8px;">92%</span>
               </div>
-              <div class="progress-wrap"><div class="progress-bar" style="width:92%; background:var(--amber);"></div></div>
+              <div class="progress-wrap" style="margin-bottom:4px;"><div class="progress-bar" style="width:92%; background:var(--amber);"></div></div>
+              <div style="font-size:12px; color:var(--teal); padding-left:4px;">→ AI analyses their data and surfaces next steps automatically</div>
             </div>
             <div>
-              <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:baseline;">
+                <span class="body-sm white">Review or approve materials</span>
+                <span style="font-size:13px; font-weight:700; color:var(--pink); flex-shrink:0; margin-left:8px;">81%</span>
+              </div>
+              <div class="progress-wrap" style="margin-bottom:4px;"><div class="progress-bar" style="width:81%; background:var(--pink);"></div></div>
+              <div style="font-size:12px; color:var(--teal); padding-left:4px;">→ In-portal review and approval - no email chains, no Zoom</div>
+            </div>
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:baseline;">
                 <span class="body-sm white">Ad spend & budget performance</span>
-                <span style="font-size:13px; font-weight:700; color:var(--amber);">39%</span>
+                <span style="font-size:13px; font-weight:700; color:var(--amber); flex-shrink:0; margin-left:8px;">39%</span>
               </div>
-              <div class="progress-wrap"><div class="progress-bar" style="width:39%; background:var(--amber);"></div></div>
+              <div class="progress-wrap" style="margin-bottom:4px;"><div class="progress-bar" style="width:39%; background:var(--amber);"></div></div>
+              <div style="font-size:12px; color:var(--teal); padding-left:4px;">→ Live dashboard: spend, CPL, ROAS always visible</div>
             </div>
             <div>
-              <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
-                <span class="body-sm white">Revenue & pipeline</span>
-                <span style="font-size:13px; font-weight:700; color:var(--teal);">36%</span>
-              </div>
-              <div class="progress-wrap"><div class="progress-bar" style="width:36%; background:var(--teal);"></div></div>
-            </div>
-            <div>
-              <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:4px; align-items:baseline;">
                 <span class="body-sm white">Reporting / visibility</span>
-                <span style="font-size:13px; font-weight:700; color:var(--teal);">25%</span>
+                <span style="font-size:13px; font-weight:700; color:var(--teal); flex-shrink:0; margin-left:8px;">25%</span>
               </div>
-              <div class="progress-wrap"><div class="progress-bar" style="width:25%; background:var(--teal);"></div></div>
+              <div class="progress-wrap" style="margin-bottom:4px;"><div class="progress-bar" style="width:25%; background:var(--teal);"></div></div>
+              <div style="font-size:12px; color:var(--teal); padding-left:4px;">→ Automated reporting from live data - no manual decks</div>
             </div>
           </div>
-          <p class="body-xs mt-4" style="color:rgba(136,145,168,0.5);">Source: 36 TTM client calls, Sept 2025 – Mar 2026 (Fathom)</p>
+          <p class="body-xs mt-4" style="color:rgba(136,145,168,0.5);">Source: 79 TTM client calls, Nov 2024 – Mar 2026 (Fathom)</p>
         </div>
 
         <div>
@@ -350,6 +362,14 @@
           <div class="card mt-6" style="padding:16px 20px; background:rgba(255,13,100,0.04); border-color:rgba(255,13,100,0.15);">
             <p class="body-sm white" style="line-height:1.6;"><strong>The insight:</strong> Every one of these campaign types follows a repeatable structure. The ingredients change. The recipe doesn't. That's what makes this automatable.</p>
           </div>
+          <!-- 100% stat integrated -->
+          <div style="margin-top:16px; padding:16px 20px; background:rgba(255,13,100,0.06); border:1px solid rgba(255,13,100,0.25); border-radius:12px; display:flex; align-items:center; gap:16px;">
+            <div style="font-size:42px; font-weight:800; color:var(--pink); letter-spacing:-0.04em; line-height:1; flex-shrink:0;">100%</div>
+            <div>
+              <p style="font-size:15px; font-weight:700; color:var(--text); margin-bottom:3px;">of our client calls included a "what's next?" conversation.</p>
+              <p style="font-size:13px; color:var(--muted);">Every single one. A project timeline in a portal answers this before they pick up the phone.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -359,30 +379,30 @@
   <div class="slide accent-blob">
     <div class="z1 full-width">
       <div class="label">The Hidden Cost</div>
-      <h2>We've spent <span class="pink">55 hours</span><br/>on client calls in<br/>17 months.</h2>
-      <p class="body mt-4" style="max-width:580px;">We analysed every recorded call in Fathom — 458 meetings, 361 hours of total recorded time. Here's what the client call data actually says.</p>
+      <h2>We've spent <span class="pink">60 hours</span><br/>on client calls in<br/>17 months.</h2>
+      <p class="body mt-4" style="max-width:580px;">We pulled every recorded call from Fathom — 458 meetings across 17 months. Filtered to client-facing calls only. Here's the real picture.</p>
 
       <div class="grid-3 mt-8">
         <div class="card" style="text-align:center; padding:32px 24px;">
-          <div style="font-size:52px; font-weight:800; letter-spacing:-0.03em; color:var(--pink); line-height:1;">78</div>
+          <div style="font-size:52px; font-weight:800; letter-spacing:-0.03em; color:var(--pink); line-height:1;">79</div>
           <div style="font-size:14px; color:var(--muted); margin-top:8px;">client calls in 17 months</div>
-          <div style="font-size:12px; color:var(--muted); margin-top:4px;">≈ 4–5 per month currently</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:4px;">5-8 per month and rising</div>
         </div>
         <div class="card" style="text-align:center; padding:32px 24px;">
-          <div style="font-size:52px; font-weight:800; letter-spacing:-0.03em; color:var(--pink); line-height:1;">43<span style="font-size:24px;">min</span></div>
+          <div style="font-size:52px; font-weight:800; letter-spacing:-0.03em; color:var(--pink); line-height:1;">46<span style="font-size:24px;">min</span></div>
           <div style="font-size:14px; color:var(--muted); margin-top:8px;">average client call duration</div>
           <div style="font-size:12px; color:var(--muted); margin-top:4px;">30+ min of which is often avoidable</div>
         </div>
         <div class="card" style="text-align:center; padding:32px 24px;">
-          <div style="font-size:52px; font-weight:800; letter-spacing:-0.03em; color:var(--pink); line-height:1;">55<span style="font-size:24px;">hrs</span></div>
+          <div style="font-size:52px; font-weight:800; letter-spacing:-0.03em; color:var(--pink); line-height:1;">60<span style="font-size:24px;">hrs</span></div>
           <div style="font-size:14px; color:var(--muted); margin-top:8px;">total client call time</div>
-          <div style="font-size:12px; color:var(--muted); margin-top:4px;">that's 7 full working days</div>
+          <div style="font-size:12px; color:var(--muted); margin-top:4px;">7.5 full working days</div>
         </div>
       </div>
 
       <div class="card mt-6" style="background:rgba(255,13,100,0.04); border-color:rgba(255,13,100,0.2); padding:24px 32px;">
         <p class="body-sm white" style="font-weight:700; font-size:16px; margin-bottom:10px;">Now project forward to 40 clients.</p>
-        <p class="body-sm" style="margin-bottom:14px;">At 1 client call per month each, averaging 43 minutes — that's <strong style="color:var(--text);">29 hours of calls every single month</strong>. Save just 30 minutes per call through self-serve and you get back <strong style="color:var(--pink);">20 hours — 2.5 working days — every month</strong>. Without hiring anyone.</p>
+        <p class="body-sm" style="margin-bottom:14px;">At 1 client call per month each, averaging 46 minutes — that's <strong style="color:var(--text);">31 hours of calls every single month</strong>. Save just 30 minutes per call through self-serve and you get back <strong style="color:var(--pink);">20 hours — 2.5 working days — every month</strong>. Without hiring anyone.</p>
         <div style="display:flex; gap:24px;">
           <div style="text-align:center;">
             <div style="font-size:32px; font-weight:800; color:var(--teal);">20hrs</div>
@@ -403,9 +423,9 @@
     </div>
   </div>
 
-  <!-- SLIDE 4: Infographic full bleed — nav hidden, caption overlay -->
+  <!-- SLIDE 7: Infographic full bleed — nav hidden, caption overlay -->
   <div class="slide infographic-slide" style="padding:0; justify-content:flex-end; align-items:center; background:#0a0d14;">
-    <img src="/workflow-infographic.png" style="position:absolute; inset:0; width:100%; height:calc(100% - 64px); object-fit:contain; object-position:center top;" alt="Workflow comparison" />
+    <iframe src="/presentation/workflow-infographic.html" style="position:absolute; inset:0; width:100%; height:calc(100% - 64px); border:none; display:block;" scrolling="no" title="Workflow comparison infographic"></iframe>
     <div style="position:relative; z-index:2; width:100%; padding:16px 60px 20px; background:linear-gradient(to top, rgba(9,11,16,0.95) 0%, rgba(9,11,16,0.6) 80%, transparent 100%);">
       <p style="font-size:14px; font-weight:500; color:rgba(255,255,255,0.55); text-align:center; letter-spacing:0.02em;">Left: how we work today &nbsp;·&nbsp; Right: how we work with The Lab &nbsp;·&nbsp; Same request. Completely different experience.</p>
     </div>

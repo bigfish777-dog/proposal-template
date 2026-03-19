@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTM Workflow Infographic</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'DM Sans', -apple-system, sans-serif;
+    background: #0f0f1a;
+    color: white;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 80px;
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .title h1 {
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: white;
+  }
+
+  .title h1 span {
+    color: #FF0D64;
+  }
+
+  .panels {
+    display: flex;
+    flex: 1;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  /* LEFT PANEL - TODAY */
+  .panel-today {
+    flex: 1;
+    background: rgba(255, 13, 100, 0.08);
+    border: 1.5px solid rgba(255, 13, 100, 0.3);
+    border-radius: 20px 0 0 20px;
+    padding: 44px 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .panel-lab {
+    flex: 1;
+    background: rgba(63, 234, 206, 0.08);
+    border: 1.5px solid rgba(63, 234, 206, 0.3);
+    border-radius: 0 20px 20px 0;
+    padding: 44px 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .vs-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .vs-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: rgba(255,255,255,0.12);
+  }
+
+  .vs-badge {
+    background: #1a1a2e;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1px;
+    z-index: 1;
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .panel-label-today {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FF6B6B;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .panel-label-lab {
+    font-size: 28px;
+    font-weight: 700;
+    color: #3FEACE;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .panel-icon {
+    font-size: 28px;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+  }
+
+  .step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 52px;
+    flex-shrink: 0;
+  }
+
+  .step-num-today {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 107, 107, 0.2);
+    border: 1.5px solid rgba(255, 107, 107, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FF6B6B;
+    flex-shrink: 0;
+  }
+
+  .step-num-lab {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(63, 234, 206, 0.15);
+    border: 1.5px solid rgba(63, 234, 206, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #3FEACE;
+    flex-shrink: 0;
+  }
+
+  .connector-today {
+    width: 2px;
+    flex: 1;
+    min-height: 28px;
+    background: linear-gradient(to bottom, rgba(255,107,107,0.4), rgba(255,107,107,0.1));
+    margin: 4px 0;
+  }
+
+  .connector-lab {
+    width: 2px;
+    flex: 1;
+    min-height: 28px;
+    background: linear-gradient(to bottom, rgba(63,234,206,0.4), rgba(63,234,206,0.1));
+    margin: 4px 0;
+  }
+
+  .step-content {
+    padding: 8px 0 28px 0;
+    flex: 1;
+  }
+
+  .step-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+
+  .step-detail {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+  }
+
+  .step:last-child .step-content {
+    padding-bottom: 0;
+  }
+
+  .panel-footer {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-today {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FF6B6B;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-lab {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3FEACE;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="title">
+    <h1>How <span>The Lab</span> Changes the Way We Work</h1>
+  </div>
+
+  <div class="panels">
+
+    <!-- LEFT: TODAY -->
+    <div class="panel-today">
+      <div class="panel-header">
+        <span class="panel-icon">⚠️</span>
+        <span class="panel-label-today">Today</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-today">1</div>
+            <div class="connector-today"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">Client calls, emails, or WhatsApps</div>
+            <div class="step-detail">No standard entry point - briefs arrive from everywhere</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-today">2</div>
+            <div class="connector-today"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">Ad, Grace, or Gabriella responds manually</div>
+            <div class="step-detail">Team time spent on intake, not on delivery</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-today">3</div>
+            <div class="connector-today"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">Brief pieced together across 3-4 conversations</div>
+            <div class="step-detail">Information scattered, context lost, details missed</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-today">4</div>
+            <div class="connector-today"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">Assets sent back via email or shared folder</div>
+            <div class="step-detail">Version confusion, no audit trail</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-today">5</div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">Client chases for updates</div>
+            <div class="step-detail">Team firefighting instead of building</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="footer-today">Fragmented. Manual. Hard to scale.</div>
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="vs-divider">
+      <div class="vs-badge">VS</div>
+    </div>
+
+    <!-- RIGHT: THE LAB -->
+    <div class="panel-lab">
+      <div class="panel-header">
+        <span class="panel-icon">🧪</span>
+        <span class="panel-label-lab">The Lab</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-lab">1</div>
+            <div class="connector-lab"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">Client logs into The Lab</div>
+            <div class="step-detail">One place for everything - no hunting for a contact</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-lab">2</div>
+            <div class="connector-lab"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">Submits brief via structured intake form</div>
+            <div class="step-detail">Complete, consistent briefs every time - no back-and-forth</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-lab">3</div>
+            <div class="connector-lab"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">AI drafts campaign assets automatically</div>
+            <div class="step-detail">From brief to first draft without team input</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-lab">4</div>
+            <div class="connector-lab"></div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">Client reviews and approves in-portal</div>
+            <div class="step-detail">Clear version history, no email chains</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-left">
+            <div class="step-num-lab">5</div>
+          </div>
+          <div class="step-content">
+            <div class="step-title">Performance visible on their dashboard</div>
+            <div class="step-detail">No update calls needed - data is always live</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="footer-lab">Structured. Automated. Built to scale.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
