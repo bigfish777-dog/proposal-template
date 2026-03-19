@@ -432,11 +432,130 @@
     </div>
   </div>
 
-  <!-- SLIDE 7: Infographic full bleed — nav hidden, caption overlay -->
-  <div class="slide infographic-slide" style="padding:0; justify-content:flex-end; align-items:center; background:#0a0d14;">
-    <iframe src="/presentation/workflow-infographic.html" style="position:absolute; inset:0; width:100%; height:calc(100% - 64px); border:none; display:block; pointer-events:none;" scrolling="no" title="Workflow comparison infographic"></iframe>
-    <div style="position:relative; z-index:2; width:100%; padding:16px 60px 20px; background:linear-gradient(to top, rgba(9,11,16,0.95) 0%, rgba(9,11,16,0.6) 80%, transparent 100%);">
-      <p style="font-size:14px; font-weight:500; color:rgba(255,255,255,0.55); text-align:center; letter-spacing:0.02em;">Left: how we work today &nbsp;·&nbsp; Right: how we work with The Lab &nbsp;·&nbsp; Same request. Completely different experience.</p>
+  <!-- SLIDE 7: Infographic — Today vs The Lab (inline, no iframe) -->
+  <div class="slide infographic-slide" style="padding:28px 40px 0; flex-direction:column; background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 100%);">
+    <div style="text-align:center; margin-bottom:20px; flex-shrink:0;">
+      <h2 style="font-size:32px; font-weight:800; letter-spacing:-0.02em; color:white;">How <span style="color:#FF0D64;">The Lab</span> Changes the Way We Work</h2>
+    </div>
+
+    <!-- Two panels -->
+    <div style="display:flex; flex:1; gap:0; align-items:stretch; min-height:0; margin-bottom:0;">
+
+      <!-- LEFT: TODAY -->
+      <div style="flex:1; background:rgba(255,13,100,0.08); border:1.5px solid rgba(255,13,100,0.3); border-radius:20px 0 0 20px; padding:28px 36px; display:flex; flex-direction:column;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px; flex-shrink:0;">
+          <span style="font-size:22px;">⚠️</span>
+          <span style="font-size:22px; font-weight:700; color:#FF6B6B; letter-spacing:3px; text-transform:uppercase;">Today</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0; flex:1;">
+          <!-- Step 1 -->
+          <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:16px; position:relative;">
+            <div style="display:flex; flex-direction:column; align-items:center; width:40px; flex-shrink:0;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(255,107,107,0.2); border:1.5px solid rgba(255,107,107,0.5); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#FF6B6B;">1</div>
+              <div style="width:2px; flex:1; min-height:16px; background:linear-gradient(to bottom,rgba(255,107,107,0.4),rgba(255,107,107,0.1)); margin-top:4px;"></div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">Client calls, emails, or WhatsApps</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">No standard entry point — briefs arrive from everywhere</div></div>
+          </div>
+          <!-- Step 2 -->
+          <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:16px; position:relative;">
+            <div style="display:flex; flex-direction:column; align-items:center; width:40px; flex-shrink:0;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(255,107,107,0.2); border:1.5px solid rgba(255,107,107,0.5); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#FF6B6B;">2</div>
+              <div style="width:2px; flex:1; min-height:16px; background:linear-gradient(to bottom,rgba(255,107,107,0.4),rgba(255,107,107,0.1)); margin-top:4px;"></div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">Ad, Grace, or Gabriella responds manually</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">Team time spent on intake, not on delivery</div></div>
+          </div>
+          <!-- Step 3 -->
+          <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:16px; position:relative;">
+            <div style="display:flex; flex-direction:column; align-items:center; width:40px; flex-shrink:0;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(255,107,107,0.2); border:1.5px solid rgba(255,107,107,0.5); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#FF6B6B;">3</div>
+              <div style="width:2px; flex:1; min-height:16px; background:linear-gradient(to bottom,rgba(255,107,107,0.4),rgba(255,107,107,0.1)); margin-top:4px;"></div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">Brief pieced together across 3-4 conversations</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">Information scattered, context lost, details missed</div></div>
+          </div>
+          <!-- Step 4 -->
+          <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:16px; position:relative;">
+            <div style="display:flex; flex-direction:column; align-items:center; width:40px; flex-shrink:0;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(255,107,107,0.2); border:1.5px solid rgba(255,107,107,0.5); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#FF6B6B;">4</div>
+              <div style="width:2px; flex:1; min-height:16px; background:linear-gradient(to bottom,rgba(255,107,107,0.4),rgba(255,107,107,0.1)); margin-top:4px;"></div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">Assets sent back via email or shared folder</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">Version confusion, no audit trail</div></div>
+          </div>
+          <!-- Step 5 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:40px; flex-shrink:0; display:flex; justify-content:center;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(255,107,107,0.2); border:1.5px solid rgba(255,107,107,0.5); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#FF6B6B;">5</div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">Client chases for updates</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">Team firefighting instead of building</div></div>
+          </div>
+        </div>
+        <div style="margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08); flex-shrink:0;">
+          <div style="font-size:18px; font-weight:700; color:#FF6B6B;">Fragmented. Manual. Hard to scale.</div>
+        </div>
+      </div>
+
+      <!-- VS divider -->
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:64px; flex-shrink:0; position:relative;">
+        <div style="position:absolute; top:0; bottom:0; left:50%; width:1px; background:rgba(255,255,255,0.1);"></div>
+        <div style="background:#1a1a2e; border:1.5px solid rgba(255,255,255,0.2); border-radius:50%; width:44px; height:44px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:rgba(255,255,255,0.6); letter-spacing:1px; position:relative; z-index:1;">VS</div>
+      </div>
+
+      <!-- RIGHT: THE LAB -->
+      <div style="flex:1; background:rgba(63,234,206,0.08); border:1.5px solid rgba(63,234,206,0.3); border-radius:0 20px 20px 0; padding:28px 36px; display:flex; flex-direction:column;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px; flex-shrink:0;">
+          <span style="font-size:22px;">🧪</span>
+          <span style="font-size:22px; font-weight:700; color:#3FEACE; letter-spacing:3px; text-transform:uppercase;">The Lab</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0; flex:1;">
+          <!-- Step 1 -->
+          <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:16px;">
+            <div style="display:flex; flex-direction:column; align-items:center; width:40px; flex-shrink:0;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(63,234,206,0.15); border:1.5px solid rgba(63,234,206,0.4); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#3FEACE;">1</div>
+              <div style="width:2px; flex:1; min-height:16px; background:linear-gradient(to bottom,rgba(63,234,206,0.4),rgba(63,234,206,0.1)); margin-top:4px;"></div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">Client logs into The Lab</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">One place for everything — no hunting for a contact</div></div>
+          </div>
+          <!-- Step 2 -->
+          <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:16px;">
+            <div style="display:flex; flex-direction:column; align-items:center; width:40px; flex-shrink:0;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(63,234,206,0.15); border:1.5px solid rgba(63,234,206,0.4); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#3FEACE;">2</div>
+              <div style="width:2px; flex:1; min-height:16px; background:linear-gradient(to bottom,rgba(63,234,206,0.4),rgba(63,234,206,0.1)); margin-top:4px;"></div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">Submits brief via structured intake form</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">Complete, consistent briefs every time — no back-and-forth</div></div>
+          </div>
+          <!-- Step 3 -->
+          <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:16px;">
+            <div style="display:flex; flex-direction:column; align-items:center; width:40px; flex-shrink:0;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(63,234,206,0.15); border:1.5px solid rgba(63,234,206,0.4); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#3FEACE;">3</div>
+              <div style="width:2px; flex:1; min-height:16px; background:linear-gradient(to bottom,rgba(63,234,206,0.4),rgba(63,234,206,0.1)); margin-top:4px;"></div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">AI drafts campaign assets automatically</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">From brief to first draft without team input</div></div>
+          </div>
+          <!-- Step 4 -->
+          <div style="display:flex; gap:16px; align-items:flex-start; padding-bottom:16px;">
+            <div style="display:flex; flex-direction:column; align-items:center; width:40px; flex-shrink:0;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(63,234,206,0.15); border:1.5px solid rgba(63,234,206,0.4); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#3FEACE;">4</div>
+              <div style="width:2px; flex:1; min-height:16px; background:linear-gradient(to bottom,rgba(63,234,206,0.4),rgba(63,234,206,0.1)); margin-top:4px;"></div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">Client reviews and approves in-portal</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">Clear version history, no email chains</div></div>
+          </div>
+          <!-- Step 5 -->
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:40px; flex-shrink:0; display:flex; justify-content:center;">
+              <div style="width:36px; height:36px; border-radius:50%; background:rgba(63,234,206,0.15); border:1.5px solid rgba(63,234,206,0.4); display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; color:#3FEACE;">5</div>
+            </div>
+            <div style="padding-top:6px;"><div style="font-size:16px; font-weight:600; color:white; margin-bottom:3px;">Performance visible on their dashboard</div><div style="font-size:13px; color:rgba(255,255,255,0.5);">No update calls needed — data is always live</div></div>
+          </div>
+        </div>
+        <div style="margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08); flex-shrink:0;">
+          <div style="font-size:18px; font-weight:700; color:#3FEACE;">Structured. Automated. Built to scale.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Caption bar -->
+    <div style="width:100%; padding:12px 60px; text-align:center; flex-shrink:0;">
+      <p style="font-size:13px; font-weight:500; color:rgba(255,255,255,0.45); letter-spacing:0.02em;">Left: how we work today &nbsp;·&nbsp; Right: how we work with The Lab &nbsp;·&nbsp; Same request. Completely different experience.</p>
     </div>
   </div>
 
