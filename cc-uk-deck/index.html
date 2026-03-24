@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CC UK — Meeting Prep | Test Tube Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#E8185A;--teal:#4DD9D0;--amber:#FFA71A;--dark:#060F1C;--card:#161B27;--border:rgba(255,255,255,0.08);--text:#F0F2F8;--muted:#8891A8;--green:#22C55E;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--dark);overflow:hidden;height:100vh;width:100vw;}
+.slides{width:100%;height:100%;position:relative;}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:flex-start;padding:64px 80px;}
+.slide.active{display:flex;}
+/* Nav */
+.nav{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;background:rgba(22,27,39,0.95);border:1px solid var(--border);border-radius:99px;padding:9px 18px;backdrop-filter:blur(12px);z-index:100;}
+.nav button{background:none;border:none;color:var(--muted);cursor:pointer;font-size:17px;padding:3px 8px;transition:color .15s;}
+.nav button:hover{color:var(--text);}
+.counter{color:var(--muted);font-size:12px;font-weight:500;min-width:40px;text-align:center;}
+.dots{display:flex;gap:6px;align-items:center;}
+.dot{width:6px;height:6px;border-radius:99px;background:var(--muted);transition:all .2s;cursor:pointer;border:none;padding:0;}
+.dot.active{background:var(--pink);width:18px;}
+/* Cover */
+.cover{background:radial-gradient(ellipse at 65% 75%,#1A5C6B 0%,#0B2A45 45%,var(--dark) 100%);}
+.label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:14px;}
+.cover-h1{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(48px,9vw,82px);line-height:.95;letter-spacing:-.03em;margin-bottom:20px;}
+.cover-sub{font-size:clamp(14px,1.8vw,18px);color:var(--teal);line-height:1.6;max-width:500px;}
+.meta-row{display:flex;gap:32px;margin-top:48px;flex-wrap:wrap;}
+.meta-item .ml{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);margin-bottom:4px;}
+.meta-item .mv{font-size:15px;font-weight:600;color:var(--text);}
+/* Interior slides */
+.sec-h{font-family:'Poppins',sans-serif;font-size:clamp(28px,4.5vw,50px);font-weight:800;color:var(--pink);line-height:1.05;letter-spacing:-.02em;margin-bottom:28px;}
+.part-tag{display:inline-block;background:var(--pink);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;letter-spacing:.06em;margin-bottom:14px;}
+.body{max-width:760px;font-size:clamp(14px,1.4vw,16px);line-height:1.85;color:var(--text);}
+.body p{margin-bottom:16px;}
+.body p:last-child{margin-bottom:0;}
+.body strong{font-weight:600;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;width:100%;max-width:1000px;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px 28px;}
+.card h3{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:12px;}
+.card p{font-size:14px;color:var(--muted);line-height:1.7;}
+.stat-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:28px;}
+.stat-box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;min-width:130px;}
+.stat-num{font-family:'Poppins',sans-serif;font-size:28px;font-weight:800;color:var(--teal);line-height:1;}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px;}
+.bullet-list{list-style:none;display:flex;flex-direction:column;gap:12px;max-width:680px;margin-top:16px;}
+.bullet-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.65;color:var(--text);}
+.bullet-list li::before{content:'→';color:var(--pink);font-weight:700;flex-shrink:0;margin-top:1px;}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-bottom:14px;max-width:800px;}
+.q-card .q-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);margin-bottom:8px;}
+.q-card .q-text{font-size:16px;font-weight:600;color:var(--text);line-height:1.4;}
+.rec-card{background:var(--card);border:1px solid rgba(63,234,206,0.2);border-radius:12px;padding:22px 26px;margin-bottom:14px;max-width:800px;}
+.rec-card h4{font-family:'Poppins',sans-serif;font-size:17px;font-weight:700;color:var(--teal);margin-bottom:10px;}
+.rec-card p{font-size:14px;color:var(--muted);line-height:1.7;}
+.agenda-table{width:100%;max-width:700px;border-collapse:collapse;margin-top:8px;}
+.agenda-table th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:8px 16px;text-align:left;border-bottom:1px solid var(--border);}
+.agenda-table td{padding:12px 16px;font-size:15px;color:var(--text);border-bottom:1px solid rgba(255,255,255,0.04);}
+.agenda-table td:first-child{color:var(--pink);font-weight:600;width:80px;}
+.callout{background:rgba(232,24,90,0.06);border:1px solid rgba(232,24,90,0.2);border-radius:10px;padding:18px 22px;margin-top:20px;max-width:780px;font-size:15px;color:var(--text);line-height:1.7;}
+.green-card{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:18px 22px;margin-top:20px;max-width:780px;}
+.key-hint{position:fixed;bottom:24px;right:36px;font-size:11px;color:rgba(255,255,255,0.18);}
+@media(max-width:768px){.slide{padding:40px 24px;}.two-col{grid-template-columns:1fr;gap:20px;}.nav{display:none;}}
+</style>
+</head>
+<body>
+<div class="slides" id="slides">
+
+<!-- COVER -->
+<div class="slide cover active" id="s0" data-label="Cover">
+  <div>
+    <div class="label">Internal · March 2026</div>
+    <h1 class="cover-h1">CC UK<br/>Meeting Prep</h1>
+    <p class="cover-sub">Strategy session briefing document for Adam and Fish.<br/>12:30 – 15:30</p>
+    <div class="meta-row">
+      <div class="meta-item"><div class="ml">Date</div><div class="mv">March 2026</div></div>
+      <div class="meta-item"><div class="ml">Session</div><div class="mv">12:30 – 15:30</div></div>
+      <div class="meta-item"><div class="ml">Prepared by</div><div class="mv">Adam & Fish</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- AGENDA -->
+<div class="slide" id="s1" data-label="Agenda">
+  <div style="width:100%">
+    <div class="label">Today's session</div>
+    <h2 class="sec-h">Agenda</h2>
+    <table class="agenda-table">
+      <thead><tr><th>Time</th><th>Session</th></tr></thead>
+      <tbody>
+        <tr><td>12:30</td><td>The State of Play</td></tr>
+        <tr><td>12:50</td><td>The £50M+ Group</td></tr>
+        <tr><td>13:10</td><td>Let's Talk</td></tr>
+        <tr><td>13:45</td><td>Why We'd Do It Differently</td></tr>
+        <tr><td>14:15</td><td>The Better Play</td></tr>
+        <tr><td>14:30</td><td>Break</td></tr>
+        <tr><td>14:45</td><td>Agree the Plan</td></tr>
+        <tr><td>15:30</td><td>Done</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PART 1: STATE OF PLAY -->
+<div class="slide" id="s2" data-label="State of Play">
+  <div style="width:100%">
+    <div class="part-tag">Part 1</div>
+    <h2 class="sec-h">The State of Play</h2>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-num">41</div><div class="stat-label">Members, 3 chapters</div></div>
+      <div class="stat-box"><div class="stat-num">90%+</div><div class="stat-label">Event attendance</div></div>
+      <div class="stat-box"><div class="stat-num">15+</div><div class="stat-label">Referrals per meeting</div></div>
+      <div class="stat-box"><div class="stat-num">4yr+</div><div class="stat-label">Retention on renewal</div></div>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h3 style="color:var(--teal)">The bottom line</h3>
+        <p>The community's healthy and the product works. The problem isn't inside CC UK. It's getting the right people through the door.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--amber)">Where you want to get to</h3>
+        <ul class="bullet-list" style="margin-top:0;">
+          <li>100+ members by end of 2026</li>
+          <li>6+ active chapters</li>
+          <li>£2M revenue</li>
+          <li>Two new chapters by end of September</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">That's more than doubling membership in 12 months with the same core team. Warm intros from directors and members built a healthy community. On their own they won't get you there.</div>
+  </div>
+</div>
+
+<!-- PART 2: £50M+ GROUP -->
+<div class="slide" id="s3" data-label="The £50M+ Group">
+  <div style="width:100%">
+    <div class="part-tag">Part 2</div>
+    <h2 class="sec-h">The £50M+ Group</h2>
+    <div class="two-col">
+      <div>
+        <div class="card" style="margin-bottom:14px;">
+          <h3 style="color:var(--pink)">Treat this separately</h3>
+          <p>Different audience, different message, different route in. It shouldn't be folded into the main membership marketing plan.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:var(--teal)">What we know</h3>
+          <ul class="bullet-list" style="margin-top:0;">
+            <li>First group of 12 founders targeted by June</li>
+            <li>6 confirmed founders already</li>
+            <li>Birmingham to Manchester corridor</li>
+            <li>Potential for £100M+ introductions quickly</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="align-self:start;">
+        <h3 style="color:var(--amber)">Why it's different</h3>
+        <p style="margin-bottom:14px;">At £50M+ these founders have been pitched to constantly. They don't join things because of an ad or a funnel. They join because someone they deeply trust said it was worth their time.</p>
+        <p>The route in is personal, not digital.</p>
+        <div class="callout" style="margin-top:16px; font-size:14px;"><strong>The hook isn't the membership. It's the introductions.</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PART 3: LET'S TALK -->
+<div class="slide" id="s4" data-label="Let's Talk">
+  <div style="width:100%">
+    <div class="part-tag">Part 3</div>
+    <h2 class="sec-h">Let's Talk</h2>
+    <p class="body" style="max-width:600px; margin-bottom:24px;">Before we share our thinking, we want to hear yours.</p>
+    <div class="q-card">
+      <div class="q-label">Q1</div>
+      <div class="q-text">What happens after an event?</div>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px;">When someone attends a CC UK event and doesn't join on the day, what happens next? Is there a structured follow-up or does it go quiet?</p>
+    </div>
+    <div class="q-card">
+      <div class="q-label">Q2</div>
+      <div class="q-text">What are you currently considering?</div>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px;">You mentioned four areas: new customer journeys, an events model, a quiz and partners. What does your thinking look like on each of those?</p>
+    </div>
+    <div class="q-card">
+      <div class="q-label">Q3</div>
+      <div class="q-text">What's worked for the £50M+ group so far?</div>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px;">Six founders have already confirmed. What made them say yes and is there a pattern you can replicate?</p>
+    </div>
+  </div>
+</div>
+
+<!-- PART 4: WHY DIFFERENTLY -->
+<div class="slide" id="s5" data-label="Why We'd Do It Differently">
+  <div style="width:100%">
+    <div class="part-tag">Part 4</div>
+    <h2 class="sec-h">Why We'd Do It Differently</h2>
+    <div class="two-col">
+      <div>
+        <div class="card" style="margin-bottom:14px;border-color:rgba(232,24,90,0.25);">
+          <h3 style="color:var(--pink)">On the quiz with ad spend</h3>
+          <ul class="bullet-list" style="margin-top:0;">
+            <li>A £15M founder filling in a quiz because they saw a Facebook ad isn't how this audience behaves</li>
+            <li>Positioning risk: CC UK's appeal is exclusivity and curation — a paid traffic funnel sends the wrong signal</li>
+            <li>The addressable market is ~15,000–25,000 businesses. A well-run referral programme gets you further for almost nothing</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:14px;border-color:rgba(232,24,90,0.25);">
+          <h3 style="color:var(--pink)">On mass marketing</h3>
+          <ul class="bullet-list" style="margin-top:0;">
+            <li>This audience doesn't join things because of ads. They join because someone they respect said it was worth their time</li>
+            <li>Without consistent internal resource, it stalls before it generates results</li>
+          </ul>
+        </div>
+        <div class="callout" style="margin-top:0;">We're not saying ignore brand awareness entirely. We're saying <strong>targeted visibility in the right places</strong> is a different thing.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PART 5: THE BETTER PLAY -->
+<div class="slide" id="s6" data-label="The Better Play">
+  <div style="width:100%">
+    <div class="part-tag">Part 5</div>
+    <h2 class="sec-h">The Better Play</h2>
+    <p class="body" style="max-width:700px;margin-bottom:24px;">Create more moments where the right people get close enough to experience the room. The product sells itself once someone's in it.</p>
+    <div class="rec-card">
+      <h4>Recommendation 1: A highly qualified book-a-call funnel</h4>
+      <p>A short application before someone can book a call with a director. The qualification process itself signals exclusivity. The questions should feel like a thoughtful filter, not a form. The call needs to feel like a peer conversation, not a sales call.</p>
+    </div>
+    <div class="rec-card">
+      <h4>Recommendation 2: A request-a-brochure funnel</h4>
+      <p>A physical brochure does something a PDF never can — it sits on a desk, gets picked up again, gets passed on. Qualify before sending. Only spend on people worth spending on. Clear next step inside: book a call, visit a chapter, speak to a director.</p>
+    </div>
+    <div class="callout"><strong>You can do anything, but you can't do everything.</strong> The conversation we need to have is which of these moves the needle fastest with the resource you've actually got.</div>
+  </div>
+</div>
+
+<!-- WORTH CONSIDERING -->
+<div class="slide" id="s7" data-label="Worth Considering">
+  <div style="width:100%">
+    <div class="label">Also worth considering</div>
+    <h2 class="sec-h">The Wider Menu</h2>
+    <div class="two-col">
+      <ul class="bullet-list">
+        <li><strong>Post-event follow-up</strong> — a structured 30-day personal sequence from the director for every attendee who doesn't join on the day</li>
+        <li><strong>Introducer programme</strong> — accountants, lawyers and commercial finance brokers talking to your ideal member every week. Give them a reason and a toolkit to refer</li>
+      </ul>
+      <ul class="bullet-list">
+        <li><strong>Targeted brand awareness</strong> — directors posting consistently on LinkedIn, member stories in the right networks. Not broad reach. Visible in the right places</li>
+        <li><strong>Member referral process</strong> — members are already referring people without any tools. Give them something easy to forward and a clear next step to point people to</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- PART 6: AGREE THE PLAN -->
+<div class="slide" id="s8" data-label="Agree the Plan">
+  <div style="width:100%">
+    <div class="part-tag">Part 6</div>
+    <h2 class="sec-h">Agree the Plan</h2>
+    <div class="two-col">
+      <div>
+        <div class="q-card" style="border-color:rgba(63,234,206,0.25);">
+          <div class="q-label" style="color:var(--teal)">Priorities</div>
+          <div class="q-text" style="font-size:14px;font-weight:400;color:var(--muted);">No more than three. Ranked by impact against resource required. Named owner against every action before we leave.</div>
+        </div>
+        <div class="q-card" style="border-color:rgba(63,234,206,0.25);">
+          <div class="q-label" style="color:var(--teal)">The £50M+ group</div>
+          <div class="q-text" style="font-size:14px;font-weight:400;color:var(--muted);">Separate plan. What's the next action to get from 6 to 12 by June?</div>
+        </div>
+      </div>
+      <div>
+        <div class="q-card" style="border-color:rgba(63,234,206,0.25);">
+          <div class="q-label" style="color:var(--teal)">Quick wins this week</div>
+          <div class="q-text" style="font-size:14px;font-weight:400;color:var(--muted);">What can be done before Friday? Agree it now.</div>
+        </div>
+        <div class="q-card" style="border-color:rgba(63,234,206,0.25);">
+          <div class="q-label" style="color:var(--teal)">Review date</div>
+          <div class="q-text" style="font-size:14px;font-weight:400;color:var(--muted);">30 days. One person accountable for each priority.</div>
+        </div>
+      </div>
+    </div>
+    <div class="green-card">
+      <p style="font-size:13px;color:var(--green);font-weight:600;margin-bottom:6px;">Done by 15:30</p>
+      <p style="font-size:14px;color:var(--muted);">Named priorities · Named owners · Named actions · Review date in the diary</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Nav -->
+<div class="nav">
+  <button onclick="prev()">←</button>
+  <div class="dots" id="dots"></div>
+  <button onclick="next()">→</button>
+  <span class="counter" id="counter">1 / 9</span>
+</div>
+<div class="key-hint">← → to navigate</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dc = document.getElementById('dots');
+const counter = document.getElementById('counter');
+let cur = 0;
+const total = slides.length;
+for(let i=0;i<total;i++){const d=document.createElement('button');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);dc.appendChild(d);}
+counter.textContent='1 / '+total;
+function go(n){slides[cur].classList.remove('active');dc.children[cur].classList.remove('active');cur=(n+total)%total;slides[cur].classList.add('active');dc.children[cur].classList.add('active');counter.textContent=(cur+1)+' / '+total;}
+function next(){go(cur+1);}function prev(){go(cur-1);}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next();}if(e.key==='ArrowLeft'){e.preventDefault();prev();}});
+</script>
+</body>
+</html>
