@@ -10,7 +10,7 @@
 :root{--pink:#E8185A;--teal:#4DD9D0;--amber:#FFA71A;--dark:#060F1C;--card:#161B27;--border:rgba(255,255,255,0.08);--text:#F0F2F8;--muted:#8891A8;--green:#22C55E;}
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--dark);overflow:hidden;height:100vh;width:100vw;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--dark);overflow:hidden;height:100vh;width:100vw;}@media(max-width:768px){body{overflow:auto;height:auto;}.slides{height:auto;position:relative;}.slide{position:relative;display:none;min-height:100vh;padding:40px 24px 80px;}.slide.active{display:flex;}}
 .slides{width:100%;height:100%;position:relative;}
 .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:flex-start;padding:64px 80px;}
 .slide.active{display:flex;}
@@ -61,7 +61,7 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(-
 .callout{background:rgba(232,24,90,0.06);border:1px solid rgba(232,24,90,0.2);border-radius:10px;padding:18px 22px;margin-top:20px;max-width:780px;font-size:15px;color:var(--text);line-height:1.7;}
 .green-card{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:18px 22px;margin-top:20px;max-width:780px;}
 .key-hint{position:fixed;bottom:24px;right:36px;font-size:11px;color:rgba(255,255,255,0.18);}
-@media(max-width:768px){.slide{padding:40px 24px;}.two-col{grid-template-columns:1fr;gap:20px;}.nav{display:none;}}
+@media(max-width:768px){.two-col{grid-template-columns:1fr;gap:16px;}.stat-row{gap:10px;}.stat-box{min-width:100px;}.nav{bottom:12px;padding:7px 14px;gap:10px;}.agenda-table td{font-size:13px;padding:10px 12px;}.q-card,.rec-card{padding:16px 18px;}.sec-h{margin-bottom:20px;}}
 </style>
 </head>
 <body>
@@ -308,6 +308,13 @@ for(let i=0;i<total;i++){const d=document.createElement('button');d.className='d
 counter.textContent='1 / '+total;
 function go(n){slides[cur].classList.remove('active');dc.children[cur].classList.remove('active');cur=(n+total)%total;slides[cur].classList.add('active');dc.children[cur].classList.add('active');counter.textContent=(cur+1)+' / '+total;}
 function next(){go(cur+1);}function prev(){go(cur-1);}
+// Touch swipe support for mobile
+let touchStartX = 0;
+document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive: true});
+document.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+}, {passive: true});
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next();}if(e.key==='ArrowLeft'){e.preventDefault();prev();}});
 </script>
 </body>
