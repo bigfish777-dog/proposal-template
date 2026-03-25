@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brdy Telecom - Test Tube Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#E8185A;--teal:#4DD9D0;--white:#fff;--text:#2D2D2D;--muted:#6B7280;--light:#F5F6F8;--green:#1A5C4A;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+.cover{min-height:100vh;background:radial-gradient(ellipse at 65% 75%,#1A5C6B 0%,#0B2A45 45%,#060F1C 100%);color:white;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between;}
+.cover-date{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:16px;}
+.cover-logo{max-height:60px;width:auto;}
+.cover-h1{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(48px,10vw,88px);line-height:.95;letter-spacing:-.03em;margin:56px 0 24px;}
+.cover-sub{font-size:clamp(15px,1.8vw,19px);color:var(--teal);line-height:1.6;max-width:580px;}
+.cover-sub em{font-style:italic;}
+.cover-credits{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px;}
+.credit-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:6px;}
+.credit-name{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:var(--teal);}
+.sec{min-height:100vh;padding:96px 56px;display:flex;flex-direction:column;justify-content:center;}
+.sec-alt{background:var(--light);}
+.sec-h{font-family:'Poppins',sans-serif;font-size:clamp(30px,4.5vw,50px);font-weight:800;color:var(--pink);line-height:1.05;letter-spacing:-.02em;margin-bottom:36px;}
+.body{max-width:720px;font-size:clamp(15px,1.4vw,17px);line-height:1.85;}
+.body p{margin-bottom:20px;}
+.body p:last-child{margin-bottom:0;}
+.body strong{font-weight:600;}
+.body em{font-style:italic;}
+.divider{width:48px;height:3px;background:var(--pink);border-radius:2px;margin:36px 0;}
+.callout{background:white;border-left:3px solid var(--pink);padding:18px 24px;border-radius:0 8px 8px 0;margin:24px 0;font-style:italic;font-size:16px;line-height:1.65;max-width:700px;color:var(--text);}
+.dlist{max-width:680px;padding-left:24px;font-size:clamp(15px,1.4vw,16px);line-height:1.8;color:var(--text);}
+.dlist li{margin-bottom:8px;}
+.phase-block{background:white;border-radius:12px;padding:32px 36px;max-width:760px;margin-bottom:28px;border:1px solid #E5E7EB;}
+.phase-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pink);margin-bottom:8px;}
+.phase-title{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;margin-bottom:18px;color:var(--text);}
+.phase-body p{margin-bottom:16px;font-size:clamp(14px,1.3vw,16px);line-height:1.8;}
+.phase-body p:last-child{margin-bottom:0;}
+.phase-body strong{font-weight:600;}
+/* Email mock */
+.email-comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:32px 0;}
+@media(max-width:700px){.email-comparison{grid-template-columns:1fr;}}
+.email-mock{border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.1);background:#fff;}
+.email-chrome{background:#F1F3F5;padding:10px 14px;display:flex;align-items:center;gap:8px;}
+.email-dot{width:10px;height:10px;border-radius:50%;}
+.email-dot.red{background:#FF5F57;}
+.email-dot.amber{background:#FFBD2E;}
+.email-dot.green{background:#28C840;}
+.email-chrome-bar{flex:1;background:white;border-radius:4px;height:20px;margin-left:8px;padding:0 8px;font-size:10px;color:#9CA3AF;display:flex;align-items:center;}
+.email-header{background:#F9FAFB;padding:12px 16px;border-bottom:1px solid #E5E7EB;}
+.email-header-field{font-size:11px;color:#6B7280;line-height:1.8;}
+.email-header-field strong{color:#374151;}
+.email-body-preview{padding:16px;font-size:13px;line-height:1.6;color:#374151;min-height:140px;}
+.email-label-bad{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#EF4444;margin-bottom:6px;}
+.email-label-good{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#10B981;margin-bottom:6px;}
+/* Price box */
+.price-box{background:linear-gradient(135deg,#060F1C 0%,#0F3D5C 100%);border-radius:14px;padding:40px 48px;max-width:580px;margin-top:28px;color:white;}
+.price-box h3{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:var(--teal);margin-bottom:24px;}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:16px;gap:16px;}
+.price-row:last-of-type{border-bottom:none;}
+.price-row .lbl{color:rgba(255,255,255,.8);}
+.price-row .val{font-weight:700;font-size:22px;flex-shrink:0;}
+.price-note{margin-top:20px;font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;}
+.sign-off{margin-top:52px;font-size:16px;line-height:1.9;}
+.sign-off .name{font-weight:700;font-size:17px;margin-top:12px;display:block;}
+.sign-off .details{font-style:italic;font-weight:400;display:block;font-size:15px;color:var(--muted);}
+/* Team */
+.about-sec{background:white;}
+.about-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;max-width:960px;}
+@media(max-width:720px){.about-wrap{grid-template-columns:1fr;}}
+.about-intro{font-size:clamp(15px,1.4vw,17px);line-height:1.85;color:var(--text);}
+.about-intro p{margin-bottom:18px;}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:20px;}
+.team-card{text-align:center;}
+.team-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:8px;}
+.team-name{font-weight:600;font-size:13px;}
+.team-role{font-size:11px;color:var(--muted);}
+/* Testimonials */
+.t-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;max-width:960px;}
+.tcard{background:var(--light);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:12px;}
+.tresult{font-family:'Poppins',sans-serif;font-size:15px;font-weight:800;color:var(--pink);}
+.tquote{font-size:14px;line-height:1.7;color:var(--text);flex:1;}
+.tperson{display:flex;align-items:center;gap:10px;}
+.tphoto{width:44px;height:44px;border-radius:50%;object-fit:cover;}
+.tname{font-weight:700;font-size:13px;}
+.tco{font-size:11px;color:var(--muted);}
+/* Footer */
+.footer{background:#060F1C;color:rgba(255,255,255,.5);text-align:center;padding:32px;font-size:13px;line-height:1.8;}
+.footer a{color:rgba(255,255,255,.6);text-decoration:none;}
+/* Dots nav */
+#navDots{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:100;}
+.dot{width:10px;height:10px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:transparent;cursor:pointer;transition:.25s;}
+.dot.active{background:var(--pink);border-color:var(--pink);}
+/* Fade-in */
+.fi{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease;}
+.fi.vis{opacity:1;transform:none;}
+/* Comparison table */
+.comp-table{width:100%;max-width:720px;border-collapse:collapse;margin:24px 0;font-size:15px;}
+.comp-table th{padding:12px 16px;text-align:left;font-weight:700;border-bottom:2px solid var(--pink);}
+.comp-table td{padding:12px 16px;border-bottom:1px solid #E5E7EB;line-height:1.5;}
+.comp-table tr:last-child td{border-bottom:none;}
+.comp-table .good{color:#10B981;font-weight:600;}
+.comp-table .bad{color:#9CA3AF;}
+</style>
+</head>
+<body>
+<div id="navDots"></div>
+
+<!-- COVER -->
+<section class="cover" id="s0" data-label="Cover">
+  <div>
+    <div class="cover-date">Test Tube Marketing - March 2026</div>
+    <img class="cover-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="Test Tube Marketing"/>
+  </div>
+  <div>
+    <h1 class="cover-h1">Brdy Telecom<br/>Proposal</h1>
+    <p class="cover-sub">A 90-day plan to build the targeting infrastructure, go-to-market engine, and B2B outreach system that should have been in place before the first 20,000 emails went out.</p>
+  </div>
+  <div class="cover-credits">
+    <div><div class="credit-label">Presented to</div><div class="credit-name">Brdy Telecom</div></div>
+    <div><div class="credit-label">Presented by</div><div class="credit-name">Test Tube Marketing</div></div>
+  </div>
+</section>
+
+<!-- MY TAKEAWAYS -->
+<section class="sec" id="s1" data-label="My Takeaways">
+  <div class="fi">
+    <h2 class="sec-h">My takeaways from the call.</h2>
+    <div class="body">
+      <p>There's a line from the call I keep coming back to. I asked if your five sales guys could tell me who your best customers are, and you said: <em>"They wouldn't have a clue."</em></p>
+      <p>You then followed it up with: <em>"I know that every month we're putting on 100 customers. I just need to know who the hell they are."</em></p>
+      <p>That tells me most of what I need to know about where the real problem sits.</p>
+    </div>
+    <ul class="dlist">
+      <li>You've tried email outreach. 20,000 emails, multiple sectors, multiple countries. Almost nothing came back.</li>
+      <li>You're running LinkedIn outreach at volume - 5,000 connection requests a month - with modest results.</li>
+      <li>You're about to test paid search but there's a question mark around whether people are even searching for what you sell.</li>
+      <li>And now you're considering Meta and Reddit.</li>
+    </ul>
+    <div class="body" style="margin-top:20px;">
+      <p>My belief? None of these channels failed because they're the wrong channels. They underperformed because the foundation wasn't there.</p>
+      <p>There's a real risk of going out to the market without a clear picture of who your best customers are, what triggered them to buy, or how to find more people in the same situation. That's the bit we need to fix first. Everything else gets easier once it's in place.</p>
+    </div>
+    <div class="callout">"Every customer you sign up is a blueprint for the next batch. A wind farm operator buys from you, and there are a finite number of wind farm operators in the UK. The answer isn't mass outreach to thousands. It's targeted campaigns to the specific companies who already have the problem, sector by sector, one vertical at a time."</div>
+  </div>
+</section>
+
+<!-- ON THE EMAILS -->
+<section class="sec sec-alt" id="s2" data-label="On the Emails">
+  <div class="fi">
+    <h2 class="sec-h">On the email outreach specifically.</h2>
+    <div class="body">
+      <p>I want to be straight about this, because I know you've been told by other agencies that they can make it work.</p>
+      <p>The emails themselves weren't great. They were generic, templated, and easy to ignore. That said, I'm not confident that better creative alone would have delivered significantly better results.</p>
+      <p>The real issue was that you were sending to people who may not even be aware they have a problem that satellite broadband could solve. You were targeting by sector and company size, but that doesn't tell you whether a specific business is struggling with connectivity right now.</p>
+      <p>A construction company with offices in central London and a construction company building a wind farm on the Aberdeenshire coast are both "construction companies" in Apollo. Only one of them needs you. And even then, the timing has to be right.</p>
+    </div>
+
+    <div style="margin:36px 0 8px;"><span class="email-label-bad">What was sent</span></div>
+    <div class="email-comparison">
+      <div class="email-mock">
+        <div class="email-chrome">
+          <div class="email-dot red"></div><div class="email-dot amber"></div><div class="email-dot green"></div>
+          <div class="email-chrome-bar">Inbox</div>
+        </div>
+        <div class="email-header">
+          <div class="email-header-field"><strong>From:</strong> Brdy Telecom</div>
+          <div class="email-header-field"><strong>To:</strong> &#123;&#123;FirstName&#125;&#125;</div>
+          <div class="email-header-field"><strong>Subject:</strong> Instant connectivity for construction sites</div>
+        </div>
+        <div class="email-body-preview">
+          <p>"Hi &#123;&#123;FirstName&#125;&#125;, construction projects need instant, reliable connectivity from day one. Brdy's satellite broadband sets up in hours, enabling BIM, IoT monitoring, video calls, and compliance reporting even in remote or temporary sites. Could I share how we're keeping teams always online?"</p>
+          <p style="color:#9CA3AF;font-size:12px;margin-top:12px;">Generic. No specificity. Could have been sent by any broadband company - or frankly, anyone selling anything to construction.</p>
+        </div>
+      </div>
+
+      <div class="email-mock">
+        <div class="email-chrome">
+          <div class="email-dot red"></div><div class="email-dot amber"></div><div class="email-dot green"></div>
+          <div class="email-chrome-bar">Inbox</div>
+        </div>
+        <div class="email-header">
+          <div class="email-header-field"><strong>From:</strong> Bryn at Brdy</div>
+          <div class="email-header-field"><strong>To:</strong> James</div>
+          <div class="email-header-field"><strong>Subject:</strong> Aberdeenshire wind farm connectivity - 48hrs</div>
+        </div>
+        <div class="email-body-preview">
+          <p>"Hi James,</p>
+          <p>Quick one. We recently set up satellite connectivity for a wind farm project in Aberdeenshire where the nearest fibre was 12 miles away. They were running site ops, safety reporting, and drone surveys over a Starlink connection we had live within 48 hours of them breaking ground.</p>
+          <p>I noticed [Company Name] has a few sites in development around the Scottish Highlands. Probably dealing with similar connectivity headaches.</p>
+          <p>Worth a 10 minute conversation? Happy to share what we did and whether it'd work for your setup.</p>
+          <p>Bryn"</p>
+        </div>
+      </div>
+    </div>
+    <div class="body">
+      <p>The difference isn't just better writing. It's a real deployment, a specific geography, a named application, and a reason to believe we've actually looked at their business. That kind of email gets read. It might not get a response every time, but it doesn't get deleted on autopilot either.</p>
+      <p>The challenge, of course, is that you can't write emails like this at scale without knowing your customers, your case studies, and your targets inside out. Which brings us back to the foundation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 90 DAY PLAN -->
+<section class="sec" id="s3" data-label="90 Day Plan">
+  <div class="fi">
+    <h2 class="sec-h">What I'd do: 90 day plan.</h2>
+
+    <div class="phase-block">
+      <div class="phase-tag">Phase 1 - Weeks 1 to 4</div>
+      <div class="phase-title">Build the Foundation</div>
+      <div class="phase-body">
+        <p><strong>Customer intelligence capture.</strong> Your sales team sign up 100+ connections a month, but nobody is capturing the data that would tell you who to target next. We build a simple intake form that takes 2 minutes per deal: sector, company size, use case, what triggered the purchase, deal size, decision maker role. Nothing complex. No CRM overhaul. Just a lightweight process that turns every new sale into usable intelligence. Over 90 days, that gives you data on 300+ customers.</p>
+        <p><strong>Segmentation and ICP development.</strong> Using whatever historical data you can pull together combined with the new intelligence coming in, we identify the 3 to 5 sectors where you've got the strongest traction - not just "construction" or "renewables" but specifically: what type of company, at what stage, operating where, buying how many units, through which decision maker.</p>
+        <p><strong>Case study development.</strong> You've got deployments across mining, construction, tourism, maritime, healthcare, offshore energy. Each one is a story that should be making the next prospect in that sector feel like you've done this before. We turn the best 3 to 5 into short, punchy marketing assets: who they are, what the problem was, what you did, what the result was.</p>
+        <p><strong>Connectivity assessment tool.</strong> Rather than trying to sell a product to people who don't know it exists, we position Brdy as the expert advisor. A "connectivity assessment" - either a short online questionnaire or a free advisory call - gives prospects a way in that doesn't require them to already know satellite is the answer. It works as a landing page for paid search, as a CTA in outreach, and as a lead qualification tool all at once.</p>
+        <p><strong>Website review.</strong> Your new B2B site is launching imminently. We review it with fresh eyes and provide recommendations on messaging, conversion paths, and how to integrate the assessment tool.</p>
+      </div>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-tag">Phase 2 - Weeks 4 to 8</div>
+      <div class="phase-title">Go to Market, Sector by Sector</div>
+      <div class="phase-body">
+        <p><strong>Sector campaign - first vertical.</strong> We pick the sector where you've got the strongest proof and the most identifiable targets. We go deep on one sector rather than shallow on five. Using AI, we identify 100 to 200 target companies in that sector, research them individually, find the decision makers, and build a multi-touch outreach campaign that uses your case study for that sector as the proof point.</p>
+        <p><strong>AI powered prospect research.</strong> If you've sold to a tourist rail operator, we can use AI to find every other leisure rail operator in the UK. If you've deployed to wind farms, we can map the operators, find out which sites are in development, identify the people running those projects. The research that would take a person days takes minutes. We then enrich that data: what connectivity they're likely using now, where their sites are, how remote those locations are.</p>
+        <p><strong>Weekly email cadence.</strong> A weekly email that goes out to your growing database of contacts, leads, and prospects. Not a newsletter. Not a corporate update. Short, story-based emails about interesting things happening in your world. A deployment you did last week. A problem you solved in an unusual way. The kind of content that people actually read, even when they're not ready to buy yet.</p>
+        <p><strong>Meta ads test.</strong> We've spent about £8,000 on Meta since January and acquired five new clients from it. The algorithm is remarkably good at finding B2B buyers now, even though people assume Facebook is consumer only. Ad spend starts small (we'd recommend £1,000 to £1,500/month to test) and scales based on results.</p>
+        <p><strong>Paid search test.</strong> A small Google Ads campaign pointing to a dedicated landing page built around the connectivity assessment. Targeting problem-aware search terms: "internet for remote site," "broadband for construction," "wifi for temporary location."</p>
+      </div>
+    </div>
+
+    <div class="phase-block">
+      <div class="phase-tag">Phase 3 - Weeks 8 to 12</div>
+      <div class="phase-title">Optimise, Expand, Prepare for Amazon Leo</div>
+      <div class="phase-body">
+        <p><strong>Campaign analysis and iteration.</strong> By week 8, we'll have real data on which outreach is getting responses, which Meta creative is performing, whether paid search is generating quality leads, and which email content is resonating. We optimise: more effort into what's working, less into what isn't.</p>
+        <p><strong>Second sector campaign.</strong> We take the playbook from the first vertical and apply it to the next one. Different sector, different case study, different targets, same methodology. Each sector you crack becomes a repeatable template.</p>
+        <p><strong>Amazon Leo launch preparation.</strong> When Amazon launches its satellite broadband service in the UK, awareness of the entire category spikes. Every business that's been putting up with poor connectivity suddenly realises there's another option. We prepare landing pages, email sequences, content, and outreach specifically designed to capture that wave of interest. The companies that are positioned and ready will win.</p>
+        <p><strong>Sales enablement.</strong> Your business development guys are currently more reactive than proactive. We create the tools they need to follow up effectively: email templates that reference the right case study for each sector, a clear follow-up process for warm leads, and guidance on how to use the case studies and assessment tool in their conversations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="sec sec-alt" id="s4" data-label="What You Get">
+  <div class="fi">
+    <h2 class="sec-h">What you get.</h2>
+    <table class="comp-table">
+      <thead><tr><th>Deliverable</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Half-day strategy session (in person)</strong></td><td>We come to you. Walk through customer data, define segments, map campaigns, build connectivity assessment framework.</td></tr>
+        <tr><td><strong>Customer intelligence system</strong></td><td>Simple intake process your sales team actually uses. Turns every new sale into usable data.</td></tr>
+        <tr><td><strong>3 to 5 sector-specific case studies</strong></td><td>Written, designed, ready to deploy in outreach, on the website, in emails.</td></tr>
+        <tr><td><strong>Sector campaigns (one per phase)</strong></td><td>100 to 200 researched targets, personalised outreach, case study deployed as proof point.</td></tr>
+        <tr><td><strong>Weekly email cadence</strong></td><td>Story-based emails written and sent by us every week to your growing database.</td></tr>
+        <tr><td><strong>Meta ads and paid search</strong></td><td>Creative produced, campaigns managed, results reported. Ad spend is additional.</td></tr>
+        <tr><td><strong>Amazon Leo launch campaign</strong></td><td>Landing pages, email sequences, outreach materials - ready before launch.</td></tr>
+        <tr><td><strong>Sales enablement toolkit</strong></td><td>Templates, processes, guidance for your BD team.</td></tr>
+        <tr><td><strong>Weekly progress updates</strong></td><td>You'll know exactly where every campaign stands.</td></tr>
+        <tr><td><strong>WhatsApp access</strong></td><td>Direct line to me and the team. Questions answered same day.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="sec" id="s5" data-label="Investment">
+  <div class="fi">
+    <h2 class="sec-h">Investment.</h2>
+    <div class="price-box">
+      <h3>Setup and Strategy</h3>
+      <div class="price-row"><span class="lbl">One-time setup fee</span><span class="val">£3,995+VAT</span></div>
+      <p class="price-note">This covers the half-day in-person strategy session, customer intelligence system build, ICP development, initial case study creation, connectivity assessment framework, and website review. It's a heavier upfront piece because we're building the targeting infrastructure that should have been in place before any outreach was attempted.</p>
+    </div>
+    <div class="price-box" style="margin-top:20px;">
+      <h3>Monthly Retainer</h3>
+      <div class="price-row"><span class="lbl">Monthly retainer</span><span class="val">£2,495+VAT/mo</span></div>
+      <p class="price-note">This covers ongoing campaign execution, prospect research, outreach management, weekly email cadence, content creation, Meta and paid search campaign management, weekly reporting, and WhatsApp access. Ad spend is separate and additional - we'd recommend starting at £1,000 to £1,500/month.</p>
+    </div>
+    <div class="price-box" style="margin-top:20px;">
+      <h3>Total 90 Day Investment</h3>
+      <div class="price-row"><span class="lbl">Setup + 3 months retainer</span><span class="val">£11,480+VAT</span></div>
+      <div class="price-row"><span class="lbl">Initial commitment</span><span class="val">3 months</span></div>
+      <div class="price-row"><span class="lbl">After initial period</span><span class="val">Rolling 30 days</span></div>
+      <p class="price-note">Ad spend is additional and recommended at £1,000 to £1,500/month to start. We don't want anyone working with us because they have to. Everything we create is 100% yours. All assets, all content, all data, all campaigns. Nothing held hostage.</p>
+    </div>
+    <div class="body" style="margin-top:32px;">
+      <p>To put that in context: you told me some deals can be worth £50,000 or more. One large deployment covers this investment several times over.</p>
+      <p>And here's the thing that stuck with me from the call. You're already putting on 100 connections a month with almost no B2B marketing infrastructure in place. No proper website, no defined ICP, no case studies being used in outreach, no data capture on who's buying. Imagine what happens when all of those pieces are working, right as Amazon Leo launches and the entire market starts paying attention.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="sec sec-alt" id="s6" data-label="Why Us">
+  <div class="fi">
+    <h2 class="sec-h">Why us.</h2>
+    <div class="body">
+      <p>I won't pretend we know satellite broadband. We don't. That's your world.</p>
+      <p>What we know is B2B lead generation for businesses selling complex, considered purchases to specific sectors. That's our entire business.</p>
+      <p>We're working with a vehicle leasing company right now that had the same conversation you and I just had. They know their sweet spot is fleets of 70 to 200 vehicles. They couldn't find those companies easily. So we used AI to research and identify targets, built sector specific outreach, and next week we're sending 20 personalised letters with actual mobile phones inside to prove the point about service levels. Creative, targeted, impossible to ignore.</p>
+      <p>We've run email campaigns that generated £130,000 in new business for a commercial property company. We've helped clients add £36 million in revenue over the past decade. Almost everything we do is B2B services.</p>
+      <p><strong>The other thing that matters here:</strong> you only work Mondays and Wednesday mornings. You don't have the bandwidth to manage another agency that needs constant direction. We don't need managing. We manage ourselves and tell you what's happening, not the other way around.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="sec" id="s7" data-label="Next Steps">
+  <div class="fi">
+    <h2 class="sec-h">Next steps.</h2>
+    <div class="body">
+      <p>1. We talk through any questions on a follow up call.</p>
+      <p>2. If we're both happy, I'll send over the agreement.</p>
+      <p>3. First payment triggers the half-day strategy session (in person, at your place or ours).</p>
+      <p>4. We start building the intelligence and campaigns while your new website launches.</p>
+      <p>The timing lines up well. New website about to go live. Amazon Leo on the horizon. A sales team that's ready to do more if they had the leads. What's missing is the system that identifies the right targets and gets Brdy in front of them with the right message at the right time.</p>
+      <p>Let's go find the next 100 customers who look exactly like the ones you've already got, shall we?</p>
+    </div>
+    <div class="sign-off">
+      <span class="name">Nick 'Big Fish' Fisher</span>
+      <span class="details"><em>Test Tube Marketing | bigfish@testtubemarketing.com</em></span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / TEAM -->
+<section class="sec about-sec" id="s8" data-label="About Us">
+  <div class="fi">
+    <h2 class="sec-h">About us.</h2>
+    <div class="about-wrap">
+      <div class="about-intro">
+        <p>Test Tube Marketing is a B2B marketing agency based in Balsall Common. We specialise in lead generation for businesses selling complex, high-value services to other businesses.</p>
+        <p>Our approach combines strategic thinking, direct response copywriting, and performance marketing. We've worked across professional services, SaaS, infrastructure, leasing, and commercial property - anywhere the sale is considered, the buyer is hard to find, and the stakes are high.</p>
+        <p>We don't do vanity metrics. We do pipeline.</p>
+        <div class="team-grid" style="margin-top:32px;">
+          <div class="team-card"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#E8185A,#4DD9D0);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:28px;">🐟</div><div class="team-name">Nick Fisher</div><div class="team-role">Co-Founder</div></div>
+          <div class="team-card"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#0B2A45,#4DD9D0);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:28px;">🧪</div><div class="team-name">Adam Ashburn</div><div class="team-role">Co-Founder</div></div>
+          <div class="team-card"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#1A5C4A,#4DD9D0);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:24px;">✍️</div><div class="team-name">Gabriella N</div><div class="team-role">Head of Copywriting</div></div>
+          <div class="team-card"><div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#E8185A,#0B2A45);margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:24px;">😊</div><div class="team-name">Grace Harrold</div><div class="team-role">Head of Client Happiness</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="t-grid">
+          <div class="tcard"><div class="tresult">"OVER £130,000 IN NEW BUSINESS"</div><p class="tquote">"I turned to Ad and Fish when my marketing manager took a new role. I was stunned when the first 4 emails they wrote generated more calls and replies than anything we'd done previously! Since then, they've helped me generate over £130,000 in sales."</p><div class="tperson"><div class="tphoto" style="background:#E8185A;display:flex;align-items:center;justify-content:center;font-size:20px;">👤</div><div><div class="tname">Kirsty Darkins</div><div class="tco">KD Commercial</div></div></div></div>
+          <div class="tcard"><div class="tresult">"40% GROWTH YEAR ON YEAR"</div><p class="tquote">"I came to the Test Tube Marketing team not because I was struggling, but because I wanted to have a clearly defined marketing strategy in place. My revenue grew 40% vs last year, and I've just surpassed 7 figures for the first time ever."</p><div class="tperson"><div class="tphoto" style="background:#4DD9D0;display:flex;align-items:center;justify-content:center;font-size:20px;">👤</div><div><div class="tname">Tess Cope</div><div class="tco">The Transformation Agency</div></div></div></div>
+          <div class="tcard"><div class="tresult">"250 CALLS BOOKED!"</div><p class="tquote">"On the first campaign Fish and Ad ran for us, we'd set a target of booking 50 calls. The first 2 emails they sent exceeded our target, and we had over 250 calls booked in total."</p><div class="tperson"><div class="tphoto" style="background:#1A5C4A;display:flex;align-items:center;justify-content:center;font-size:20px;">👤</div><div><div class="tname">Michelle Clarke</div><div class="tco">Veblen Directors</div></div></div></div>
+          <div class="tcard"><div class="tresult">"I'VE NEVER HAD A RESPONSE LIKE THIS"</div><p class="tquote">"We've been sending emails to our database for years, but when the TTM team took over, we saw a difference almost immediately. More opens, more replies, and more prospects moving towards us - one of which has now turned into a massive contract."</p><div class="tperson"><div class="tphoto" style="background:#0B2A45;display:flex;align-items:center;justify-content:center;font-size:20px;">👤</div><div><div class="tname">Steve Hindley</div><div class="tco">iNarrator</div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Test Tube Marketing Ltd - Prepared exclusively for Brdy Telecom</p>
+  <p style="margin-top:6px;"><a href="https://www.testtubemarketing.com">www.testtubemarketing.com</a></p>
+</footer>
+
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')}),{threshold:.08});
+document.querySelectorAll('.fi').forEach(el=>io.observe(el));
+const secs=document.querySelectorAll('section[id]');
+const dc=document.getElementById('navDots');
+secs.forEach((s,i)=>{const b=document.createElement('button');b.className='dot';b.title=s.dataset.label||'';b.onclick=()=>s.scrollIntoView({behavior:'smooth'});dc.appendChild(b);});
+const dots=dc.querySelectorAll('.dot');
+const no=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting&&x.intersectionRatio>.45){const i=Array.from(secs).indexOf(x.target);dots.forEach((d,j)=>d.classList.toggle('active',i===j));}}),{threshold:.45});
+secs.forEach(s=>no.observe(s));
+</script>
+</body>
+</html>
