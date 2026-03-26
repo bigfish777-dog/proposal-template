@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Corporate Connections - Test Tube Marketing Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#E8166D;--teal:#4DD9D0;--white:#fff;--text:#2D2D2D;--muted:#6B7280;--light:#F5F6F8;--green:#1A5C4A;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+.cover{min-height:100vh;background:radial-gradient(ellipse at 65% 75%,#1A5C6B 0%,#0B2A45 45%,#060F1C 100%);color:white;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between;}
+.cover-date{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:16px;}
+.cover-h1{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(52px,11vw,96px);line-height:.95;letter-spacing:-.03em;margin:56px 0 24px;}
+.cover-sub{font-size:clamp(15px,1.8vw,19px);color:var(--teal);line-height:1.6;max-width:540px;}
+.cover-credits{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px;}
+.credit-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:6px;}
+.credit-name{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:var(--teal);}
+.sec{min-height:100vh;padding:96px 56px;display:flex;flex-direction:column;justify-content:center;}
+.sec-alt{background:var(--light);}
+.sec-h{font-family:'Poppins',sans-serif;font-size:clamp(32px,5vw,54px);font-weight:800;color:var(--pink);line-height:1.05;letter-spacing:-.02em;margin-bottom:36px;}
+.body{max-width:720px;font-size:clamp(15px,1.4vw,17px);line-height:1.8;}
+.body p{margin-bottom:18px;}
+.body p:last-child{margin-bottom:0;}
+.body strong{font-weight:600;}
+.body ul{margin:16px 0 18px 0;padding-left:0;list-style:none;}
+.body ul li{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:16px;line-height:1.65;}
+.body ul li::before{content:'*';color:var(--pink);font-weight:900;font-size:20px;line-height:1.3;flex-shrink:0;}
+.callout{background:white;border-left:3px solid var(--pink);padding:18px 24px;border-radius:0 8px 8px 0;margin:24px 0;font-style:italic;font-size:16px;line-height:1.65;max-width:700px;color:var(--text);}
+.compare-table{width:100%;max-width:680px;border-collapse:collapse;margin-top:24px;font-size:15px;}
+.compare-table th{background:var(--pink);color:white;font-family:'Poppins',sans-serif;font-weight:600;padding:12px 16px;text-align:left;}
+.compare-table td{padding:11px 16px;border-bottom:1px solid #E5E7EB;}
+.compare-table tr:nth-child(even) td{background:#F9FAFB;}
+.compare-table td:last-child{font-weight:600;}
+.price-box{background:linear-gradient(135deg,#060F1C 0%,#0F3D5C 100%);border-radius:14px;padding:40px 48px;max-width:660px;margin-top:28px;color:white;}
+.price-box h3{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:var(--teal);margin-bottom:24px;}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:16px;gap:16px;}
+.price-row:last-of-type{border-bottom:none;}
+.price-row .lbl{color:rgba(255,255,255,.8);}
+.price-row .val{font-weight:700;font-size:19px;flex-shrink:0;}
+.price-note{margin-top:20px;font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;}
+.ws-tag{display:inline-block;background:var(--pink);color:white;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;letter-spacing:.04em;margin-bottom:10px;}
+.ws-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.ws-block{margin-top:28px;max-width:720px;}
+.dlist{list-style:none;display:flex;flex-direction:column;gap:13px;max-width:700px;margin-top:16px;}
+.dlist li{display:flex;align-items:flex-start;gap:10px;font-size:16px;line-height:1.65;}
+.dlist li::before{content:'*';color:var(--pink);font-weight:900;font-size:20px;line-height:1.3;flex-shrink:0;}
+/* FB Ad mockup */
+.fb-feed{background:#f0f2f5;padding:28px;border-radius:12px;max-width:560px;margin:32px 0;}
+.fb-post{background:white;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.12);overflow:hidden;}
+.fb-post-header{display:flex;align-items:center;gap:10px;padding:14px 16px;}
+.fb-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#E8166D,#0B2A45);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:white;flex-shrink:0;}
+.fb-post-meta{flex:1;}
+.fb-post-name{font-weight:600;font-size:14px;color:#050505;}
+.fb-post-info{font-size:12px;color:#65676b;display:flex;align-items:center;gap:4px;}
+.fb-post-body{padding:0 16px 12px;}
+.fb-post-body p{font-size:14px;line-height:1.6;color:#050505;margin-bottom:6px;}
+.fb-video{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;}
+.fb-video iframe{width:100%;height:100%;border:none;}
+.fb-post-footer{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-top:1px solid #e4e6eb;}
+.fb-footer-url{font-size:12px;color:#65676b;text-transform:uppercase;letter-spacing:.05em;}
+.fb-footer-tagline{font-size:12px;color:#65676b;font-style:italic;}
+.fb-footer-btn{background:var(--pink);color:white;font-size:12px;font-weight:600;padding:6px 14px;border-radius:6px;text-decoration:none;white-space:nowrap;}
+/* Funnel link */
+.funnel-link{display:inline-block;margin:20px 0;padding:14px 28px;background:var(--pink);color:white;font-weight:600;font-size:16px;border-radius:8px;text-decoration:none;}
+/* LTV tables */
+.ltv-table{width:100%;max-width:680px;border-collapse:collapse;margin-top:24px;font-size:15px;}
+.ltv-table th{background:var(--pink);color:white;font-family:'Poppins',sans-serif;font-weight:600;padding:12px 16px;text-align:left;}
+.ltv-table td{padding:11px 16px;border-bottom:1px solid #E5E7EB;}
+.ltv-table tr:nth-child(even) td{background:#F9FAFB;}
+.ltv-table td:last-child{font-weight:600;}
+/* Testimonials */
+.testi-sec{background:var(--light);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:36px;}
+.tcard{background:white;border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.tresult{font-family:'Poppins',sans-serif;font-size:19px;font-weight:800;color:var(--green);text-transform:uppercase;line-height:1.1;}
+.tquote{font-size:13.5px;line-height:1.65;font-style:italic;flex:1;color:var(--text);}
+.tperson{display:flex;align-items:center;gap:10px;margin-top:8px;}
+.tphoto-placeholder{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0B1E35,#0F3D5C);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:var(--teal);flex-shrink:0;}
+.tname{font-weight:700;font-size:13px;}
+.tco{font-size:12px;color:var(--muted);}
+/* About */
+.about-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;max-width:960px;}
+.about-h{font-family:'Poppins',sans-serif;line-height:1.05;letter-spacing:-.02em;margin-bottom:24px;}
+.about-h .about-word{font-weight:300;font-style:italic;color:var(--muted);font-size:clamp(32px,4vw,46px);display:block;}
+.about-h .brand{font-weight:800;color:var(--pink);font-size:clamp(34px,4.5vw,50px);display:block;}
+/* Nav dots */
+.nav-dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:100;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(200,200,200,.5);cursor:pointer;border:none;padding:0;transition:all .2s;}
+.dot.active{background:var(--pink);transform:scale(1.5);}
+/* Sign-off */
+.sign-off{margin-top:52px;font-size:16px;line-height:1.9;}
+.sign-off .name{font-weight:700;font-size:17px;margin-top:12px;display:block;}
+.sign-off .details{font-style:italic;font-weight:400;display:block;font-size:15px;color:var(--muted);}
+/* Footer */
+.footer{background:#060F1C;color:rgba(255,255,255,.4);text-align:center;padding:28px 24px;font-size:12px;line-height:1.8;}
+/* Animations */
+.fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.fi.vis{opacity:1;transform:translateY(0);}
+/* Section tag */
+.part-tag{display:inline-block;background:rgba(232,22,109,.12);color:var(--pink);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:99px;margin-bottom:16px;}
+@media(max-width:768px){
+  .cover{padding:32px 24px;}
+  .sec{padding:64px 24px;min-height:auto;}
+  .about-wrap{grid-template-columns:1fr;gap:36px;}
+  .nav-dots{display:none;}
+  .fb-feed{padding:16px;}
+}
+@media(max-width:520px){
+  .price-box{padding:24px 20px;}
+  .price-row{flex-direction:column;gap:2px;padding:10px 0;}
+  .fb-post-footer{flex-direction:column;gap:8px;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+<nav class="nav-dots" id="navDots"></nav>
+
+<!-- COVER -->
+<section class="cover" id="s0" data-label="Cover">
+  <div>
+    <div class="cover-date">March 2026</div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;color:white;letter-spacing:-.02em;">Test Tube Marketing</span>
+    </div>
+    <h1 class="cover-h1">Marketing<br/>Proposal</h1>
+    <p class="cover-sub">Prepared for Pete<br/><em>Corporate Connections | March 2026</em></p>
+  </div>
+  <div class="cover-credits">
+    <div>
+      <div class="credit-label">Prepared by</div>
+      <div class="credit-name">Ad and Fish</div>
+    </div>
+    <div>
+      <div class="credit-label">For</div>
+      <div class="credit-name">Corporate Connections</div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR TAKEAWAYS -->
+<section class="sec" id="s1" data-label="Takeaways">
+  <div class="sec-h fi">Our takeaways from the session</div>
+  <div class="body">
+    <p class="fi">After spending a couple of hours together, it became obvious that the bottleneck isn't the product. The membership delivers. The stories from the room are extraordinary. Your conversion rate when you get a qualified person in front of you is somewhere around seventy to eighty percent. The product isn't the problem.</p>
+    <p class="fi"><strong>The bottleneck is reach.</strong></p>
+    <p class="fi">Right now, Corporate Connections grows through personal graft. Your graft, specifically. And it works. But personal connections have a ceiling. You said it yourself: you want to find people you've never met.</p>
+    <p class="fi">There are somewhere between fifteen and twenty five thousand founder led businesses in the UK doing £5m plus. You need about sixty more of them to hit a hundred members. That's not a mass marketing exercise, but it does need something more deliberate than organic referrals alone.</p>
+    <p class="fi">That's what this proposal addresses.</p>
+    <p class="fi">We're not here to replace what's already working. The referrals, the introductions, the personal relationships, that engine keeps running. What we're here to do is fill the gaps and amplify. You've got the sales ability. You've got a VA team coming online to handle the operational side. What you don't have is a marketing function that's putting qualified strangers on your calendar and keeping Corporate Connections front of mind with the people who aren't ready yet. That's the bit we do.</p>
+    <p class="fi">There are two distinct pieces here, and they're designed to work independently. You can say yes to one and not the other. We've separated them deliberately so there's no all or nothing decision to make.</p>
+  </div>
+</section>
+
+<!-- PART 1: THE FUNNEL -->
+<section class="sec sec-alt" id="s2" data-label="Part 1: The Funnel">
+  <div class="part-tag fi">Part 1</div>
+  <div class="sec-h fi">The Book a Call Funnel</div>
+  <div class="body">
+    <p class="fi">This is the direct response engine. The thing that puts qualified £5m+ business owners on your calendar so you can do what you do best.</p>
+    <p class="fi">We're running this exact model for our own business right now. Not theoretically. It's live and generating results today. You can see how our funnel works here:</p>
+    <a href="https://funnel.testtubemarketing.com" class="funnel-link fi" target="_blank" rel="noopener">funnel.testtubemarketing.com</a>
+    <p class="fi" style="margin-top:8px;">Here's what one of our best performing ads looks like in the wild:</p>
+
+    <!-- FB Ad Mockup -->
+    <div class="fb-feed fi">
+      <div class="fb-post">
+        <div class="fb-post-header">
+          <div class="fb-avatar">TTM</div>
+          <div class="fb-post-meta">
+            <div class="fb-post-name">Test Tube Marketing</div>
+            <div class="fb-post-info">Published by Nick Fisher &nbsp;·&nbsp; 9 February &nbsp;·&nbsp; 🌐</div>
+          </div>
+        </div>
+        <div class="fb-post-body">
+          <p>Most agencies send you a strategy doc. Then disappear.</p>
+          <p>Coaching programmes give you clarity. Then leave you to implement it yourself.</p>
+          <p>We're not that.</p>
+          <p>We work with you like a fractional marketing department. Strategy, copy, tech, emails, campaigns. Done. Not taught.</p>
+        </div>
+        <div class="fb-video">
+          <iframe src="https://drive.google.com/file/d/1kBHJDJoFjqep7oICVjayvPlih2uDPfpe/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="fb-post-footer">
+          <span class="fb-footer-url">www.testtubemarketing.com</span>
+          <span class="fb-footer-tagline">Done. Not taught.</span>
+          <a href="https://funnel.testtubemarketing.com" class="fb-footer-btn" target="_blank" rel="noopener">Apply now</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">What we build</div>
+      <p>We create a complete book a call funnel from scratch, built inside your GoHighLevel account. Everything stays yours.</p>
+      <ul class="dlist" style="margin-top:16px;">
+        <li><span><strong>Ad creative:</strong> 6 initial video ads, scripted, shot, and edited by us. We bring our full production kit: professional cameras, lenses, lighting, microphones, and autocue (north of £7,200 worth of equipment). We handle the scripting in advance and the edit afterwards. New batch of 6 creatives every fortnight, iterated based on performance data.</span></li>
+        <li><span><strong>VSL (Video Sales Letter):</strong> A short video for the landing page that positions Corporate Connections, tells the right stories, and pre qualifies the viewer before they apply. We'd shoot this at our purpose built studio here in Balsall Common to get the best possible production quality.</span></li>
+        <li><span><strong>Landing page:</strong> Copy, design, and build. Clean, high converting page with the VSL, qualifying form, and calendar integration. We'll be running ongoing split tests on headlines, layouts, and calls to action to continually improve conversion rates.</span></li>
+        <li><span><strong>Qualifying form:</strong> Multi step application that captures details and filters out businesses below the £5m threshold before they reach your diary.</span></li>
+        <li><span><strong>Calendly setup and integration:</strong> Calendar connected so calls book directly into your diary. Automated confirmation emails and reminder sequences to maximise show rates.</span></li>
+        <li><span><strong>Automation:</strong> Booking confirmations, reminder sequences, no show follow ups. All built in your GoHighLevel.</span></li>
+        <li><span><strong>Reporting:</strong> Weekly performance updates so you know exactly what's working and what we're changing.</span></li>
+        <li><span><strong>FB ad account setup:</strong> If your ad account isn't ready to run, we'll set it up and configure it. This carries a one off fee of £350 + VAT.</span></li>
+      </ul>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">How it works</div>
+      <p>A business owner sees the ad on Facebook or Instagram. It's short, typically under twenty seconds, direct, and immediately positions CC as something different from every networking group they've seen before.</p>
+      <p>They click through to a page with the VSL. They watch. If they're qualified and interested, they fill in a short application form and book a call with you.</p>
+      <p>You do what you already do brilliantly. Have the conversation. Build rapport. Identify opportunities. Invite them to a meeting.</p>
+      <p>We handle everything upstream of that call. Your job is to close. Our job is to fill the calendar.</p>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">The secondary benefit: awareness</div>
+      <p>Even before anyone books a call, the ads are doing work. Based on the budget we're recommending, you should expect around 15,000 impressions per month. That's 15,000 business owners seeing Corporate Connections who don't currently know you exist. Some of them won't be ready now. But when they hear the name again six months later, from a member, from an introducer, at a golf club, they'll recognise it. That brand awareness compounds over time, and you're getting it as a byproduct of the direct response campaign.</p>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">Creative approach</div>
+      <p>We start with 6 ad creatives and test them against each other. The data tells us which hooks, which messages, and which formats are resonating. Every fortnight, we produce 6 new creatives based on what the data is showing us. The ads that work get doubled down on. The ones that don't get replaced. We apply the same split testing discipline to the landing page, the form, and the email sequences.</p>
+      <p>This isn't a set and forget campaign. It's an iterative, data driven process. The worst thing to do is spend two months perfecting everything before anything goes live. We get it out, test it, and improve from there.</p>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">Targeting</div>
+      <p>We'd recommend starting with Birmingham and the surrounding area. The maths is simple: a Birmingham member is more valuable to you because you retain more of the revenue, and it strengthens your home group, which in turn improves renewals. Growing the group stops the slide and creates momentum.</p>
+      <p>Once we've got proof of concept and the numbers are stacking up, we can expand targeting to other areas.</p>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">What we need from you</div>
+      <ul class="dlist">
+        <li><span><strong>Commitment to ad spend:</strong> Minimum £3,000 in the first month to give us enough data to test properly. This is paid directly to Meta, not to us. Thereafter, if it's working, we keep spending.</span></li>
+        <li><span><strong>Creative control:</strong> Trust us to get things out the door quickly. We'll iterate based on data, not committee. Perfection is the enemy of progress with this stuff.</span></li>
+        <li><span><strong>About 90 minutes for filming:</strong> We'll shoot the first batch of ad creatives and the VSL in a single session at our studio in Balsall Common. We script everything in advance and direct you through the shoot. You just need to show up and be yourself.</span></li>
+        <li><span><strong>Calendar availability:</strong> Calls need to be taken within a few days of booking. The longer the gap, the lower the show rate. We'll build the Calendly reminders and follow ups, but the calendar needs to have space.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PART 1: INVESTMENT -->
+<section class="sec" id="s3" data-label="Part 1: Investment">
+  <div class="part-tag fi">Part 1</div>
+  <div class="sec-h fi">Investment</div>
+  <div class="body">
+    <p class="fi">We're offering two pricing models. Choose whichever works best for you.</p>
+
+    <div class="ws-block fi">
+      <div class="ws-title">Option A: Fixed Fee</div>
+      <div class="price-box">
+        <h3>Option A — Fixed Fee</h3>
+        <div class="price-row"><span class="lbl">Funnel Build (one off)</span><span class="val">£8,250 + VAT</span></div>
+        <div class="price-row"><span class="lbl">Monthly Management</span><span class="val">£2,000 + VAT / month</span></div>
+        <div class="price-row"><span class="lbl">Ad Spend (paid to Meta)</span><span class="val">Min. £3,000 / month</span></div>
+        <div class="price-row"><span class="lbl">FB Ad Account Setup (if required)</span><span class="val">£350 + VAT (one off)</span></div>
+        <p class="price-note">The funnel build fee covers everything: scripting, professional filming with our own production equipment, editing, page copy, page build, Calendly integration, automation, and the first batch of 6 ad creatives. Monthly management covers ongoing creative iteration (6 new ads per fortnight), campaign optimisation, split testing, and weekly reporting.</p>
+      </div>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-title">Option B: Commission</div>
+      <div class="price-box">
+        <h3>Option B — Commission</h3>
+        <div class="price-row"><span class="lbl">Funnel Build</span><span class="val">Waived</span></div>
+        <div class="price-row"><span class="lbl">Monthly Management</span><span class="val">Waived</span></div>
+        <div class="price-row"><span class="lbl">Commission per Member</span><span class="val">20% of £15,000 = £3,000 + VAT</span></div>
+        <div class="price-row"><span class="lbl">Ad Spend (paid to Meta)</span><span class="val">Min. £3,000 / month</span></div>
+        <div class="price-row"><span class="lbl">FB Ad Account Setup (if required)</span><span class="val">£350 + VAT (one off)</span></div>
+        <p class="price-note">Under the commission model, we waive the build fee and the monthly management fee entirely. Instead, we take 20% of the membership fee for every new member who signs up through the funnel. Commission is payable on sign up, invoiced monthly for members acquired through the funnel in that period.</p>
+      </div>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">The maths behind 20%</div>
+      <p>Before you look at that 20% and wince, let us walk through the numbers. Because the real story isn't what it costs to acquire a member. It's what that member is worth over time.</p>
+      <p>Let's assume this funnel generates just 2 new members per month. That's a conservative target. Here's what the numbers look like over the first year and beyond.</p>
+
+      <p style="margin-top:20px;font-weight:600;">Year 1: 18 new members</p>
+      <table class="ltv-table" style="margin-top:12px;">
+        <thead><tr><th>Item</th><th>Amount (ex VAT)</th></tr></thead>
+        <tbody>
+          <tr><td>Membership revenue (18 x £15,000)</td><td>£270,000</td></tr>
+          <tr><td>Your net at 60% margin</td><td>£162,000</td></tr>
+          <tr><td>Commission to TTM (18 x £3,000)</td><td>£54,000</td></tr>
+          <tr><td>Ad spend (assuming £1,500 CAC, high end)</td><td>£27,000</td></tr>
+          <tr><td>Total acquisition cost</td><td>£81,000</td></tr>
+          <tr><td><strong>Your net after all acquisition costs</strong></td><td><strong>£81,000</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:24px;">So even in year one, at the higher end of ad spend estimates, you net £81,000 after paying both our commission and all ad costs. That's before any renewals.</p>
+      <p>But members renew.</p>
+      <p>We didn't discuss your exact year one renewal figure, but even if it was as low as 50%, here's what that looks like over four years:</p>
+
+      <table class="ltv-table" style="margin-top:12px;">
+        <thead><tr><th>Item</th><th>Amount (ex VAT)</th></tr></thead>
+        <tbody>
+          <tr><td>Year 1 revenue (18 members)</td><td>£270,000</td></tr>
+          <tr><td>Year 2 renewals (50% = 9 members)</td><td>£135,000</td></tr>
+          <tr><td>Year 3 renewals (those 9 stay)</td><td>£135,000</td></tr>
+          <tr><td>Year 4 renewals (those 9 stay)</td><td>£135,000</td></tr>
+          <tr><td>Total revenue from these 18 members</td><td>£675,000</td></tr>
+          <tr><td>Your net at 60% margin</td><td>£405,000</td></tr>
+          <tr><td>Total acquisition cost (year 1 only)</td><td>£81,000</td></tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:24px;">You pay £81,000 once to acquire these members. You collect £405,000 in net margin over the following four years. That's a return of 5x on the acquisition investment.</p>
+      <p>And those are conservative numbers. If the funnel generates more than 2 members per month, the return scales with it. If CAC comes in lower than £1,500, which it well might as the funnel matures, the return improves further. And if your actual renewal rate is higher than 50%, the numbers only get better.</p>
+      <div class="callout" style="margin-top:20px;">The real risk calculation: if it doesn't work, you've spent ad budget testing it. That's it. There's no build fee. There's no monthly retainer. The commission only kicks in when a member actually signs up. The only money at risk is the ad spend, and we'd know within four to six weeks whether the funnel is generating calls. If it isn't, we stop and regroup. If it is, the numbers above start to play out.</div>
+      <p style="margin-top:8px;">Minimum terms, notice periods, and other specifics for the commission model will be covered in the formal agreement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PART 2: CONTENT -->
+<section class="sec sec-alt" id="s4" data-label="Part 2: Content">
+  <div class="part-tag fi">Part 2</div>
+  <div class="sec-h fi">Content, Emails &amp; Brand Building</div>
+  <div class="body">
+    <p class="fi">This is the awareness engine. The thing that builds the Corporate Connections brand from a well kept secret into something that business owners doing £5m plus actually recognise and talk about.</p>
+    <p class="fi">You made the comparison to BNI and Entrepreneur Circle. Both have spent years building awareness. You don't have years to wait, and frankly you don't need to. You've got better stories than either of them. You're just not telling them.</p>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">What we recommend</div>
+      <p>Regardless of whether you engage us to execute this, here's what needs to happen:</p>
+
+      <ul class="dlist" style="margin-top:16px;">
+        <li><span><strong>1. Weekly storytelling emails to the database.</strong> Not newsletters. Stories. The coffee club at Ferrari. The deal that got put together between two members who would never have met otherwise. The guy who came to one meeting and within a month had three new introductions worth more than his membership fee. These stories already exist. They just need to be told consistently, in your voice, every single week. This is the single most powerful thing you can do to keep Corporate Connections front of mind with the people who aren't ready to join yet but will be eventually.</span></li>
+        <li><span><strong>2. A proper database with qualification markers.</strong> Every guest, every visitor, every prospect needs to be captured and categorised. Qualified, aspiring, introducer, not a fit. London alone had thirty guests who never went anywhere because nobody had their details. That can't keep happening. The CRM is coming online with your VA team, and this is a great first job for them. The structure and tagging needs to be right from day one so that when you've got five hundred contacts in there, you can actually do something useful with them.</span></li>
+        <li><span><strong>3. LinkedIn presence from Pete personally.</strong> Not the Corporate Connections page. You. The personal posts carry more weight, more authenticity, and more reach. You don't need to post every day. One or two posts per week about what's happening, who you've met, what introductions were made in the room. Done tastefully. The goal is salience. When someone sees an ad for Corporate Connections and then goes to look you up, what they find needs to reinforce the message.</span></li>
+        <li><span><strong>4. Post event follow up sequences.</strong> You already call prospects within twenty four hours. That's excellent and should continue. But after that initial call, the conversation currently stops. There needs to be a system that keeps those people warm. Invitations to future events, stories from the room, reminders of what they experienced. The emotional window doesn't close after one phone call if you keep feeding it.</span></li>
+        <li><span><strong>5. Introducer enablement.</strong> Your introducers want to help. They just don't get round to it because it isn't easy enough. The collateral needs to feel natural to them. Rather than one polished pack that sits in a drawer, give them a sentence, a paragraph, and a page. Let them choose what fits their relationship with the person they're introducing. And when a member says they've got someone to refer, make it happen in the room. Help them send the email or make the call before they leave. Don't let it become something they'll get round to later.</span></li>
+        <li><span><strong>6. Event positioning and pricing perception.</strong> List the summit ticket at £995. Even if every single person comes in on a free invitation. The listed price signals value. A fifteen thousand pound membership that has a hundred and forty seven pound event attached to it creates a disconnect. You don't need to charge people. You just need the published price to match what Corporate Connections actually is. This is a simple change that shifts perception immediately.</span></li>
+        <li><span><strong>7. The quiz, through partners only.</strong> You've already built the Strategic Clarity Report. It's ready to go. Get the VA team to make it live as their first task, then test it with five partners who have databases of £5m plus businesses. Don't spend money driving traffic to it. That would dilute the intent. But distributing it through warm channels costs nothing and gives you data. If it works, scale it. If it doesn't, you've got your answer.</span></li>
+      </ul>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">What it looks like with us doing it</div>
+      <p>You could do all of the above in house. Some of it your VA team can handle, particularly the CRM setup and the quiz launch. But the storytelling, the copywriting, the content strategy, and the introducer materials require a different skill set. Writing in someone else's voice, consistently, in a way that sounds like them and not like an agency, is harder than most people think.</p>
+      <p>We're not here to replace what you've already got in motion. You've got Pete's relationships, the VA team coming on board, the GoHighLevel CRM, the introducer network, and the events model. Those are real assets. What we do is plug in alongside all of that, fill the gaps, and amplify what's already working. We'll leverage your resources and your team's capacity, not duplicate it.</p>
+      <p>If you want us to handle this alongside the funnel, here's what the engagement looks like:</p>
+
+      <ul class="dlist" style="margin-top:16px;">
+        <li><span><strong>Weekly email:</strong> Written in your voice, from the stories and anecdotes you share with us. We write it, you review it, it goes out. One email per week, story led, with a clear call to action tied to whatever's most relevant at the time.</span></li>
+        <li><span><strong>LinkedIn content:</strong> Two to three posts per week for your personal profile and the CC page. We draft them, you approve them. Photos from events, stories from the room. We handle the scheduling and the consistency so it doesn't fall off when you get busy.</span></li>
+        <li><span><strong>Event promotion and follow up:</strong> Pre event content to build anticipation. Post event storytelling to extend the impact. Follow up email sequences for guests who attended but didn't apply immediately.</span></li>
+        <li><span><strong>Introducer materials:</strong> A simple toolkit that makes it easy for partners and members to refer. Short scripts, forwardable emails, and one page summaries they can tailor. Updated quarterly as the brand evolves and new stories emerge.</span></li>
+        <li><span><strong>Content strategy and planning:</strong> Monthly content calendar. We'll identify the stories worth telling, plan the cadence, and make sure everything that goes out is consistent with how Corporate Connections should be perceived.</span></li>
+        <li><span><strong>Database and CRM guidance:</strong> We'll work with your VA team to make sure the tagging, segmentation, and nurture sequences are set up properly. We're not managing the CRM day to day, but we'll make sure the structure supports everything else we're doing.</span></li>
+      </ul>
+
+      <p style="margin-top:20px;">The funnel brings in people who are actively looking right now. The content and email work builds the next pipeline. It warms up the people who aren't ready yet. It keeps Corporate Connections front of mind so that when someone at a golf club mentions networking, the other person says "have you heard of Corporate Connections?"</p>
+      <p>It also supports the funnel directly. When someone sees an ad and goes to look you up, what they find needs to reinforce the message. Consistent content does that. Without it, you're relying entirely on the ad to do all the heavy lifting. With it, the prospect arrives on the call already feeling like they know who you are.</p>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">Investment</div>
+      <div class="price-box">
+        <h3>Part 2 — Monthly Retainer</h3>
+        <div class="price-row"><span class="lbl">Monthly Retainer</span><span class="val">£1,250 + VAT / month</span></div>
+        <p class="price-note">30 days rolling. No lock in beyond the first month. All content, copy, and assets created belong to Corporate Connections.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="sec" id="s5" data-label="Why us">
+  <div class="sec-h fi">Why us for this</div>
+  <div class="body">
+    <p class="fi">We're running this exact funnel model for our own business right now. It's live, it's generating calls, and it's converting. We're not pitching something we've read about. We're doing it every day.</p>
+    <p class="fi">We know the show rate challenges because we're solving them ourselves. We know what ad creatives work because we're testing new ones every fortnight. We know what landing page layouts convert because we've split tested ours and have the data to prove it.</p>
+    <p class="fi">On the content and strategy side, we've been writing for B2B service businesses for over two decades. Our clients include property training companies, business coaches, auction houses, commercial frame manufacturers, and consulting firms. Diverse industries, but every single one of them needs the same thing: marketing that sounds like them, not like an agency.</p>
+    <p class="fi">And perhaps most importantly for this: we know you. We've been to the meetings. We've seen how the room works. We've had the conversations about the brand, the positioning, the price perception, the qualification challenges. We're not starting from scratch on understanding what Corporate Connections is. We already get it.</p>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="sec sec-alt testi-sec" id="s6" data-label="Results">
+  <div class="sec-h fi">Results</div>
+  <div class="testi-grid">
+    <div class="tcard fi">
+      <div class="tresult">40% Growth Year on Year</div>
+      <p class="tquote">"I came to the Test Tube Marketing team not because I was struggling, but because I wanted to have a clearly defined marketing strategy in place. We've been working together almost 2 years now, and my revenue grew 40% vs last year, and I've just surpassed 7 figures for the first time ever. Thank you, TTM team!"</p>
+      <div class="tperson">
+        <div class="tphoto-placeholder">TC</div>
+        <div>
+          <div class="tname">Tess Cope</div>
+          <div class="tco">The Transformation Agency</div>
+        </div>
+      </div>
+    </div>
+    <div class="tcard fi">
+      <div class="tresult">Over £130,000 in New Business</div>
+      <p class="tquote">"I turned to Ad and Fish when my marketing manager took a new role, because I wanted to keep up my regular emails. I was stunned when the first 4 emails they wrote generated more calls and replies than anything we'd done previously! Since then, they've helped me generated over £130,000 in sales. I can't recommend them enough."</p>
+      <div class="tperson">
+        <div class="tphoto-placeholder">KD</div>
+        <div>
+          <div class="tname">Kirsty Darkins</div>
+          <div class="tco">KD Commercial</div>
+        </div>
+      </div>
+    </div>
+    <div class="tcard fi">
+      <div class="tresult">£30K in Recurring Revenue</div>
+      <p class="tquote">"On my first launch, Fish's emails performed so well, we not only had to open up more spots, we also had to 'close doors' early due to selling out. A few months later, the guys helped me launch my mobile app, and within 30 days, we'd signed up over 1,000 members paying £29.99 each."</p>
+      <div class="tperson">
+        <div class="tphoto-placeholder">SK</div>
+        <div>
+          <div class="tname">Steve Keane</div>
+          <div class="tco">Kraft Coaching</div>
+        </div>
+      </div>
+    </div>
+    <div class="tcard fi">
+      <div class="tresult">250 Calls Booked!</div>
+      <p class="tquote">"On the first campaign Fish and Ad ran for us, we'd set a target of booking 50 calls. The first 2 emails they sent exceeded our target, and we had over 250 calls booked in total. Plus we've been able to re-run the campaign since, and get even more calls booked!"</p>
+      <div class="tperson">
+        <div class="tphoto-placeholder">MC</div>
+        <div>
+          <div class="tname">Michelle Clarke</div>
+          <div class="tco">Veblen Directors</div>
+        </div>
+      </div>
+    </div>
+    <div class="tcard fi">
+      <div class="tresult">6 Figures in Revenue</div>
+      <p class="tquote">"The first launch Ad, Fish and the team worked on with us generated over £30,000 in sales from a 5-Day Facebook Challenge. Better yet, we were able to leverage the assets they created and re-run the challenge multiple times, and generate a total of 6 figures in revenue."</p>
+      <div class="tperson">
+        <div class="tphoto-placeholder">AC</div>
+        <div>
+          <div class="tname">Aran Curry</div>
+          <div class="tco">Insight Education</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec" id="s7" data-label="About">
+  <div class="about-wrap">
+    <div>
+      <h2 class="about-h fi"><span class="about-word">about</span><span class="brand">Test Tube Marketing</span></h2>
+      <div class="body fi">
+        <p>We're a done-for-you fractional marketing department for expert businesses doing £500k+ in annual revenue.</p>
+        <p>Based at Holly Grange, Balsall Common. Strategy AND execution. We do both.</p>
+        <p>Over 20 years of combined experience. £35m+ in attributed client revenue. We only work with a handful of clients at any one time.</p>
+      </div>
+    </div>
+    <div class="fi">
+      <div style="background:linear-gradient(135deg,#060F1C,#0F3D5C);border-radius:14px;padding:32px;color:white;">
+        <div style="font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:20px;">The team</div>
+        <div style="display:flex;align-items:center;gap:14px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--pink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:white;flex-shrink:0;">A</div>
+          <div>
+            <div style="font-weight:600;font-size:14px;">Ad</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.6);">Strategy &amp; Copy</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;padding:8px 0;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:white;flex-shrink:0;">F</div>
+          <div>
+            <div style="font-weight:600;font-size:14px;">Fish</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.6);">Creative &amp; Production</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS NEXT -->
+<section class="sec sec-alt" id="s8" data-label="Next steps">
+  <div class="sec-h fi">What happens next</div>
+  <div class="body">
+    <p class="fi">You decide which pieces you want to proceed with. Part 1, Part 2, or both.</p>
+    <ul class="dlist fi">
+      <li><span><strong>If Part 1 (the funnel):</strong> we book in the filming session at our studio. First batch of ads and the VSL, all in one go, about 90 minutes of your time. We'll script everything in advance. We'll aim for within the next 2 to 3 weeks.</span></li>
+      <li><span><strong>If Part 2 (content and strategy):</strong> we kick off with a 90 minute session to map out the first month of content, identify the key stories, and get access to the systems.</span></li>
+    </ul>
+    <p class="fi">Either way, we can be live within 2 to 3 weeks of sign off.</p>
+    <p class="fi">We want to help you get to 100 members. Not because it's a nice round number, but because once you're there, the growth accelerates itself. More members means more introductions. More introductions means more guests. More guests means more conversions. That's the flywheel, and it needs an engine to get it spinning.</p>
+    <p class="fi">Let us help you build it.</p>
+
+    <div class="sign-off fi">
+      <span class="name">Ad and Fish</span>
+      <span class="details">Test Tube Marketing | Holly Grange, Balsall Common</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Test Tube Marketing Ltd &nbsp;·&nbsp; <a href="https://www.testtubemarketing.com" style="color:rgba(255,255,255,.5);">www.testtubemarketing.com</a></p>
+</footer>
+
+<script>
+// Nav dots
+const secs = [...document.querySelectorAll('section[id]')];
+const nav = document.getElementById('navDots');
+secs.forEach((s,i)=>{
+  const btn = document.createElement('button');
+  btn.className='dot';
+  btn.title = s.dataset.label || '';
+  btn.onclick=()=>s.scrollIntoView({behavior:'smooth'});
+  nav.appendChild(btn);
+});
+const dots = [...nav.querySelectorAll('.dot')];
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const idx = secs.indexOf(e.target);
+      dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+    }
+  });
+},{threshold:.4});
+secs.forEach(s=>io.observe(s));
+
+// Fade-in
+const fio = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:.12});
+document.querySelectorAll('.fi').forEach(el=>fio.observe(el));
+</script>
+</body>
+</html>
