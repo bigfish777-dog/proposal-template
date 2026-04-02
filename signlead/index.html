@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sign Lead | Proposal 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#E8185A;--teal:#4DD9D0;--white:#fff;--text:#2D2D2D;--muted:#6B7280;--light:#F5F6F8;--green:#1A5C4A;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+.cover{min-height:100vh;background:radial-gradient(ellipse at 65% 75%,#1A5C6B 0%,#0B2A45 45%,#060F1C 100%);color:white;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between;}
+.cover-date{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:16px;}
+.cover-h1{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(52px,11vw,96px);line-height:.95;letter-spacing:-.03em;margin:56px 0 24px;}
+.cover-sub{font-size:clamp(15px,1.8vw,19px);color:var(--teal);line-height:1.6;max-width:620px;}
+.cover-sub em{font-style:italic;}
+.cover-credits{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px;}
+.credit-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:6px;}
+.credit-name{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:var(--teal);}
+.sec{min-height:100vh;padding:96px 56px;display:flex;flex-direction:column;justify-content:center;}
+.sec-alt{background:var(--light);}
+.sec-h{font-family:'Poppins',sans-serif;font-size:clamp(32px,5vw,54px);font-weight:800;color:var(--pink);line-height:1.05;letter-spacing:-.02em;margin-bottom:36px;}
+.body{max-width:760px;font-size:clamp(15px,1.4vw,17px);line-height:1.8;}
+.body p{margin-bottom:18px;}
+.body p:last-child{margin-bottom:0;}
+.body strong{font-weight:600;}
+.body em{font-style:italic;}
+.body ul{margin:16px 0 18px 0;padding-left:0;list-style:none;}
+.body ul li{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:16px;line-height:1.65;}
+.body ul li::before{content:'*';color:var(--pink);font-weight:900;font-size:20px;line-height:1.3;flex-shrink:0;}
+.callout{background:white;border-left:3px solid var(--pink);padding:18px 24px;border-radius:0 8px 8px 0;margin:24px 0;font-style:italic;font-size:16px;line-height:1.65;max-width:700px;color:var(--text);}
+.ws-tag{display:inline-block;background:var(--pink);color:white;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;letter-spacing:.04em;margin-bottom:10px;}
+.ws-title{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.ws-block{margin-top:28px;max-width:760px;}
+.dlist{list-style:none;display:flex;flex-direction:column;gap:13px;max-width:740px;margin-top:16px;}
+.dlist li{display:flex;align-items:flex-start;gap:10px;font-size:16px;line-height:1.65;}
+.dlist li::before{content:'*';color:var(--pink);font-weight:900;font-size:20px;line-height:1.3;flex-shrink:0;}
+.price-box{background:linear-gradient(135deg,#060F1C 0%,#0F3D5C 100%);border-radius:14px;padding:40px 48px;max-width:660px;margin-top:28px;color:white;}
+.price-box h3{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:var(--teal);margin-bottom:24px;}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:16px;gap:16px;}
+.price-row:last-of-type{border-bottom:none;}
+.price-row .lbl{color:rgba(255,255,255,.8);}
+.price-row .val{font-weight:700;font-size:19px;flex-shrink:0;}
+.price-note{margin-top:20px;font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;}
+.steps{list-style:none;display:flex;flex-direction:column;gap:18px;max-width:680px;margin-top:24px;}
+.steps li{display:flex;align-items:flex-start;gap:14px;font-size:16px;line-height:1.65;}
+.step-n{width:34px;height:34px;border-radius:50%;background:var(--pink);color:white;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sign-off{margin-top:52px;font-size:16px;line-height:1.9;}
+.sign-off .name{font-weight:700;font-size:17px;margin-top:12px;display:block;}
+.sign-off .details{font-style:italic;font-weight:400;display:block;font-size:15px;color:var(--muted);}
+.about-sec{background:white;}
+.about-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;max-width:960px;}
+.about-h{font-family:'Poppins',sans-serif;line-height:1.05;letter-spacing:-.02em;margin-bottom:24px;}
+.about-h .about-word{font-weight:300;font-style:italic;color:var(--muted);font-size:clamp(32px,4vw,46px);display:block;}
+.about-h .brand{font-weight:800;color:var(--pink);font-size:clamp(34px,4.5vw,50px);display:block;}
+.team-col{display:flex;flex-direction:column;}
+.team-header{font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--text);text-align:center;margin-bottom:20px;}
+.team-row{display:flex;align-items:center;gap:14px;padding:6px 0;}
+.team-photo{width:54px;height:54px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #f0f0f0;}
+.team-photo-placeholder{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#0B1E35,#0F3D5C);display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;font-size:18px;color:var(--teal);flex-shrink:0;border:2px solid #f0f0f0;}
+.t-name{font-weight:600;font-size:14px;color:var(--text);}
+.t-role{font-size:12px;color:var(--muted);margin-top:1px;}
+.testi-sec{background:var(--light);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:36px;}
+.tcard{background:white;border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.tresult{font-family:'Poppins',sans-serif;font-size:19px;font-weight:800;color:var(--green);text-transform:uppercase;line-height:1.1;}
+.tquote{font-size:13.5px;line-height:1.65;font-style:italic;flex:1;color:var(--text);}
+.tperson{display:flex;align-items:center;gap:10px;margin-top:8px;}
+.tphoto{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.tphoto-placeholder{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0B1E35,#0F3D5C);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:var(--teal);flex-shrink:0;}
+.tname{font-weight:700;font-size:13px;}
+.tco{font-size:12px;color:var(--muted);}
+.nav-dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:100;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(200,200,200,.5);cursor:pointer;border:none;padding:0;transition:all .2s;}
+.dot.active{background:var(--pink);transform:scale(1.5);}
+.footer{background:#060F1C;color:rgba(255,255,255,.4);text-align:center;padding:28px 24px;font-size:12px;line-height:1.8;}
+.footer a{color:rgba(255,255,255,.5);}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.fi.vis{opacity:1;transform:translateY(0);}
+.compare-table{width:100%;max-width:680px;border-collapse:collapse;margin-top:24px;font-size:15px;}
+.compare-table th{background:var(--pink);color:white;font-family:'Poppins',sans-serif;font-weight:600;padding:12px 16px;text-align:left;}
+.compare-table td{padding:11px 16px;border-bottom:1px solid #E5E7EB;}
+.compare-table tr:nth-child(even) td{background:#F9FAFB;}
+.compare-table td:last-child{font-weight:600;}
+@media(max-width:768px){
+  .cover{padding:32px 24px;}
+  .sec{padding:64px 24px;min-height:auto;}
+  .about-wrap{grid-template-columns:1fr;gap:36px;}
+  .nav-dots{display:none;}
+}
+@media(max-width:520px){
+  .price-box{padding:24px 20px;}
+  .price-row{flex-direction:column;gap:2px;padding:10px 0;}
+  .price-row .val{font-size:16px;}
+  .price-row .lbl{font-size:13px;}
+}
+</style>
+</head>
+<body>
+<nav class="nav-dots" id="navDots"></nav>
+
+<!-- COVER -->
+<section class="cover" id="s0" data-label="Cover">
+  <div>
+    <div class="cover-date">April 2026</div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <span style="font-family:'Poppins',sans-serif;font-weight:800;font-size:18px;color:white;letter-spacing:-.02em;">Test Tube Marketing</span>
+    </div>
+    <h1 class="cover-h1">Proposal</h1>
+    <p class="cover-sub">Sign Lead &amp; Test Tube Marketing<br/><em>Helping Pete build a marketing engine that fills the workshop without filling his diary.</em></p>
+  </div>
+  <div class="cover-credits">
+    <div>
+      <div class="credit-label">Presented to</div>
+      <div class="credit-name">Pete Mitchell, Sign Lead</div>
+    </div>
+    <div>
+      <div class="credit-label">Presented by</div>
+      <div class="credit-name">Test Tube Marketing</div>
+    </div>
+  </div>
+</section>
+
+<!-- TAKEAWAYS -->
+<section class="sec" id="s1" data-label="Takeaways">
+  <h2 class="sec-h fi">My takeaways</h2>
+  <div class="body">
+    <p class="fi">Pete,</p>
+    <p class="fi">Good chat on the phone. Here's what stuck with me:</p>
+    <p class="fi">You've built something genuinely impressive. Seven years in, five employees, a workshop expansion on the way, 2 million views on TikTok for a signage company in County Durham. That doesn't happen by accident.</p>
+    <p class="fi">But the bit that really got my attention was when you talked about the agency work. The design agencies who bring you in on B2B projects, the new builds, the rebrand rollouts, the full signage packages worth £3k, £5k, £10k, £20k a pop. That's where the real money is - but you know that already.</p>
+    <p class="fi">The challenge isn't whether you can deliver that work. You clearly can.</p>
+    <p class="fi">The challenge is that right now, those relationships happen when they happen.</p>
+    <p class="fi">There's no system behind it. No proactive outreach. No consistent presence in front of the people who send you the best jobs.</p>
+    <p class="fi">You're not short of talent or ambition. You're short of a pipeline.</p>
+    <p class="fi">And that's exactly what we'd build together.</p>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section class="sec sec-alt" id="s2" data-label="Opportunity">
+  <h2 class="sec-h fi">The opportunity</h2>
+  <div class="body">
+    <p class="fi">Let's look at the numbers.</p>
+    <p class="fi">Right now, your average job might be £1,000 to £3,000. That's fine for the bread-and-butter work. But the agency channel is a completely different animal.</p>
+    <p class="fi">One design agency relationship that sends you two or three B2B signage projects a year could be worth £10,000 to £60,000 in annual revenue. Not from cold leads who haggle on price, but from warm introductions where you're the recommended supplier.</p>
+    <p class="fi">Get five of those relationships working properly and you've added a quarter of a million to the top line. That changes the shape of the business entirely.</p>
+    <p class="fi">The question isn't whether those agencies exist. They do. There's hundreds of design agencies, branding studios, interior designers, and architects across the North East alone who regularly need a signage partner they can trust.</p>
+    <p class="fi">The question is: how do you get in front of them, stay in front of them, and become the name they think of when the next project lands on their desk?</p>
+    <p class="fi">That's what this proposal is about.</p>
+  </div>
+</section>
+
+<!-- WHAT WE'D DO -->
+<section class="sec" id="s3" data-label="What We'd Do">
+  <h2 class="sec-h fi">What we'd do together</h2>
+  <div class="body">
+    <p class="fi">Two things. Both simple. Both powerful.</p>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">1</div>
+      <h3 class="ws-title">Weekly consulting</h3>
+      <p>You'll get a weekly call with me or Ad. Not a vague "catchup" where we ask you how things are going and nod thoughtfully. A proper working session.</p>
+      <p>We'll use these to:</p>
+      <ul class="dlist">
+        <li>Build your target list of design agencies, branding studios, interior designers, and architects</li>
+        <li>Define your messaging and positioning for the trade/agency market</li>
+        <li>Plan your outreach strategy so you're not just emailing into a void</li>
+        <li>Review what's working, what's not, and adjust</li>
+        <li>Work through your TikTok and LinkedIn content strategy</li>
+        <li>Tackle whatever else needs tackling that week, whether that's a quote follow-up, a pitch deck, or a tricky client conversation</li>
+      </ul>
+      <p>You'll also get our personal phone numbers. WhatsApp us whenever you need to bounce something, sense-check an idea, or get a second opinion. We're not precious about it.</p>
+      <p>This isn't coaching. We're not going to ask you what you think the answer is. We'll tell you what we'd do, based on 25+ years of doing this across hundreds of businesses. You decide whether to run with it.</p>
+    </div>
+
+    <div class="ws-block fi">
+      <div class="ws-tag">2</div>
+      <h3 class="ws-title">Weekly emails (written by us)</h3>
+      <p>This is the engine.</p>
+      <p>Once we've built your target list of agencies, we'll help you get them onto an email list. By doing it properly, one relationship at a time, so every person on that list actually wants to hear from you.</p>
+      <p>Then, every week, we'll write you an email. Then we'll send it out of your email marketing tool.</p>
+      <p>Not a sales email. Not a newsletter full of clip art and "10% off this month!" Not something that sounds like AI wrote it at 2am.</p>
+      <p>A proper, human, anecdotal email. The kind that a creative director at a design agency actually reads and thinks "I like these guys."</p>
+      <p>The kind of email that, three months in, means when a project lands that needs signage, your name is the first one that comes to mind.</p>
+      <p>We've done this for clients across dozens of industries. It works. Consistently. Because most businesses either don't email at all, or they email badly. We do it well, and we do it every single week without fail.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE'RE NOT DOING -->
+<section class="sec sec-alt" id="s4" data-label="What We're Not Doing">
+  <h2 class="sec-h fi">What we're not doing</h2>
+  <div class="body">
+    <p class="fi">I want to be upfront about what this isn't, because I think you've had enough people promise you the world.</p>
+    <p class="fi">We're not running your ads. You don't need paid traffic right now. You need relationships.</p>
+    <p class="fi">We're not managing your social media. You're already doing a decent job of that yourself, especially on TikTok. We'll advise on it during our weekly calls, but we're not taking it over.</p>
+    <p class="fi">We're not redesigning your website. It could do with some love, but that's not the priority. The priority is getting in front of the right people and building those agency relationships.</p>
+    <p class="fi">We're not building you a funnel. Your business doesn't sell through funnels. It sells through trust, reputation, and being the obvious choice when a project needs signage.</p>
+    <p class="fi">What we are doing is giving you a senior marketing brain on a weekly call, and writing the emails that will build you a pipeline of agency relationships over time.</p>
+    <p class="fi">Simple. Focused. Effective.</p>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="sec" id="s5" data-label="Investment">
+  <h2 class="sec-h fi">Your investment</h2>
+  <div class="body">
+    <div class="ws-block fi">
+      <h3 class="ws-title">What's included</h3>
+      <table class="compare-table">
+        <thead><tr><th>What's included</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Weekly consulting call - 30 mins with Fish or Ad</td><td>✓</td></tr>
+          <tr><td>WhatsApp access - Direct line to us, questions answered same day</td><td>✓</td></tr>
+          <tr><td>Weekly email, written by us - Relationship-building content for your agency list</td><td>✓</td></tr>
+          <tr><td>List building guidance - We'll show you exactly how to build your agency email list</td><td>✓</td></tr>
+          <tr><td>Content and social strategy advice - TikTok, LinkedIn, and everything in between</td><td>✓</td></tr>
+        </tbody>
+      </table>
+      <div class="price-box">
+        <h3>Your investment</h3>
+        <div class="price-row"><span class="lbl">Monthly fee</span><span class="val">£1,249+VAT per month</span></div>
+        <div class="price-row"><span class="lbl">Initial commitment</span><span class="val">3 months</span></div>
+        <div class="price-row"><span class="lbl">Thereafter</span><span class="val">Rolling 30 days</span></div>
+        <p class="price-note">No setup fee. No hidden extras. No ad spend required.</p>
+      </div>
+    </div>
+
+    <div class="ws-block fi">
+      <h3 class="ws-title">For context</h3>
+      <p>One agency relationship that sends you two decent B2B signage projects a year is worth £10,000 to £40,000 in revenue.</p>
+      <p>That means one good relationship pays for this entire engagement several times over.</p>
+      <p>And we're not building one relationship. We're building a system that generates them consistently.</p>
+      <p>After the initial 3 months, it's 30 days' notice either way. We don't want anyone working with us because they have to. Everything we create is yours. The emails, the strategy, the list, all of it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="sec sec-alt" id="s6" data-label="Why Us">
+  <h2 class="sec-h fi">Why us</h2>
+  <div class="body">
+    <p class="fi">We're not a signage consultancy. We won't pretend to know the difference between Foamex and Dibond better than you do.</p>
+    <p class="fi"><em>(I mean, I got those material names off Google!)</em></p>
+    <p class="fi">What we do know is how to get businesses in front of the right people, build relationships at scale through email, and turn sporadic word-of-mouth into a predictable pipeline.</p>
+    <p class="fi">We've done it for a stamp auction house, a commercial property trainer, a basement pump manufacturer, a picture framing company, and dozens of other businesses that, on paper, shouldn't be "exciting" to market. They all have one thing in common: the emails we write get opened, get read, and get results.</p>
+    <p class="fi">Between us, we've generated over £36 million in revenue for our clients across the last decade. Not through flashy campaigns. Through consistent, well-written, human communication that makes people want to do business with our clients.</p>
+    <p class="fi">That's what we'd do for Sign Lead.</p>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="sec" id="s7" data-label="Next Steps">
+  <h2 class="sec-h fi">Next steps</h2>
+  <div class="body">
+    <p class="fi">If this feels right, here's what happens:</p>
+    <ol class="steps fi">
+      <li><span class="step-n">1</span>We jump on a quick call to answer any questions and make sure we're both happy.</li>
+      <li><span class="step-n">2</span>We send over a simple agreement and get you set up.</li>
+      <li><span class="step-n">3</span>We book your first weekly call and get to work.</li>
+    </ol>
+    <p class="fi" style="margin-top:32px;">No six-week onboarding. No 47-page strategy document. We start by understanding the landscape and building the list, and we write the first email within the first couple of weeks.</p>
+    <p class="fi">Pete, you've built a cracking business. Let's make sure the right people know about it.</p>
+    <div class="sign-off fi">
+      <span class="name">Fish</span>
+      <span class="details">Test Tube Marketing<br/>bigfish@testtubemarketing.com</span>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="sec testi-sec" id="s9" data-label="Results">
+  <div class="fi">
+    <h2 class="sec-h">Results.</h2>
+    <div class="testi-grid">
+      <div class="tcard">
+        <div class="tresult">"$6K PER MONTH"</div>
+        <p class="tquote">"When I heard the guys were starting a marketing agency, I KNEW I wanted to work with them. They've not only helped provide me with the strategic insights I was looking for, but helped me launch my membership programme which now generates over $6,000 per month - Thanks Ad and Fish!"</p>
+        <div class="tperson"><img class="tphoto" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/APqGiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKK4bxH4q8P8Aw58JJ4wtdM1fUbjUUv7mW3+0X0xf5opQzqy7QvILN8oJ+Y8V0VFAHjvxC+KXw68LaXf+H9V1S+vL1b6W8dXht3t2M0M7SFmLKw2lQAPmB2Gtv4o/tMfDf4ZaLZ67/wjN7rWv6lYMsJv7Z4nklZI3f7zeVNoBO4IcmvP/AIkftBfCP4QeD9Q8Qahq3nXU8j2es2iW8JVOuG4RssgA9xkV53+0l+0p4M+M3wSl0Lwr4R1fSNR8PxPbq1zA9ldxC4t4x8+7I2jKjnA6c1+kVFAHh3ib9qf4QeAPh94d8Ia1rXh7xL4dtX1PV9QeGxW7TTZrVba2a4wQoZmyBklwMA9BXkP7QH7Sf7QfwR+F2h/GX4oaX4R+HGl6jY2WsW19JdW0Cxx3EpR4XYLqf7oV/wA9wOlfqBRQB4V+1t+0V8Kf2XPhn4d+Pml+MfEmo2VjDZyQW1xpmr2jW0jI4V3jIMgPy9W6V+LHw4/4KI/FD4kfCbS9P8UeJfDOv+JvDurx2OlQ6npt7b3NwLhZ2S4iZzEwwOWGAc1+jNFAHzn8Wv8Agqh8Ofg18KdV+JWrP4euNP8AEPiS7+yw3up6lZ+TLbXjFpPKCGZlOACQQRkV4x+0v/wAFIPhf+0L+zv8AGH9mvxjaeCvE/iHUtQvr3+0rW10iOe4upIg0jzSM4G4x0xkH2r6uoooA+bv+ClH/AAU5+Fn7HnwW8WfHP4b+E/DN14k8QapPceJdW0m3hupFnnmjRmkjKjnB7VzXxY/4Kt/Fn4xeCtM8WfCDwhaeENP0PSp5tT1C5e3e8t2JwqqGH9PavqOigDyP9sf9ojwF+z58ErTxj8Qta1L4ha1qM0d7d6lqFpf6ddtGrO0CROQCRn5ev4CvjL4UftRftNf8FIfjV4g+M/7P1v4f8UeDfD+vSWt3qN7fWZupL2zR3laNnSVyCFyTj0r9V6KAPAv+Chn/BWj4hf8ABM/9nXxT8MP2s/E2m6Vb+I9atLi1bxbpFqIYp7p4nAjgkUjOSQQv6V4J8J/+Cmn/BTT4aeJ/h74Y+H3wV8V2Ot6fMmq6rqWpWbR6hd3U0C2zy4DqxVV4BC8ev0looA8N/4KC/8FfP2Vf2O/2dvDPjH4g/Ez4b6Xr3i3VL2/h0m0srW6vZo5YrZJdskcjBdxYj5VHNfOH7a37UH7S37N37R3xR/aC+IWl+HfAnhy3uNP1TT43iu7S1vLqNNttun7rGSc4I4Br9XKKAPnH/AIKr/wDBTv8AZI/YH/Z+8d/FXxX4w0Txh4s1iS5ttW1q7a1uYpbmVXjQbnkIIPB4r4w/4Kof8ABXX4v/8ABOr9nr4mfszeBvCvhz4sa9pV9c39ho+lQW0k0scbSJt8kgRxuA6YxX6V0UAfNn/BXH/gpf8J/2A/2Q/D37L3xB8V+Grzwxo9xDcS6jpN6WkFk0bSqG3tx82QMdM1+EtFFAH6J0UUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/Z" alt="Mike Maher"/><div><div class="tname">Mike Maher</div><div class="tco">Take A Deep Breath</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="tresult">"£30K IN RECURRING REVENUE"</div>
+        <p class="tquote">"On my first launch, Fish's emails performed so well, we not only had to open up more spots, we also had to 'close doors' early due to selling out. A few months later, the guys helped me launch my mobile app, and within 30 days, we'd signed up over 1,000 members paying £29.99 each."</p>
+        <div class="tperson"><img class="tphoto" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/..." alt="Steve Keane"/><div><div class="tname">Steve Keane</div><div class="tco">Kraft Coaching</div></div></div>
+      </div>
+      <div class="tcard">
+        <div class="tresult">"OVER £130,000 IN NEW BUSINESS"</div>
+        <p class="tquote">"I turned to Ad and Fish when my marketing manager took a new role, because I wanted to keep up my regular emails. I was stunned when the first 4 emails they wrote generated more calls and replies than anything we'd done previously! Since then, they've helped me generated over £130,000 in sales I can't recommend them enough."</p>
+        <div class="tperson"><img class="tphoto" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/..." alt="Kirsty Darkins"/><div><div class="tname">Kirsty Darkins</div><div class="tco">KD Commercial</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about-sec" id="s8" data-label="About Us">
+  <div class="fi about-wrap">
+    <div>
+      <h2 class="about-h">
+        <span class="about-word">About</span>
+        <span class="brand">Test Tube<br/>Marketing</span>
+      </h2>
+      <div class="body">
+        <p><strong>Hi, we're Ad and Fish, the founders of Test Tube Marketing.</strong></p>
+        <p>Between us, we've been running marketing campaigns, building funnels, and making sales online for over 25 years.</p>
+        <p>Unlike other agencies, who will try and force your business to fit their model, we take a completely unique approach to every client we work with. Our experienced team takes the time to understand your business, your goals, and your unique skills, to ensure we can deliver the results you're looking for.</p>
+      </div>
+    </div>
+    <div class="team-col">
+      <div class="team-header">THE TEAM</div>
+      <div class="team-row"><div class="team-photo-placeholder">A</div><div><div class="t-name">Adam Ashburn</div><div class="t-role">Co-Founder</div></div></div>
+      <div class="team-row"><div class="team-photo-placeholder">F</div><div><div class="t-name">Nick 'Big Fish' Fisher</div><div class="t-role">Co-Founder</div></div></div>
+      <div class="team-row"><div class="team-photo-placeholder">G</div><div><div class="t-name">Grace Harrold</div><div class="t-role">Head of Client Happiness</div></div></div>
+      <div class="team-row"><div class="team-photo-placeholder">G</div><div><div class="t-name">Gabriella Neocleous</div><div class="t-role">Head of Copywriting</div></div></div>
+      <div class="team-row"><div class="team-photo-placeholder">W</div><div><div class="t-name">Wayne Naldo</div><div class="t-role">Head of Design</div></div></div>
+      <div class="team-row"><div class="team-photo-placeholder">E</div><div><div class="t-name">Emma Garcia</div><div class="t-role">Head of Finance</div></div></div>
+      <div class="team-row"><div class="team-photo-placeholder">D</div><div><div class="t-name">Dante Nyugen</div><div class="t-role">Head of Video</div></div></div>
+      <div class="team-row"><div class="team-photo-placeholder">C</div><div><div class="t-name">Cooper</div><div class="t-role">Head of Security</div></div></div>
+      <div class="team-row"><div class="team-photo-placeholder">T</div><div><div class="t-name">Thula</div><div class="t-role">Head of Treats</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">Test Tube Marketing Ltd<br/><a href="https://www.testtubemarketing.com" target="_blank" rel="noopener">www.testtubemarketing.com</a></footer>
+
+<script>
+const sections=[...document.querySelectorAll('section[data-label]')];
+const nav=document.getElementById('navDots');
+sections.forEach((sec,i)=>{
+  const b=document.createElement('button');
+  b.className='dot'+(i===0?' active':'');
+  b.setAttribute('aria-label',sec.dataset.label);
+  b.onclick=()=>sec.scrollIntoView({behavior:'smooth',block:'start'});
+  nav.appendChild(b);
+});
+const dots=[...document.querySelectorAll('.dot')];
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const idx=sections.indexOf(entry.target);
+      dots.forEach(d=>d.classList.remove('active'));
+      if(dots[idx])dots[idx].classList.add('active');
+    }
+  });
+},{threshold:.45});
+sections.forEach(s=>obs.observe(s));
+const fiObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.12});
+document.querySelectorAll('.fi').forEach(el=>fiObs.observe(el));
+</script>
+</body>
+</html>
