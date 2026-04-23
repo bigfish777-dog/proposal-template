@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3X ROI Launch Partner Offer | Test Tube Marketing</title>
+  <meta name="description" content="A simple sales page based on Nick Fisher's 2023 launch partner letter. Triple your investment in 90 days, or pay nothing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #fcfaf5;
+      --ink: #1f1b18;
+      --muted: #6a625b;
+      --line: #d9d0c5;
+      --red: #b6332c;
+      --red-dark: #8f231d;
+      --card: #fffdf9;
+      --shadow: 0 24px 60px rgba(32, 23, 15, 0.08);
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(182, 51, 44, 0.06), transparent 28%),
+        linear-gradient(180deg, #f6f1e8 0%, var(--paper) 22%, #f7f3ec 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
+    .hero {
+      padding: 32px 0 72px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(139, 117, 91, 0.16);
+      box-shadow: var(--shadow);
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(0,0,0,0.025) 1px, transparent 1px);
+      background-size: 100% 40px;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .hero-inner {
+      position: relative;
+      padding: 44px clamp(22px, 4vw, 56px) 52px;
+      display: grid;
+      gap: 28px;
+    }
+
+    .scribble {
+      font-family: 'Caveat', cursive;
+      color: var(--red);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1;
+      transform: rotate(-3deg);
+      display: inline-block;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: end;
+    }
+
+    .brand {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      max-width: 12ch;
+    }
+
+    .subhead {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      max-width: 58ch;
+      color: #322b27;
+    }
+
+    .dash-box {
+      border: 2px dashed #bcae9f;
+      border-radius: 24px;
+      background: rgba(255, 253, 249, 0.88);
+      padding: 24px;
+    }
+
+    .scan-title {
+      font-weight: 800;
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .scan-list {
+      margin: 0;
+      padding-left: 22px;
+      display: grid;
+      gap: 10px;
+      font-size: 1.05rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(182, 51, 44, 0.25);
+    }
+    .btn-secondary {
+      border: 1px solid rgba(31, 27, 24, 0.14);
+      background: rgba(255,255,255,0.7);
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 0 0 64px;
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(139, 117, 91, 0.14);
+      border-radius: 28px;
+      padding: clamp(24px, 4vw, 40px);
+      box-shadow: 0 18px 40px rgba(32, 23, 15, 0.06);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4.2vw, 3.3rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      color: #312a25;
+      font-size: 1.08rem;
+      max-width: 62ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .mini-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .mini-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .mini-card p,
+    .mini-card li,
+    .result p { margin: 0; color: #3b342f; }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .result {
+      background: linear-gradient(180deg, #fff 0%, #fbf7f1 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      min-height: 100%;
+    }
+
+    .result strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--red-dark);
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .price {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .price .mini-card:first-child {
+      border-color: rgba(182, 51, 44, 0.28);
+      background: linear-gradient(180deg, #fff 0%, #fff6f5 100%);
+    }
+
+    .price-tag {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+      margin: 10px 0;
+      color: var(--red-dark);
+    }
+
+    .footer-cta {
+      text-align: center;
+      padding-bottom: 90px;
+    }
+
+    .footer-cta .section-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,248,246,0.94) 100%);
+    }
+
+    .tiny {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 920px) {
+      .result-grid,
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 16px; }
+      .hero-inner { padding: 26px 18px 34px; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="hero-inner">
+          <div class="meta">
+            <div>
+              <div class="scribble">Strictly limited offer</div>
+              <div class="brand">Test Tube Marketing</div>
+            </div>
+            <div class="note">From Nick “Big Fish” Fisher</div>
+          </div>
+
+          <div>
+            <h1>Give me 90 days and I’ll build you a campaign that can triple your investment.</h1>
+            <p class="subhead">And if I can’t triple your investment in 90 days or less, you don’t pay. Guaranteed.</p>
+          </div>
+
+          <div class="dash-box">
+            <p class="scan-title">The 6-second version</p>
+            <ol class="scan-list">
+              <li>For the first time in over 2 years, I’m taking on a small number of new clients.</li>
+              <li>If we work together, the goal is simple: <strong>3X your investment</strong>, or I refund 100% of the fee.</li>
+            </ol>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#cta">Apply for a launch partner spot</a>
+            <a class="btn btn-secondary" href="#proof">See the proof</a>
+          </div>
+          <div class="note">This offer is aimed at established businesses with an audience, an offer worth selling, and the appetite to move quickly.</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="section-card">
+          <h2>What this actually is</h2>
+          <p class="lead">This is a done-for-you launch and campaign service. Not “here’s a Loom and good luck”. We plan it, write it, build it, and help you launch it properly.</p>
+          <div class="grid-2">
+            <div class="mini-card">
+              <h3>What we handle</h3>
+              <ul class="clean">
+                <li>Campaign strategy and launch planning</li>
+                <li>Sales copy, landing pages, and email sequences</li>
+                <li>Pre-launch video scripting, shooting, and editing</li>
+                <li>Page build, funnel setup, and tech integration</li>
+                <li>Affiliate coordination and promotional support</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <h3>Why now</h3>
+              <p>I’ve spent the last couple of years mostly working with a small handful of retainer clients and referrals. Which is great for me, but not exactly ideal if you’d like to know what I can do. So I’m opening up a limited round of launch partner spots and backing it with a very un-hedged guarantee.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="wrap">
+        <div class="section-card">
+          <h2>Proof, not puff</h2>
+          <p class="lead">A few examples from the work behind the scenes. Not “we got loads of reach”. Actual money.</p>
+          <div class="result-grid">
+            <div class="result">
+              <strong>£101k</strong>
+              <p>Generated in 7 days for an online coach’s first ever 6-figure launch.</p>
+            </div>
+            <div class="result">
+              <strong>£17,664</strong>
+              <p>Added to monthly recurring revenue for a membership organisation within 3 months.</p>
+            </div>
+            <div class="result">
+              <strong>£34k</strong>
+              <p>Lifted a group coaching relaunch from £14.8k to £34k, and had to shut the campaign early.</p>
+            </div>
+            <div class="result">
+              <strong>£42.5k</strong>
+              <p>Generated in 5 days for Dale Pinnock, then repeated to reach £120k total.</p>
+            </div>
+            <div class="result">
+              <strong>£727k</strong>
+              <p>Produced by a book funnel campaign in Nick James’ business.</p>
+            </div>
+            <div class="result">
+              <strong>£200k+</strong>
+              <p>Collected from Aran Curry’s launch, after £70k landed in the first week alone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-card">
+          <h2>Who this is for</h2>
+          <div class="grid-2">
+            <div class="mini-card">
+              <h3>You’re a fit if…</h3>
+              <ul class="clean">
+                <li>Your business is already doing at least £100k a year.</li>
+                <li>You’ve got a product, programme, or service that’s genuinely good.</li>
+                <li>You already have an audience, ideally 10,000+ subscribers or an engaged following.</li>
+                <li>You’ve got a solid reputation in your niche.</li>
+                <li>You’re willing to move fast and launch quickly.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <h3>This is not for…</h3>
+              <p>Newbies, early-stage businesses, or anyone hoping a campaign will magically fix a weak offer. It won’t. This works best when the fundamentals are already there and the missing piece is the campaign.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-card">
+          <h2>The offer</h2>
+          <p class="lead">When this is offered publicly, the plan was to charge £15,000 + VAT, plus a share of revenue. For this original launch-partner version, the offer was intentionally lower in exchange for fresh case studies and up-to-date proof.</p>
+          <div class="price">
+            <div class="mini-card" style="flex:1 1 320px;">
+              <h3>Founding / beta rate</h3>
+              <div class="price-tag">£7,500 + VAT</div>
+              <p>Plus an agreed percentage of the revenue generated.</p>
+            </div>
+            <div class="mini-card" style="flex:1 1 320px;">
+              <h3>Guarantee</h3>
+              <div class="price-tag">3X ROI</div>
+              <p>If the campaign doesn’t triple your investment inside 90 days or less, the fee gets refunded. No messy small print energy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="footer-cta">
+      <div class="wrap">
+        <div class="section-card">
+          <div class="scribble">Don’t hang about</div>
+          <h2>Only 10 launch partner spots.</h2>
+          <p class="lead" style="margin-inline:auto;">This was designed as a tightly limited offer for established businesses that wanted a serious campaign built properly, fast. If you want to use this page as a live sales asset, the next step is to plug in the exact booking link or application route you want to send people to.</p>
+          <div class="cta-row" style="justify-content:center; margin-top: 24px;">
+            <a class="btn btn-primary" href="mailto:bigfish@testtubemarketing.com?subject=3X%20ROI%20Launch%20Partner">Enquire about this offer</a>
+            <a class="btn btn-secondary" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Back to top</a>
+          </div>
+          <p class="tiny" style="margin-top: 18px;">Built from the original late-2023 sales letter, simplified for web. Easy to swap the CTA for Calendly, Typeform, or a direct proposal flow.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
