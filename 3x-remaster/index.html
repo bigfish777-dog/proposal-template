@@ -1,0 +1,1469 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Give Me 90 Days - Nick 'Big Fish' Fisher · 2026 Remaster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Caveat:wght@400;500;600;700&family=Kalam:wght@400;700&family=Homemade+Apple&family=Reenie+Beanie&family=Shadows+Into+Light&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Bodoni+Moda:ital,wght@0,700;0,900;1,700;1,900&family=Abril+Fatface&family=DM+Serif+Display:ital@0;1&family=Anton&family=Rozha+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4ebd0;          /* aged yellow */
+    --paper-edge: #e7d9a8;
+    --ink: #1b1813;
+    --ink-soft: #3a342a;
+    --red: #c0281f;            /* red pen */
+    --red-deep: #901a12;
+    --highlight: #fff176;      /* yellow highlighter */
+    --body-font: 'Special Elite', 'Courier Prime', 'Courier New', monospace;
+    --display-font: 'Oswald', 'Impact', 'Arial Narrow', sans-serif;
+    --serif-font: 'Playfair Display', 'Times New Roman', serif;
+    --headline-font: 'Bodoni Moda', 'Didot', 'Times New Roman', serif;
+    --hand: 'Caveat', 'Kalam', cursive;
+    --hand-alt: 'Reenie Beanie', cursive;
+    --script: 'Homemade Apple', cursive;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: #2b2620;
+    color: var(--ink);
+    font-family: var(--body-font);
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============= PROGRESS BAR ============= */
+  .progress-bar {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 4px; background: rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+  .progress-bar__fill {
+    height: 100%; width: 0%;
+    background: var(--red);
+    transition: width 0.1s linear;
+  }
+
+  /* ============= PAPER ============= */
+  .page {
+    max-width: 820px;
+    margin: 32px auto;
+    background: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 10% 0%, rgba(0,0,0,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 95% 100%, rgba(0,0,0,0.10) 0%, transparent 60%),
+      radial-gradient(circle at 30% 40%, rgba(120,90,40,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 70% 70%, rgba(120,90,40,0.06) 0%, transparent 45%),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper-edge) 100%);
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.3),
+      0 20px 60px rgba(0,0,0,0.5),
+      inset 0 0 60px rgba(139,110,60,0.15);
+    padding: 56px 72px 64px;
+    position: relative;
+  }
+  /* paper grain */
+  .page::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      /* fine grain */
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.1 0 0 0 0.12 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+      /* larger-scale fibre mottling */
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='2' seed='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.22 0 0 0 0 0.08 0 0 0 0.40 0'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
+    background-size: 300px 300px, 600px 600px;
+    mix-blend-mode: multiply;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  /* coffee stain */
+  .page::after {
+    content: "";
+    position: absolute;
+    top: 42%; right: -20px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, transparent 55%, rgba(120,70,20,0.15) 58%, rgba(120,70,20,0.25) 62%, rgba(120,70,20,0.10) 70%, transparent 80%),
+      radial-gradient(circle, rgba(140,90,40,0.08) 0%, transparent 50%);
+    transform: rotate(-15deg);
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  /* Additional scattered coffee rings & stains (very subtle) */
+  .stain {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    z-index: 0;
+  }
+  .stain--ring {
+    background:
+      radial-gradient(circle, transparent 58%, rgba(110,65,15,0.18) 61%, rgba(110,65,15,0.30) 64%, rgba(110,65,15,0.12) 72%, transparent 82%);
+  }
+  .stain--splat {
+    background:
+      radial-gradient(circle, rgba(130,85,35,0.16) 0%, rgba(130,85,35,0.08) 45%, transparent 70%);
+    filter: blur(0.5px);
+  }
+  .stain--fleck {
+    background: radial-gradient(circle, rgba(90,55,20,0.35) 0%, rgba(90,55,20,0.18) 55%, transparent 75%);
+  }
+
+  /* ============= PRE-HEADER STRIP ============= */
+  .preheader {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 3px double var(--red);
+    border-bottom: 3px double var(--red);
+    padding: 6px 0;
+    margin-bottom: 24px;
+    font-family: var(--display-font);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--red);
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .preheader span::before { content: "★ "; font-size: 0.9em; }
+  .preheader span::after { content: " ★"; font-size: 0.9em; }
+
+  /* ============= MASTHEAD ============= */
+  .masthead { text-align: center; margin-bottom: 32px; position: relative; z-index: 2; }
+  .masthead .kicker {
+    font-family: var(--hand);
+    font-size: 24px;
+    color: var(--red);
+    transform: rotate(-1.5deg);
+    display: inline-block;
+    margin-bottom: -6px;
+  }
+  .masthead h1 {
+    font-family: var(--headline-font);
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 1.02;
+    color: var(--ink);
+    margin: 6px 0 16px;
+    letter-spacing: -0.015em;
+  }
+  .masthead h1 em {
+    font-style: italic;
+    color: var(--red-deep);
+  }
+  .masthead .subhead {
+    font-family: var(--display-font);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.3;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    max-width: 640px;
+    margin: 0 auto 8px;
+  }
+  .masthead .subhead .red { color: var(--red); }
+  .masthead .byline {
+    font-family: var(--body-font);
+    font-size: 17px;
+    margin-top: 24px;
+    border-top: 1px solid rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    padding: 6px 0;
+    display: inline-block;
+    padding-left: 18px; padding-right: 18px;
+  }
+  .masthead .byline strong { font-weight: 700; }
+
+  /* ============= LETTER BODY ============= */
+  .letter { font-family: var(--body-font); color: var(--ink); }
+  .letter p { margin: 0 0 18px; }
+  .letter p.salutation {
+    font-family: var(--hand);
+    font-size: 30px;
+    color: var(--ink);
+    transform: rotate(-0.5deg);
+    margin-bottom: 6px;
+  }
+
+  /* drop cap */
+  .dropcap::first-letter {
+    font-family: var(--serif-font);
+    font-weight: 900;
+    font-size: 64px;
+    float: left;
+    line-height: 0.9;
+    padding: 6px 10px 0 0;
+    color: var(--red-deep);
+  }
+
+  /* highlighter */
+  .hl {
+    background: linear-gradient(180deg, transparent 10%, var(--highlight) 10%, var(--highlight) 88%, transparent 88%);
+    padding: 0 2px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  body.no-hl .hl { background: transparent; }
+
+  /* red underline (wavy) */
+  .underline {
+    text-decoration: underline wavy var(--red);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+  }
+  .underline-straight {
+    position: relative;
+  }
+  .underline-straight::after {
+    content: "";
+    position: absolute;
+    left: -2px; right: -2px; bottom: -2px;
+    height: 3px;
+    background: var(--red);
+    transform: skewX(-8deg) scaleY(1);
+    border-radius: 2px;
+  }
+
+  /* red circle around text */
+  .red-circle {
+    position: relative;
+    display: inline-block;
+    padding: 2px 8px;
+    --ring-rot: -3deg;
+  }
+  .red-circle::before {
+    content: "";
+    position: absolute;
+    inset: -6px -10px;
+    border: 2.5px solid var(--red);
+    border-radius: 50%;
+    transform: rotate(var(--ring-rot)) scaleX(1.15);
+    pointer-events: none;
+  }
+
+  /* Loop that sits BEHIND text, no layout impact */
+  .ring-behind {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+  }
+  .ring-behind::before {
+    content: "";
+    position: absolute;
+    top: -8px; bottom: -8px; left: -14px; right: -14px;
+    border: 2.5px solid var(--red);
+    border-radius: 50%;
+    transform: rotate(-3deg) scaleX(0.97);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* red strong */
+  .letter strong { font-weight: 700; }
+  .letter .red { color: var(--red); }
+  .letter em.hand { font-family: var(--hand); font-style: normal; font-size: 1.2em; color: var(--red); }
+
+  /* Inline callout - paragraph that stands out like a margin note box */
+  .letter p.callout {
+    font-family: var(--hand);
+    font-size: 26px;
+    line-height: 1.35;
+    color: var(--ink);
+    background: rgba(255,241,118,0.55);
+    border-top: 2px solid var(--red);
+    border-bottom: 2px solid var(--red);
+    padding: 14px 20px 12px;
+    margin: 22px -10px;
+    transform: rotate(-0.4deg);
+    position: relative;
+  }
+  .letter p.callout strong {
+    color: var(--red-deep);
+    font-weight: 700;
+  }
+  body.no-hl .letter p.callout { background: rgba(255,255,255,0.35); }
+
+  /* Inline subheads (the little "headlines" between paragraphs) */
+  .inline-head {
+    text-align: center;
+    font-family: var(--headline-font);
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 36px 0 18px;
+  }
+  .inline-head .red { color: var(--red-deep); font-style: italic; }
+  .inline-head.small { font-size: 22px; }
+
+  /* Pull quote / big-number callout */
+  .pullquote {
+    margin: 28px -12px;
+    padding: 22px 28px 20px 28px;
+    background: rgba(255,255,255,0.35);
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+  }
+  .pullquote .big-num {
+    font-family: var(--serif-font);
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--red-deep);
+    letter-spacing: -0.01em;
+  }
+  .pullquote .big-num small {
+    font-family: var(--body-font);
+    font-size: 16px;
+    color: var(--ink);
+    font-weight: 400;
+    display: block;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .pullquote .attr {
+    font-family: var(--hand);
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
+  /* Results list with ticks */
+  ul.hits {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 22px;
+  }
+  ul.hits li {
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 14px;
+  }
+  ul.hits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0; top: -4px;
+    color: var(--red);
+    font-size: 26px;
+    font-weight: 700;
+    font-family: var(--hand);
+    transform: rotate(-8deg);
+  }
+
+  /* Bullet list with red check */
+  ul.bullets {
+    list-style: none; padding: 0; margin: 14px 0 22px;
+  }
+  ul.bullets li {
+    position: relative; padding-left: 32px; margin-bottom: 14px;
+    line-height: 1.55;
+  }
+  ul.bullets li::before {
+    content: "›";
+    position: absolute; left: 0; top: 0;
+    color: var(--red);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  /* criteria list (numbered) */
+  ol.criteria {
+    counter-reset: c;
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 22px;
+  }
+  ol.criteria li {
+    counter-increment: c;
+    position: relative;
+    padding-left: 52px;
+    margin-bottom: 22px;
+    line-height: 1.55;
+    min-height: 36px;
+  }
+  ol.criteria li::before {
+    content: counter(c, decimal-leading-zero);
+    position: absolute; left: 0; top: 0;
+    font-family: var(--display-font);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--red);
+    border: 2px solid var(--red);
+    padding: 1px 6px;
+    line-height: 1.2;
+    transform: rotate(-2deg);
+  }
+
+  /* "NOTHING" giant word */
+  .nothing {
+    text-align: center;
+    font-family: 'Oswald', 'Impact', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 120px;
+    letter-spacing: 0.04em;
+    color: var(--red-deep);
+    line-height: 1;
+    margin: 12px 0 22px;
+    transform: rotate(-1deg);
+    text-transform: uppercase;
+  }
+  .nothing span {
+    display: inline-block;
+    border-bottom: 5px solid var(--red);
+    padding-bottom: 4px;
+    transform: skewX(-4deg);
+  }
+
+  /* Guarantee seal */
+  .guarantee {
+    float: right;
+    width: 200px;
+    height: 200px;
+    margin: 0 -30px 12px 24px;
+    position: relative;
+    transform: rotate(8deg);
+    shape-outside: circle(50%);
+  }
+
+  /* Client cards (small pull boxes w/ placeholder portraits) */
+  .client-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: rgba(255,255,255,0.3);
+    border: 1.5px solid var(--ink);
+    padding: 14px;
+    margin: 18px 0;
+    position: relative;
+  }
+  .client-card .avatar {
+    flex: 0 0 72px;
+    width: 72px; height: 88px;
+    background: #c9b887;
+    border: 1.5px solid var(--ink);
+    display: grid; place-items: center;
+    font-family: var(--hand);
+    font-size: 40px;
+    color: var(--ink-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .client-card .avatar img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: sepia(0.18) saturate(0.85) contrast(0.95);
+    mix-blend-mode: multiply;
+  }
+  .client-card .avatar::after {
+    content: "PHOTO";
+    position: absolute;
+    bottom: -18px; left: 50%; transform: translateX(-50%);
+    font-family: var(--body-font);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    background: var(--paper);
+    padding: 0 4px;
+  }
+  .client-card .meta {
+    font-family: var(--body-font);
+    font-size: 16px;
+  }
+  .client-card .meta .name {
+    font-family: var(--serif-font);
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .client-card .meta .num {
+    font-family: var(--serif-font);
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--red-deep);
+    line-height: 1.1;
+  }
+
+  /* ============= 2026 UPDATE BANNER ============= */
+  .update-banner {
+    margin: 40px -12px 24px;
+    padding: 18px 24px 16px;
+    background: rgba(255,255,255,0.35);
+    border-top: 3px double var(--ink);
+    border-bottom: 3px double var(--ink);
+    position: relative;
+    text-align: center;
+  }
+  .update-banner .stamp {
+    position: absolute;
+    top: -22px; right: 20px;
+    font-family: var(--display-font);
+    font-weight: 700;
+    color: #fff7e0;
+    background: var(--red);
+    padding: 6px 14px;
+    letter-spacing: 0.18em;
+    font-size: 13px;
+    transform: rotate(3deg);
+    border: 2px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+  }
+  .update-banner h2 {
+    font-family: var(--serif-font);
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .update-banner h2 .red { color: var(--red-deep); font-style: italic; }
+  .update-banner p {
+    font-family: var(--hand);
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ============= TESTIMONIAL GRID ============= */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 22px 0 28px;
+  }
+  .testi {
+    background: rgba(255,255,255,0.4);
+    border: 1.5px solid var(--ink);
+    padding: 16px 16px 14px;
+    position: relative;
+    box-shadow: 3px 3px 0 rgba(27,24,19,0.15);
+    display: flex; flex-direction: column;
+  }
+  .testi:nth-child(3n)   { transform: rotate(-0.4deg); }
+  .testi:nth-child(3n+1) { transform: rotate(0.3deg); }
+  .testi:nth-child(3n+2) { transform: rotate(-0.2deg); }
+
+  .testi .headline {
+    font-family: var(--display-font);
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    border-bottom: 1.5px solid var(--red);
+    padding-bottom: 6px;
+  }
+  .testi .quote {
+    font-family: var(--body-font);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+  .testi .quote::before { content: "\201C"; font-family: var(--serif-font); font-size: 22px; color: var(--red); margin-right: 2px; font-weight: 700; }
+  .testi .quote::after  { content: "\201D"; font-family: var(--serif-font); font-size: 22px; color: var(--red); margin-left: 2px; font-weight: 700; }
+  .testi .who {
+    display: flex; gap: 10px; align-items: center;
+    border-top: 1px dashed rgba(0,0,0,0.3);
+    padding-top: 10px;
+    margin-top: auto;
+  }
+  .testi .who .mini-ava {
+    flex: 0 0 36px;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: #c9b887;
+    border: 1.5px solid var(--ink);
+    display: grid; place-items: center;
+    font-family: var(--hand);
+    font-weight: 700;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+  .testi .who .name {
+    font-family: var(--serif-font);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .testi .who .co {
+    font-family: var(--body-font);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  /* Featured (full-width) testi */
+  .testi.featured {
+    grid-column: 1 / -1;
+    background: rgba(255,241,118,0.25);
+    border-width: 2px;
+  }
+  .testi.featured .headline { font-size: 18px; }
+  .testi.featured .quote { font-size: 16px; }
+
+  @media (max-width: 700px) {
+    .testi-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============= TEAM STRIP ============= */
+  .team-strip {
+    margin: 30px 0;
+    padding: 22px 24px 20px;
+    background:
+      repeating-linear-gradient(135deg, rgba(0,0,0,0.03) 0 10px, transparent 10px 20px),
+      rgba(255,255,255,0.28);
+    border: 2px solid var(--ink);
+    position: relative;
+  }
+  .team-strip::before {
+    content: "P.P.S.";
+    position: absolute;
+    top: -14px; left: 20px;
+    background: var(--paper);
+    padding: 0 10px;
+    font-family: var(--serif-font);
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--red-deep);
+    letter-spacing: 0.04em;
+  }
+  .team-strip h3 {
+    font-family: var(--serif-font);
+    font-weight: 900;
+    font-size: 24px;
+    margin: 0 0 10px;
+    color: var(--ink);
+  }
+  .team-strip p { margin: 0 0 10px; }
+  .team-strip .roster {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .team-strip .member {
+    text-align: center;
+    font-family: var(--body-font);
+    font-size: 13px;
+    line-height: 1.3;
+  }
+  .team-strip .member .mini-ava {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: #c9b887;
+    border: 2px solid var(--ink);
+    display: grid; place-items: center;
+    font-family: var(--hand);
+    font-weight: 700;
+    color: var(--ink-soft);
+    font-size: 20px;
+    margin: 0 auto 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .team-strip .member .mini-ava img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: sepia(0.18) saturate(0.85) contrast(0.95);
+    mix-blend-mode: multiply;
+  }
+  .team-strip .member .role {
+    font-family: var(--body-font);
+    color: var(--ink-soft);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .team-strip .member strong {
+    font-family: var(--serif-font);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  @media (max-width: 700px) {
+    .team-strip .roster { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Step boxes */
+  .step {
+    border: 2px solid var(--ink);
+    padding: 20px 24px 18px;
+    margin: 18px 0;
+    background: rgba(255,255,255,0.22);
+    position: relative;
+  }
+  .step .step-label {
+    position: absolute;
+    top: -14px; left: 18px;
+    background: var(--red);
+    color: #fff7e0;
+    font-family: var(--display-font);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 4px 12px;
+    font-size: 14px;
+    transform: rotate(-1deg);
+  }
+  .step h3 {
+    font-family: 'Oswald', 'Impact', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin: 4px 0 10px;
+  }
+
+  /* Signature */
+  .sig {
+    font-family: var(--script);
+    font-size: 48px;
+    color: #1b3a7a;
+    line-height: 1;
+    margin: 14px 0 4px;
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+  .sig-name {
+    font-family: var(--body-font);
+    font-size: 17px;
+  }
+
+  /* P.S. */
+  .ps {
+    margin-top: 32px;
+    padding-top: 18px;
+    border-top: 2px dashed var(--ink);
+  }
+  .ps p::first-line {
+    font-weight: 700;
+  }
+  .ps-label {
+    font-family: 'Oswald', 'Impact', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--red-deep);
+  }
+
+  /* Note footer strip */
+  .note-strip {
+    margin-top: 30px;
+    padding: 16px 20px;
+    border: 2px solid var(--red);
+    background:
+      repeating-linear-gradient(
+        135deg,
+        rgba(192,40,31,0.06) 0 10px,
+        transparent 10px 20px
+      ),
+      rgba(255,220,160,0.25);
+    font-family: var(--body-font);
+    font-size: 16px;
+  }
+  .note-strip .label {
+    font-family: var(--display-font);
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  /* ============= MARGIN ANNOTATIONS ============= */
+  /* containers with annotations positioned outside the page */
+  .annot {
+    position: absolute;
+    font-family: var(--hand);
+    color: var(--red);
+    font-size: 22px;
+    line-height: 1.1;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(4px) rotate(var(--rot, -3deg));
+    transition: opacity 260ms ease, transform 260ms ease;
+    max-width: 180px;
+  }
+  .annot.left  { right: calc(100% + 14px); text-align: right; }
+  .annot.right { left: calc(100% + 14px); text-align: left; }
+
+  .annot-anchor {
+    position: relative;
+    cursor: help;
+  }
+  .annot-anchor::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 2px;
+    background: var(--red);
+    opacity: 0.3;
+    transition: opacity 200ms;
+  }
+  .annot-anchor:hover::after { opacity: 0.9; }
+  .annot-anchor:hover .annot,
+  .annot-anchor:focus .annot { opacity: 1; transform: translateY(0) rotate(var(--rot, -3deg)); }
+
+  /* Always visible annotations (when tweak is on) */
+  body.annot-always .annot { opacity: 1; transform: translateY(0) rotate(var(--rot, -3deg)); }
+
+  /* arrow SVG */
+  .annot svg.arrow {
+    position: absolute;
+    top: 50%;
+    width: 60px; height: 20px;
+    overflow: visible;
+  }
+  .annot.left  svg.arrow { left: 100%; }
+  .annot.right svg.arrow { right: 100%; transform: scaleX(-1); }
+
+  /* Always-visible margin scribbles (red pen notes) */
+  .scribble {
+    position: absolute;
+    font-family: var(--hand);
+    color: var(--red);
+    font-size: 24px;
+    line-height: 1.1;
+    max-width: 180px;
+    pointer-events: none;
+    transform: rotate(var(--rot, -4deg));
+  }
+  .scribble.left  { right: calc(100% + 18px); top: 0; text-align: right; }
+  .scribble.right { left: calc(100% + 18px);  top: 0; text-align: left;  }
+  .scribble svg.arrow {
+    position: absolute;
+    top: 50%;
+    width: 60px; height: 22px;
+    overflow: visible;
+  }
+  .scribble.left  svg.arrow { left: 100%; }
+  .scribble.right svg.arrow { right: 100%; transform: scaleX(-1); }
+  @media (max-width: 900px) {
+    .scribble { display: none; }
+  }
+
+  /* Crossed-out number with red X */
+  .crossed-out {
+    position: relative;
+    display: inline-block;
+    padding: 0 2px;
+  }
+  .crossed-out::before,
+  .crossed-out::after {
+    content: "";
+    position: absolute;
+    left: -4px; right: -4px;
+    top: 50%;
+    height: 3px;
+    background: var(--red);
+    border-radius: 2px;
+    transform-origin: center;
+    opacity: 0.92;
+  }
+  .crossed-out::before { transform: translateY(-50%) rotate(22deg); }
+  .crossed-out::after  { transform: translateY(-50%) rotate(-22deg); }
+
+  /* Handwritten scribble sitting above an element */
+  .has-scribble-above { position: relative; }
+  .scribble-above {
+    position: absolute;
+    bottom: calc(100% - 6px);
+    left: 8px;
+    font-family: var(--hand);
+    color: var(--red);
+    font-size: 26px;
+    line-height: 1;
+    transform: rotate(-3deg);
+    transform-origin: left bottom;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  /* Inline scribble that sits on its own line below the parent text */
+  .scribble-below {
+    display: block;
+    font-family: var(--hand);
+    color: var(--red);
+    font-size: 22px;
+    line-height: 1.1;
+    margin-top: 6px;
+    transform: rotate(var(--rot, -2deg));
+    transform-origin: left center;
+    white-space: nowrap;
+  }
+
+  /* ============= STICKY CTA ============= */
+  .sticky-cta {
+    position: fixed;
+    left: 50%;
+    bottom: max(16px, env(safe-area-inset-bottom, 16px));
+    transform: translateX(-50%) translateY(calc(100% + 40px));
+    background: var(--red);
+    color: #fff7e0;
+    font-family: var(--display-font);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 24px;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35), 0 2px 6px rgba(0,0,0,0.25);
+    display: flex; align-items: center; gap: 14px;
+    z-index: 900;
+    transition: transform 320ms cubic-bezier(.2,.9,.3,1);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .sticky-cta.visible { transform: translateX(-50%) translateY(0); }
+  .sticky-cta .pill {
+    background: rgba(255,255,255,0.18);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+  }
+  .sticky-cta .arrow { font-size: 20px; line-height: 1; }
+
+  /* ============= CTA BUTTON ============= */
+  .cta-block {
+    text-align: center;
+    margin: 36px 0 20px;
+  }
+  .cta {
+    display: inline-block;
+    background: var(--red);
+    color: #fff7e0;
+    font-family: var(--display-font);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 18px 34px;
+    border: none;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition: transform 120ms, box-shadow 120ms;
+    border-radius: 2px;
+  }
+  .cta:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+  .cta:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--ink); }
+  .cta .small { display: block; font-size: 12px; font-weight: 400; opacity: 0.85; margin-top: 4px; letter-spacing: 0.2em; }
+
+  .cta-sub {
+    font-family: var(--hand);
+    color: var(--red);
+    font-size: 22px;
+    margin-top: 10px;
+    transform: rotate(-1deg);
+  }
+
+  /* Image placeholder boxes (inline, for client portraits) */
+  .inline-photo {
+    display: inline-block;
+    width: 72px; height: 90px;
+    background: #b8a273;
+    border: 2px solid var(--ink);
+    vertical-align: middle;
+    margin: 0 8px;
+    position: relative;
+  }
+  .inline-photo::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 50%; top: 50%; transform: translate(-50%,-50%);
+    font-family: var(--body-font);
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+
+  /* ============= RESPONSIVE ============= */
+  @media (max-width: 900px) {
+    .page { margin: 0; padding: 36px 24px 48px; }
+    .masthead h1 { font-size: 36px; }
+    .masthead .subhead { font-size: 17px; }
+    .nothing { font-size: 80px; }
+    .guarantee { float: none; display: block; margin: 0 auto 18px; }
+    .annot { display: none; }  /* hide annotations on mobile */
+    .inline-head { font-size: 22px; }
+    body { font-size: 17px; }
+    .page::after { display: none; }
+  }
+
+  /* Headline font tweaks — some are condensed sans that need tighter leading */
+  body.hl-anton .masthead h1, body.hl-anton .inline-head { letter-spacing: 0.01em; font-weight: 400; }
+  body.hl-anton .masthead h1 { font-size: 60px; line-height: 1.0; text-transform: uppercase; }
+  body.hl-anton .inline-head { font-size: 34px; text-transform: uppercase; }
+
+  body.hl-oswald .masthead h1 { font-size: 58px; line-height: 1.0; text-transform: uppercase; letter-spacing: 0.01em; font-weight: 700; }
+  body.hl-oswald .inline-head { font-size: 32px; text-transform: uppercase; letter-spacing: 0.01em; font-weight: 700; }
+
+  body.hl-abril .masthead h1 { font-size: 50px; letter-spacing: -0.02em; font-weight: 400; }
+  body.hl-abril .inline-head { font-size: 30px; font-weight: 400; }
+
+  body.hl-dm .masthead h1 { font-size: 54px; letter-spacing: -0.01em; font-weight: 400; }
+  body.hl-dm .inline-head { font-weight: 400; }
+
+  body.hl-rozha .masthead h1 { font-size: 54px; font-weight: 400; }
+  body.hl-rozha .inline-head { font-weight: 400; }
+
+  /* Paper color variants */
+  body.paper-white {
+    --paper: #fcfaf4;
+    --paper-edge: #f4f0e1;
+  }
+  body.paper-cream {
+    --paper: #f3e7c9;
+    --paper-edge: #e6d5a6;
+  }
+  body.paper-aged {
+    --paper: #eedfb3;
+    --paper-edge: #ddc893;
+  }
+
+  /* ============= MOBILE ============= */
+  @media (max-width: 700px) {
+    body { font-size: 16px; line-height: 1.6; }
+    .page { padding: 24px 20px 32px; margin: 12px auto; }
+    .masthead h1 { font-size: 32px !important; line-height: 1.1 !important; letter-spacing: -0.01em !important; }
+    body.hl-anton .masthead h1,
+    body.hl-oswald .masthead h1 { font-size: 34px !important; line-height: 1.05 !important; }
+    body.hl-abril .masthead h1,
+    body.hl-dm .masthead h1,
+    body.hl-rozha .masthead h1 { font-size: 30px !important; }
+    .masthead .subhead { font-size: 16px !important; line-height: 1.35 !important; }
+    .masthead .kicker { font-size: 18px !important; }
+    .inline-head { font-size: 22px !important; line-height: 1.2 !important; }
+    body.hl-anton .inline-head,
+    body.hl-oswald .inline-head { font-size: 24px !important; }
+    .nothing { font-size: 72px !important; }
+    .preheader { font-size: 10px !important; letter-spacing: 0.1em; justify-content: center; }
+    .preheader span:nth-child(1),
+    .preheader span:nth-child(3) { display: none; }
+    .guarantee { float: none; margin: 12px auto; display: block; width: 150px; height: 150px; }
+    .guarantee svg { width: 150px; height: 150px; }
+    .scribble-above { font-size: 20px !important; }
+    .scribble-below { font-size: 18px !important; white-space: normal !important; }
+    .sticky-cta { font-size: 13px !important; padding: 10px 16px !important; gap: 8px; white-space: nowrap; max-width: calc(100vw - 24px); }
+    .sticky-cta > span { white-space: nowrap; }
+    .sticky-cta .pill { padding: 1px 6px !important; font-size: 12px !important; }
+  }
+
+</style>
+</head>
+<body class="paper-aged">
+
+<div class="progress-bar"><div class="progress-bar__fill" id="progressFill"></div></div>
+
+<div class="page">
+  <!-- Scattered aging: very subtle coffee rings, splats, specks -->
+  <div class="stain stain--ring"   style="top: 8%;  left: -40px; width: 160px; height: 160px; transform: rotate(12deg); opacity: 0.45;"></div>
+  <div class="stain stain--splat"  style="top: 22%; right: 60px; width: 180px; height: 140px; transform: rotate(-8deg); opacity: 0.35;"></div>
+  <div class="stain stain--ring"   style="top: 58%; left: 55%; width: 110px; height: 110px; transform: rotate(-22deg); opacity: 0.25;"></div>
+  <div class="stain stain--splat"  style="top: 74%; left: -30px; width: 210px; height: 170px; transform: rotate(18deg); opacity: 0.32;"></div>
+  <div class="stain stain--ring"   style="top: 88%; right: -30px; width: 130px; height: 130px; transform: rotate(6deg); opacity: 0.35;"></div>
+  <div class="stain stain--fleck"  style="top: 15%; left: 40%; width: 6px; height: 6px; opacity: 0.6;"></div>
+  <div class="stain stain--fleck"  style="top: 31%; left: 18%; width: 4px; height: 4px; opacity: 0.5;"></div>
+  <div class="stain stain--fleck"  style="top: 45%; left: 82%; width: 5px; height: 5px; opacity: 0.55;"></div>
+  <div class="stain stain--fleck"  style="top: 63%; left: 28%; width: 4px; height: 4px; opacity: 0.45;"></div>
+  <div class="stain stain--fleck"  style="top: 81%; left: 64%; width: 5px; height: 5px; opacity: 0.5;"></div>
+  <div class="stain stain--fleck"  style="top: 93%; left: 12%; width: 6px; height: 6px; opacity: 0.55;"></div>
+
+  <div class="preheader">
+    <span>Strictly limited offer</span>
+    <span>Strictly limited offer</span>
+    <span>Strictly limited offer</span>
+  </div>
+
+  <header class="masthead">
+    <div class="kicker">The 2026 Remaster of our £100k Sales Letter (from 2023)</div>
+    <h1>Give Us 90 Days<br/>And I'll Build You a <em>"Timeless"</em> Campaign<br/>That Will Generate Sales for Years to Come</h1>
+    <div class="subhead">And If We Can't <span class="red ring-behind">TRIPLE</span> Your Investment in 90 Days<br/>(Or Less), You Don't Pay. <span class="red">Guaranteed.</span></div>
+    <div class="byline">From: <strong>Nick 'Big Fish' Fisher</strong> &nbsp;·&nbsp; Test Tube Marketing &nbsp;·&nbsp; April 2026</div>
+  </header>
+
+  <div class="letter">
+
+    <p class="salutation">Alright good looking,</p>
+
+    <p class="dropcap">I usually prefer to slowly build up the intrigue and desire in my sales copy, rather than rush in with a big audacious promise.</p>
+
+    <p>But I want to make sure you read this letter - even if you're busier than a moth in a full wardrobe.</p>
+
+    <p>So here's the <span class="hl">6-second 'is this worth reading' synopsis</span>. So you can tell if it's worth you spending the next 4½ minutes on this page.</p>
+
+    <ol class="criteria" style="margin: 24px 0 24px;">
+      <li style="position:relative;"><strong>For the first time in over 2 years, I'm taking on new clients.</strong><span class="scribble-below" style="--rot:-2deg;">[2026 note: That was true back then!]</span></li>
+      <li><strong>The clients I work with will <span class="underline-straight">TRIPLE their investment, guaranteed</span></strong> (or I'll refund 100% of their money, no questions asked).</li>
+    </ol>
+
+    <p>Yeah, I know it's no Grant Cardone 10X promise, but I get that it's still a pretty bold statement to make.</p>
+
+    <p>Especially when you probably see hyped-up programmes and offers every single day, promising to make you a ton of money for very little effort.</p>
+
+    <p>So - <strong>why would I start a letter with a claim like that?</strong></p>
+
+    <p>Simple.</p>
+
+    <h2 class="inline-head">Because I <span class="red">CAN</span> (and <span class="red">WILL</span>)<br/>Back It Up… <span class="red">Right NOW.</span></h2>
+
+    <p>Despite spending my days drinking coffee and helping clients (from all manner of bizarre industries) attract more leads, convert more leads into buyers, and make more money, <span class="hl">I'm the first to admit I've done a fairly shit job of promoting my own services.</span></p>
+
+    <p>But there's a reason for that...</p>
+
+    <p><strong>Put simply: I've not needed to.</strong></p>
+
+    <p>I realise that might sound a bit stupid - <em>especially coming from some self-proclaimed 'marketing expert'</em> - but I can explain.</p>
+
+    <p>You see, I've enjoyed working with the <span class="underline">same half a dozen retainer clients</span> for the last 2 and a bit years.</p>
+
+    <p>And the regular 'one off' projects I've worked on have been for people who've actively sought me out - from recommendations from those I've helped generate more cash for.</p>
+
+    <p>As a result, I've not needed to attract new clients, so I've not <em><u>needed</u></em> to talk about the results my clients have been getting.</p>
+
+    <p class="callout">But I know I can't pull the wool over your eyes. <strong>You know what a sales letter looks like, and you know that's <span class="underline">exactly</span> what it is.</strong></p>
+
+    <p>And if I'm gonna make this sound compelling - <em>even if I am 'de-risking it' by offering a guarantee</em> - <em class="hand">I should probably share some results.</em></p>
+
+    <h2 class="inline-head small">So Here's a Small Example of<br/>What I've Been Doing <span class="red">'In Secret'</span> for My Clients…</h2>
+
+    <ul class="hits">
+      <li>Helped one online coach pull off his <strong>first ever 6-figure launch</strong> inside 7¼ days. <em>(For transparency, we did just over £101,000 in sales, but 6 figures is 6 figures, right?)</em></li>
+      <li>Helping a membership organisation add <strong>£17,664 to their monthly recurring revenue (MRR)</strong> in the space of 3 months.</li>
+      <li>Most recently, helped one client relaunch their group coaching programme and <strong>increase sales from £14.8k to £34,000</strong>. We actually had to 'turn off' the campaign a few days before the deadline, because he couldn't take on any more clients.</li>
+      <li>Plus a few 'high ticket' consulting gigs with a <strong>$3bn turnover FTSE100 company</strong>, and a couple of VC-funded startups in the automotive and sports-tech sectors.</li>
+    </ul>
+
+    <p>And yeah, all of that's pretty neat. Stuff I'd never have dreamt I'd be doing when I dropped out of uni and 'fell' into a marketing job some 11 or 12 years ago.</p>
+
+    <p>But for the past 6 months, there was a big part of me that knew I was just coasting.</p>
+
+    <p>And I realised it was time to do something about it.</p>
+
+    <p><strong>That's why I'm writing to you today…</strong></p>
+
+    <p>I'm partnering up with <span class="underline">Adam Ashburn</span> to beta-test a new Marketing Agency service (and we've been running some test projects for the last few months).</p>
+
+    <p>Ad and I have known each other for nearly a decade, and the model we're built the agency on is the same one we've used (independently) to help coaches, consultants and ‘expert’ businesses pull off 6- and 7-figure launches since 2010. <em class="hand">It works.</em> And our approach has been pretty simple.
+
+    <p><strong>In short, we plan out and execute entire tailor-made launch sequences:</strong></p>
+
+    <ul class="bullets">
+      <li>We write <span class="hl">dynamic copy that generates a TON of sales</span>… fast.</li>
+      <li>We script, shoot, and edit your pre-launch videos.</li>
+      <li>We write your emails.</li>
+      <li>We design and build your launch and integrate all the "techie" stuff.</li>
+      <li>We even get your affiliates fired up to mail like crazy for you.</li>
+    </ul>
+
+    <p><strong>You name it. We do it.</strong></p>
+
+    <p style="text-align: center;">I guess you could say, it's <span class="red-circle" style="--ring-rot: 1deg;"><strong>The ultimate DONE FOR YOU marketing service!</strong></span></p>
+
+    <h2 class="inline-head small">Here's What It Did<br/>For Our <span class="red">Early Clients</span>…</h2>
+
+    <div class="client-card">
+      <div class="avatar"><img src="images/dale.jpg" alt="Dale Pinnock" /></div>
+      <div class="meta">
+        <div class="name">Dale Pinnock</div>
+        <div>Dale teaches alternative health practitioners (chiropractors, physios, etc.) about nutrition and healthy eating, so they can add nutritional advice to their service offerings.</div>
+      </div>
+    </div>
+
+    <p>He used the <span class="hl"><strong>'5 Day Cash Campaign'</strong></span> to generate <strong>£42,500 in just 5 days</strong>, selling his Diploma course to his email list.</p>
+
+    <div class="pullquote">
+      <div class="big-num">£120,000+<small>Total since - same campaign, run 3 times</small></div>
+      <div class="attr">- Dale has since repeated it twice over.</div>
+    </div>
+
+    <p>The same approach has been working like gangbusters across our other launches too...</p>
+
+    <ul class="hits">
+      <li>The <strong>'Book Funnel'</strong> that generated <strong>£727,335</strong> in a single year.</li>
+      <li>The <strong>Facebook Challenge</strong> strategy that brought in <strong>£639,440</strong> across two.</li>
+    </ul>
+
+    <p>And then <strong>Aran Curry</strong> (Insight Education) leapt at the chance to have us run his latest launch for him.</p>
+
+    <p><strong>The result?</strong></p>
+
+    <div class="client-card">
+      <div class="avatar"><img src="images/aran.jpg" alt="Aran Curry" /></div>
+      <div class="meta">
+        <div class="name">Aran Curry</div>
+        <div class="num">£70k + £200k+</div>
+        <div>Over £70k collected within a week of launch. Another £200k+ (and counting) since then.</div>
+      </div>
+    </div>
+
+    <div class="update-banner">
+      <div class="stamp">2026 Update</div>
+      <h2>Since Then? <span class="red">A Whole Lot More.</span></h2>
+      <p>Here's just some of what the team has pulled off since we first sent this letter…</p>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi">
+        <div class="headline">£6K Per Month</div>
+        <p class="quote">When I heard the guys were starting a marketing agency, I KNEW I wanted to work with them. They've not only helped provide me with the strategic insights I was looking for, but helped me launch my membership programme which now generates over £6,000 per month - Thanks Ad and Fish!</p>
+        <div class="who"><div><div class="name">Mike Maher</div><div class="co">Take A Deep Breath</div></div></div>
+      </div>
+
+      <div class="testi">
+        <div class="headline">£30K in Recurring Revenue</div>
+        <p class="quote">On my first launch, Fish's emails performed so well, we not only had to open up more spots, we also had to 'close doors' early due to selling out. A few months later, the guys helped me launch my mobile app, and within 30 days, we'd signed up over 1,000 members paying £29.99 each.</p>
+        <div class="who"><div><div class="name">Steve Keane</div><div class="co">Kraft Coaching</div></div></div>
+      </div>
+
+      <div class="testi">
+        <div class="headline">Over £130,000 in New Business</div>
+        <p class="quote">I turned to Ad and Fish when my marketing manager took a new role, because I wanted to keep up my regular emails. I was stunned when the first 4 emails they wrote generated more calls and replies than anything we'd done previously! Since then, they've helped me generate over £130,000 in sales I can't recommend them enough.</p>
+        <div class="who"><div><div class="name">Kirsty Darkins</div><div class="co">KD Commercial</div></div></div>
+      </div>
+
+      <div class="testi">
+        <div class="headline">They Just Get It</div>
+        <p class="quote">It's safe to say that our 'basement pump' business isn't the most exciting, and is quite technical in its nature. But the team at TTM have been able to rapidly understand our offering, and craft compelling marketing that makes people take action. In fact, we had more replies to the first couple of emails they sent, than we'd had in all the emails in the entire 2 years prior.</p>
+        <div class="who"><div><div class="name">Ian Davies</div><div class="co">PPS Pumps</div></div></div>
+      </div>
+
+      <div class="testi featured">
+        <div class="headline">40% Growth Year on Year</div>
+        <p class="quote">I came to the Test Tube Marketing team not because I was struggling, but because I wanted to have a clearly defined marketing strategy in place. We've been working together almost 2 years now, and my revenue grew 40% vs last year, and I've just surpassed 7 figures for the first time ever. Thank you, TTM team!</p>
+        <div class="who"><div><div class="name">Tess Cope</div><div class="co">The Transformation Agency</div></div></div>
+      </div>
+
+      <div class="testi">
+        <div class="headline">6 Figures in Revenue</div>
+        <p class="quote">The first launch Ad, Fish and the team worked on with us generated over £30,000 in sales from a 5-Day Facebook Challenge. Better yet, we were able to leverage the assets they created and re-run the challenge multiple times, and generate a total of 6 figures in revenue.</p>
+        <div class="who"><div><div class="name">Aran Curry</div><div class="co">Insight Education</div></div></div>
+      </div>
+
+      <div class="testi">
+        <div class="headline">250 Calls Booked!</div>
+        <p class="quote">On the first campaign Fish and Ad ran for us, we'd set a target of booking 50 calls. The first 2 emails they sent exceeded our target, and we had over 250 calls booked in total. Plus we've been able to re-run the campaign since, and get even more calls booked!</p>
+        <div class="who"><div><div class="name">Michelle Clarke</div><div class="co">Veblen Directors</div></div></div>
+      </div>
+
+      <div class="testi">
+        <div class="headline">An Absolute Joy to Work With</div>
+        <p class="quote">What an amazing impact the Test Tube Marketing team has had on our business and more importantly on our thinking. Ad, Fish and Grace have been a total joy to work with and we all feel very inspired walking away from a session with these guys. We love their copywriting style and they get our tone of voice absolutely right.</p>
+        <div class="who"><div><div class="name">Richard Parsons</div><div class="co">Platinum Commercial Academy</div></div></div>
+      </div>
+
+      <div class="testi">
+        <div class="headline">I've Never Had a Response Like This</div>
+        <p class="quote">We've been sending emails to our database pretty consistently for years, but when the TTM team took over, we saw a difference in response almost immediately. More opens, more replies, and more prospects moving towards us - one of which has now turned into a massive contract for us!!</p>
+        <div class="who"><div><div class="name">Steve Hindley</div><div class="co">iNarrator</div></div></div>
+      </div>
+
+    </div>
+
+    <div class="team-strip">
+      <h3>Oh, and one more thing - <span style="color: var(--red-deep); font-style: italic;">it's not just me and Ad anymore.</span></h3>
+      <p>What started as a two-man beta-test has turned into a proper agency. We've built out a small but mighty team so we can hold the quality bar without slowing down. Same obsession with launches that <em>actually</em> convert - just more hands on deck.</p>
+      <div class="roster">
+        <div class="member">
+          <div class="mini-ava"><img src="images/nick.jpg" alt="Nick Fisher" /></div>
+          <strong>Nick Fisher</strong>
+          <div class="role">Creatives</div>
+        </div>
+        <div class="member">
+          <div class="mini-ava"><img src="images/adam.jpg" alt="Adam Ashburn" /></div>
+          <strong>Adam Ashburn</strong>
+          <div class="role">Strategy</div>
+        </div>
+        <div class="member">
+          <div class="mini-ava"><img src="images/grace.jpg" alt="Grace" /></div>
+          <strong>Grace</strong>
+          <div class="role">Campaign Lead</div>
+        </div>
+        <div class="member">
+          <div class="mini-ava"><img src="images/gabriella.jpg" alt="Gabriella" /></div>
+          <strong>Gabriella</strong>
+          <div class="role">Copy</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="inline-head" style="margin-bottom: 42px;">What's This Got To <span class="red">Do With You?</span></h2>
+
+    <p class="has-scribble-above" style="margin-bottom: 36px;"><span class="scribble-above">we can only take 2!</span><span class="hl"><strong>We're looking for <span class="crossed-out">10</span> clients to partner with</strong></span>, so we can make some serious money together before <span class="crossed-out">the end of the year</span>.<span class="scribble-below" style="--rot:-2deg; margin-top: 10px;">the summer holidays!</span></p>
+
+    <p>Realistically, we only want to work with people where we know we can make them <strong>£100k+ from a single launch</strong>.</p>
+
+    <p>So, clearly, <em class="hand">this is not for 'newbies'</em> or those who are in the early stages of their business.</p>
+
+    <p>In fact, we've decided on the following <span class="underline">strict criteria:</span></p>
+
+    <ol class="criteria">
+      <li>Your business must already be generating at least <strong><span class="crossed-out">£100k+</span></strong> <span style="font-family: var(--hand); color: var(--red); font-size: 28px; font-weight: 700; display: inline-block; transform: rotate(-2deg); vertical-align: -2px;">£500k+</span> <strong>in annual revenue</strong> <span style="font-family: var(--hand); color: var(--red); font-size: 22px; line-height: 1.2; display: inline-block; transform: rotate(-1deg); vertical-align: baseline;">- these are the businesses we get the best results for!</span></li>
+      <li>You must have a product/programme/service to sell. <strong>And it's got to be bloody good!</strong></li>
+      <li>You must have an audience/list. Preferably in the <strong>10,000+ subscriber range</strong>. This can be email, direct mail, or a highly engaged social media following.</li>
+      <li>You must have a <strong>good reputation</strong> in your field.</li>
+      <li>You must be up for working <strong>FAST</strong>. As soon as I take a client on I want them to launch and get paid as quickly as possible.</li>
+    </ol>
+
+    <h2 class="inline-head">"How Much<br/>Does It Cost?"</h2>
+
+    <p>Well, actually…</p>
+
+    <div class="nothing"><span>Nothing!</span></div>
+
+    <p style="text-align:center; font-family: var(--hand); font-size: 22px; color: var(--ink); margin-top: -6px;">(stay with me here)</p>
+
+    <p>You see, <strong>if you don't triple your investment, we don't get paid.</strong></p>
+
+    <p>Here's why…</p>
+
+    <p>This isn't some "here's how you do it" service. <span class="hl">We're going to be creating and building everything you need for a 6-figure campaign.</span></p>
+
+    <p>For these <span class="red-circle"><strong>2 people only</strong></span>, we're going to do everything for just <strong>£7,500+VAT</strong>, plus an agreed % of the revenue we bring in together.</p>
+
+    <p>And the reason it's just £7,500+VAT?</p>
+
+    <p>We want to collect up-to-date testimonials and case studies to show how well these strategies can work for <em class="hand">ANY</em> business, right now.</p>
+
+    <p><strong>That investment gets you EVERYTHING.</strong> Remember:</p>
+
+    <ul class="bullets">
+      <li>We'll plan out your entire tailor-made launch sequence.</li>
+      <li>We'll write dynamic copy that generates a TON of sales… fast.</li>
+      <li>We'll script, shoot, and edit your pre-launch videos.</li>
+      <li>We'll write your emails.</li>
+      <li>We'll design and build your launch and integrate all the "techie" stuff.</li>
+    </ul>
+
+    <p><strong>You name it. This is the ultimate <span class="underline">DONE FOR YOU</span> service!</strong></p>
+
+    <!-- Guarantee seal -->
+    <div class="guarantee" aria-hidden="true">
+      <svg viewBox="0 0 200 200" width="200" height="200">
+        <defs>
+          <path id="circlePath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" />
+        </defs>
+        <!-- outer scallop -->
+        <g transform="translate(100,100)">
+          <g>
+            <circle r="92" fill="#c0281f"/>
+            <circle r="92" fill="none" stroke="#fff7e0" stroke-width="1.5" stroke-dasharray="3 4"/>
+            <circle r="78" fill="#fff7e0"/>
+            <circle r="78" fill="none" stroke="#c0281f" stroke-width="1.5"/>
+            <circle r="70" fill="none" stroke="#c0281f" stroke-width="0.5" stroke-dasharray="1 2"/>
+          </g>
+        </g>
+        <text font-family="Oswald, Impact, sans-serif" font-size="13" font-weight="700" fill="#c0281f" letter-spacing="3">
+          <textPath href="#circlePath" startOffset="0%">TRIPLE YOUR INVESTMENT · OR 100% BACK ·&nbsp;</textPath>
+        </text>
+        <g transform="translate(100,100)" text-anchor="middle" fill="#1b1813" font-family="Playfair Display, serif">
+          <text y="-18" font-size="14" font-weight="700" letter-spacing="2">THE 3X</text>
+          <text y="8" font-size="34" font-weight="900" fill="#c0281f">3×</text>
+          <text y="32" font-size="11" font-weight="700" letter-spacing="2">GUARANTEE</text>
+          <text y="52" font-size="9" fill="#3a342a">90 days or your money back</text>
+        </g>
+      </svg>
+    </div>
+
+    <p>And the reason I say it costs you nothing is simple:</p>
+
+    <p><span class="hl"><strong>You will (at least) <span class="underline-straight">TRIPLE your investment</span>. Guaranteed.</strong></span></p>
+
+    <p><strong>If not, we'll give you 100% of your money back.</strong></p>
+
+    <p>The truth is, if we don't believe that <em>together</em> we'll pull in <strong>AT LEAST £100k+ fast</strong>… then we won't work with you.</p>
+
+    <div style="clear:both"></div>
+
+    <h2 class="inline-head">So Here's What You Need<br/>To Do <span class="red">Next…</span></h2>
+
+    <p>If you're interested in becoming one of our 2 launch partners, here's what you need to do next:</p>
+
+    <div class="step">
+      <div class="step-label">Step 1</div>
+      <h3>Book your Free 'Launch Discovery Call'</h3>
+      <p>Like I said, there are some strict criteria for the 2 businesses we'll be working with before the end of the year, so I'll need to ask a series of questions to be confident we can deliver you a meaningful result (that means <em>we both get paid!</em>).</p>
+      <p>There's no charge for this call - however I am asking you to pay a <strong>fully refundable deposit of £250+VAT</strong>.</p>
+      <p>This is just to <span class="hl">demonstrate your commitment</span>. The way I see it, if someone won't pay the £250 deposit to book the call, they're probably not that serious about partnering with us anyway.</p>
+      <p>When you book the discovery call, there's <strong>no obligation</strong> to work with us whatsoever. If either of us decide it's not the right fit, your deposit will be refunded to you immediately.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Step 2</div>
+      <h3>Attend your Free 'Launch Discovery Call'</h3>
+      <p>Like I said, on this call I'll ask you a bunch of questions about your business, and make some recommendations.</p>
+      <p><strong>Together we'll map out your launch campaign and set your launch date.</strong></p>
+      <p>Then one of two things will happen:</p>
+      <ol class="criteria" style="margin-top:10px;">
+        <li><strong>You'll love the plan, and decide to go ahead and execute it on your own.</strong><br/>If that's the case - no problem. We'll refund your deposit and wish you the best of luck! All I'd ask is that you keep us updated with your progress in the coming weeks and months.</li>
+        <li><strong>You'll love the plan, and decide to have us build and execute the launch FOR YOU.</strong><br/>In that case, you'll be asked to invest <strong>£7,500+VAT</strong> (less the £250 deposit) and we'll get moving as quickly as possible!</li>
+      </ol>
+      <p>Remember - <span class="hl"><strong>the goal is to generate a minimum of £100k within 3 months.</strong></span> When that happens - we all win!</p>
+    </div>
+
+    <div class="cta-block">
+      <a href="https://buy.stripe.com/cNi3cueHy8WI2n03Vo4Rq0c" target="_blank" rel="noopener" id="mainCta" class="cta">
+        Book My Discovery Call →
+        <span class="small">£250 fully refundable deposit · Limited to 2 spots</span>
+      </a>
+      <div class="cta-sub">(takes about 45 seconds)</div>
+    </div>
+
+    <p><strong>If you'd like to explore this further, go ahead and book your launch discovery call with me ASAP - just hit the button above.</strong></p>
+
+    <p style="margin-top: 24px;">Speak soon,</p>
+
+    <div class="sig">Nick</div>
+    <div class="sig-name">Nick 'Big Fish' Fisher</div>
+
+    <div class="ps">
+      <p><span class="ps-label">P.S.</span> &nbsp; At this point we're looking for <strong><span class="crossed-out">10</span></strong> <span style="font-family: var(--hand); color: var(--red); font-size: 26px; font-weight: 700; display: inline-block; transform: rotate(-2deg); vertical-align: -2px;">2</span> <strong>launch partners only</strong>, and we'll work with them on a <span class="underline">first come, first served</span> basis.</p>
+      <p>So if you want to get on the schedule, you need to book your discovery call <em class="hand">immediately.</em></p>
+      <p>Remember - if we decide to work together the intention is that we bring in <strong>£100k+</strong>. And the absolute minimum is we guarantee you'll <span class="hl"><strong>at least triple your investment, or your money back.</strong></span></p>
+    </div>
+
+  </div>
+</div>
+
+<!-- Sticky CTA -->
+<a href="https://buy.stripe.com/cNi3cueHy8WI2n03Vo4Rq0c" target="_blank" rel="noopener" class="sticky-cta" id="stickyCta">
+  <span>Claim one of <span class="pill">2 remaining</span> spots</span>
+  <span class="arrow">→</span>
+</a>
+
+<script>
+(function () {
+  // Bake in the chosen defaults from the design
+  document.body.classList.add('paper-aged', 'hl-oswald');
+  document.documentElement.style.setProperty('--headline-font', "'Oswald', 'Impact', 'Arial Narrow', sans-serif");
+
+  // Progress bar
+  var fill = document.getElementById('progressFill');
+  var sticky = document.getElementById('stickyCta');
+  function updateProgress() {
+    var h = document.documentElement;
+    var total = h.scrollHeight - h.clientHeight;
+    var pct = total > 0 ? (h.scrollTop / total) * 100 : 0;
+    fill.style.width = pct + '%';
+    sticky.classList.toggle('visible', pct > 18 && pct < 96);
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>
