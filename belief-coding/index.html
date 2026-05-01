@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jess Cunningham - Test Tube Marketing Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#E8185A;--teal:#4DD9D0;--white:#fff;--text:#2D2D2D;--muted:#6B7280;--light:#F5F6F8;--green:#1A5C4A;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+.cover{min-height:100vh;background:radial-gradient(ellipse at 65% 75%,#1A5C6B 0%,#0B2A45 45%,#060F1C 100%);color:white;padding:48px 56px;display:flex;flex-direction:column;justify-content:space-between;}
+.cover-date{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:16px;}
+.cover-logo{max-height:48px;width:auto;}
+.cover-h1{font-family:'Poppins',sans-serif;font-weight:900;font-size:clamp(52px,11vw,96px);line-height:.95;letter-spacing:-.03em;margin:56px 0 24px;}
+.cover-sub{font-size:clamp(15px,1.8vw,19px);color:var(--teal);line-height:1.6;max-width:540px;}
+.cover-credits{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px;}
+.credit-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin-bottom:6px;}
+.credit-name{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:var(--teal);}
+.sec{min-height:100vh;padding:96px 56px;display:flex;flex-direction:column;justify-content:center;}
+.sec-alt{background:var(--light);}
+.sec-h{font-family:'Poppins',sans-serif;font-size:clamp(32px,5vw,54px);font-weight:800;color:var(--pink);line-height:1.05;letter-spacing:-.02em;margin-bottom:36px;}
+.body{max-width:720px;font-size:clamp(15px,1.4vw,17px);line-height:1.8;}
+.body p{margin-bottom:18px;}.body p:last-child{margin-bottom:0;}.body strong{font-weight:600;}.body em{font-style:italic;}
+.callout{background:white;border-left:3px solid var(--pink);padding:18px 24px;border-radius:0 8px 8px 0;margin:24px 0;font-style:italic;font-size:16px;line-height:1.65;max-width:700px;}
+.sec-alt .callout{background:white;}
+.ws-tag{display:inline-block;background:var(--pink);color:white;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;letter-spacing:.04em;margin-bottom:10px;}
+.ws-title{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;margin-bottom:8px;}
+.ws-block{margin-top:28px;max-width:720px;}
+.dlist{list-style:none;display:flex;flex-direction:column;gap:13px;max-width:700px;margin-top:16px;}
+.dlist li{display:flex;align-items:flex-start;gap:10px;font-size:16px;line-height:1.65;}
+.dlist li::before{content:'*';color:var(--pink);font-weight:900;font-size:20px;line-height:1.3;flex-shrink:0;}
+.price-box{background:linear-gradient(135deg,#060F1C 0%,#0F3D5C 100%);border-radius:14px;padding:40px 48px;max-width:660px;margin-top:28px;color:white;}
+.price-box h3{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;color:var(--teal);margin-bottom:24px;}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:16px;gap:16px;}
+.price-row:last-of-type{border-bottom:none;}
+.price-row .lbl{color:rgba(255,255,255,.8);}.price-row .val{font-weight:700;font-size:19px;flex-shrink:0;}
+.price-note{margin-top:20px;font-size:13px;color:rgba(255,255,255,.6);line-height:1.65;}
+.steps{list-style:none;display:flex;flex-direction:column;gap:18px;max-width:680px;margin-top:24px;}
+.steps li{display:flex;align-items:flex-start;gap:14px;font-size:16px;line-height:1.65;}
+.step-n{width:34px;height:34px;border-radius:50%;background:var(--pink);color:white;font-family:'Poppins',sans-serif;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sign-off{margin-top:52px;font-size:16px;line-height:1.9;}
+.sign-off .name{font-weight:700;font-size:17px;margin-top:12px;display:block;}
+.sign-off .details{font-style:italic;display:block;font-size:15px;color:var(--muted);}
+.about-sec{background:white;}
+.about-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;max-width:960px;}
+.about-h{font-family:'Poppins',sans-serif;line-height:1.05;letter-spacing:-.02em;margin-bottom:24px;}
+.about-h .about-word{font-weight:300;font-style:italic;color:var(--muted);font-size:clamp(32px,4vw,46px);display:block;}
+.about-h .brand{font-weight:800;color:var(--pink);font-size:clamp(34px,4.5vw,50px);display:block;}
+.team-col{display:flex;flex-direction:column;}
+.team-header{font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-bottom:20px;}
+.team-row{display:flex;align-items:center;gap:14px;padding:6px 0;}
+.team-photo{width:54px;height:54px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #f0f0f0;}
+.t-name{font-weight:600;font-size:14px;}.t-role{font-size:12px;color:var(--muted);margin-top:1px;}
+.testi-sec{background:var(--light);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:36px;}
+.tcard{background:white;border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.tresult{font-family:'Poppins',sans-serif;font-size:19px;font-weight:800;color:var(--green);text-transform:uppercase;line-height:1.1;}
+.tquote{font-size:13.5px;line-height:1.65;font-style:italic;flex:1;}
+.tperson{display:flex;align-items:center;gap:10px;margin-top:8px;}
+.tphoto{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.tname{font-weight:700;font-size:13px;}.tco{font-size:12px;color:var(--muted);}
+.nav-dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px;z-index:100;}
+.dot{width:7px;height:7px;border-radius:50%;background:rgba(200,200,200,.5);cursor:pointer;border:none;padding:0;transition:all .2s;}
+.dot.active{background:var(--pink);transform:scale(1.5);}
+.footer{background:#060F1C;color:rgba(255,255,255,.4);text-align:center;padding:28px 24px;font-size:12px;line-height:1.8;}
+.footer a{color:rgba(255,255,255,.5);}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease;}
+.fi.vis{opacity:1;transform:translateY(0);}
+@media(max-width:768px){.cover{padding:32px 24px;}.sec{padding:64px 24px;min-height:auto;}.about-wrap{grid-template-columns:1fr;gap:36px;}.nav-dots{display:none;}}
+@media(max-width:520px){.price-box{padding:24px 20px;}.price-row{flex-direction:column;gap:2px;padding:10px 0;}.price-row .val{font-size:16px;}.price-row .lbl{font-size:13px;}}
+</style>
+</head>
+<body>
+<nav class="nav-dots" id="navDots"></nav>
+
+<!-- COVER -->
+<section class="cover" id="s0" data-label="Cover">
+<div><div class="cover-date"></div><img class="cover-logo" src="https://proposals.testtubemarketing.com/assets/ttm-logo.png" alt="Test Tube Marketing"/></div>
+<div><h1 class="cover-h1">Project<br/>Proposal</h1><p class="cover-sub">A proposal prepared exclusively for Jess Cunningham</p></div>
+<div class="cover-credits"><div><div class="credit-label">Presented to:</div><div class="credit-name">Jess Cunningham</div></div><div><div class="credit-label">Presented by:</div><div class="credit-name">Test Tube Marketing</div></div></div>
+</section>
+
+<!-- GENERATED SECTIONS -->
+<section class="sec" id="s1" data-label="My take">
+<div class="fi">
+<h2 class="sec-h">My take</h2>
+<div class="body">
+<p>Hey Jess,</p>
+<p>Thanks for filling the questionnaire so quickly. Properly thorough, properly useful. A few things stood out reading it back:</p>
+<ul class="dlist">
+<li>Sounds like you've spent the last four months getting your house in order. You're sitting on a 170k email list that's gone cold (but like you said, is probably a goldmine).</li>
+<li>You've got a Brunson-style paid challenge ready to launch in June.</li>
+<li>You've got two VSLs that need wrangling.</li>
+<li>And you want everything stable, scalable, and stress-free (understandable with the August deadline looming!)</li>
+</ul>
+<p>You also said this: "I'd like the rate to reflect the work you do and not the turnover that I do or the price points that I sell".</p>
+<p>Fair. That's how we've priced this, because we like to work with our clients for a long time, build proper relationships, and really embed with them - not have to go out and replace a client every 6 weeks.</p>
+<p>It's not dirt cheap - because there's lots to do and pretty quickly - but it's not inflated because you're turning over a couple of mil.</p>
+<p>So, without further ado, here's what we'll do for you...</p>
+</div>
+</div>
+</section>
+
+<section class="sec sec-alt" id="s2" data-label="The 90-day plan">
+<div class="fi">
+<h2 class="sec-h">The 90-day plan</h2>
+<div class="body">
+<p>You said the priorities are:</p>
+<ol class="steps">
+<li><div class="step-n">1</div><span>Consistent predictable cash flow through the VSL</span></li>
+<li><div class="step-n">2</div><span>The paid challenge launching in June (and automating it like Russell's)</span></li>
+<li><div class="step-n">3</div><span>Ecosystem and automation</span></li>
+</ol>
+<p>So that's how we'd structure the first 90 days. Three workstreams running in parallel, with the right people on each one, and everything aimed at having the engine humming by August.</p>
+
+<div class="ws-block">
+<div class="ws-tag">WORKSTREAM 1</div>
+<div class="ws-title">VSL cash flow (Weeks 1-4, then ongoing)</div>
+<p>Get one VSL converting consistently. Then get the second one launched. Then test, optimise, scale.</p>
+<ul class="dlist">
+<li>Audit the current VSL (the case-study-189788 one) and rewrite the messaging to land on your actual ICP, not the quick-win/mental-health audience it's currently chasing</li>
+<li>Build a new funnel for the new VSL you've just shot</li>
+<li>Set both up properly in GHL, with proper tracking, follow-up sequences, and a rebooking flow for no-shows</li>
+<li>Run paid traffic into both, A/B test, scale what works</li>
+</ul>
+<p>By the end of week 4 you should have at least one VSL converting predictably. By week 8 you've got two, and we know which one to scale.</p>
+</div>
+
+<div class="ws-block">
+<div class="ws-tag">WORKSTREAM 2</div>
+<div class="ws-title">The June paid challenge (Weeks 1-5)</div>
+<p>You've got the swipe files. We've got the team. We build it.</p>
+<ul class="dlist">
+<li>Full funnel build: free opt-in → £17 bump → £37 bump → £97-£147 VIP</li>
+<li>Email sequence across the welcome party, three challenge days, secret day 4, doors close, encore webinar</li>
+<li>Daily ads through the lead-in and during the challenge</li>
+<li>Pitch and re-pitch creatives</li>
+<li>Post-challenge instant wins amplification</li>
+<li>24-hour encore window setup</li>
+</ul>
+<p>Goal: be in profit before doors close. Same way you've done it before when you ran your own ads.</p>
+<p>Then we run it again in July, refined. Lovely.</p>
+</div>
+
+<div class="ws-block">
+<div class="ws-tag">WORKSTREAM 3</div>
+<div class="ws-title">Email reactivation and the ecosystem (Months 2-3)</div>
+<p>The 170k list isn't dead. It's dormant. Which is good news, because we've resuscitated more email lists than a good vet has hamsters.</p>
+<ul class="dlist">
+<li>Audit, segment, scrub, re-engage</li>
+<li>Get a proper broadcast cadence in place</li>
+<li>Build evergreen automations across the four facilitator programmes</li>
+<li>Connect everything in GHL so the ecosystem actually behaves like one ecosystem</li>
+</ul>
+<p>By August this is running on autopilot. So is the VSL traffic. So is the post-challenge nurture. You've got a baby coming. The marketing should keep going without you.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" id="s3" data-label="The team you're getting">
+<div class="fi">
+<h2 class="sec-h">The team you're getting</h2>
+<div class="body">
+<table>
+<tr><th>Workstream</th><th>Who's leading it</th></tr>
+<tr><td>Strategy and oversight</td><td>Ad & Fish</td></tr>
+<tr><td>VSL funnels and challenge build</td><td>Wayne (design/build) + Grace (backend/automation)</td></tr>
+<tr><td>Paid ads</td><td>Fish</td></tr>
+<tr><td>Email marketing and list reactivation</td><td>Gabriella (copy) + Grace (automation)</td></tr>
+<tr><td>Video editing for VSLs and social</td><td>Dante</td></tr>
+<tr><td>Account direction and 90-day reviews</td><td>Ad</td></tr>
+</table>
+<p>You'd be working with ALL of us. Not one of us. Mostly via WhatsApp and Slack, as you've asked. Weekly check-ins, monthly strategy reviews, in-person when it matters.</p>
+<p>Basically like having 1 employee who can do the work of 6 people. Without getting ripped off by National Insurance.</p>
+</div>
+</div>
+</section>
+
+<section class="sec sec-alt" id="s4" data-label="Two options">
+<div class="fi">
+<h2 class="sec-h">Two options</h2>
+<div class="body">
+<p>You asked for two quotes. Here they are.</p>
+
+<p style="font-weight:700;margin-top:16px;margin-bottom:4px;">Option 1: The five you ticked</p>
+<p>Funnels and landing pages, email marketing, paid ads, video editing, strategy and oversight. Everything in the 90-day plan above.</p>
+<div class="price-box">
+<h3>Option 1</h3>
+<div class="price-row"><span class="lbl">Monthly retainer</span><span class="val">£4,200+VAT</span></div>
+</div>
+<p>You handle workbooks, lead magnets, and AI automation in-house with the people you're bringing on.</p>
+
+<p style="font-weight:700;margin-top:16px;margin-bottom:4px;">Option 2: Full management</p>
+<p>Everything in option 1, plus:</p>
+<ul class="dlist">
+<li>Workbook and lead magnet design (Wayne)</li>
+<li>AI automation work (Fish)</li>
+<li>Anything design-led across digital products</li>
+</ul>
+<div class="price-box">
+<h3>Option 2</h3>
+<div class="price-row"><span class="lbl">Monthly retainer</span><span class="val">£4,850+VAT</span></div>
+</div>
+<p>You don't need me to tell you this genuinely cheaper than hiring the equivalent in-house role(s), and you don't have to wait for them to ramp.</p>
+</div>
+</div>
+</section>
+
+<section class="sec" id="s5" data-label="A note on the rate">
+<div class="fi">
+<h2 class="sec-h">A note on the rate</h2>
+<div class="body">
+<p>We mentioned on the page that our typical retainer sits between £2,500 and £4,000+VAT. The numbers above are slightly higher than that ceiling.</p>
+<p>Here's why: when I shared that range we hadn't seen the full scope. What you've actually asked for is bigger. Two VSL builds, a Brunson-style challenge, £100k+/month ad management, a 170k-list reactivation, ongoing optimisation, and an evergreen-by-August deadline.</p>
+<p>We could have quoted lower. We're not going to, because we'd rather be honest about what it takes than over-promise and under-deliver. You've worked with agencies who priced you on turnover. We're pricing you on work. £4,200/£4,850 is what this work properly costs.</p>
+<p>Ad spend is separate. Paid directly to the platforms. We don't markup or retain any of it.</p>
+</div>
+</div>
+</section>
+
+<section class="sec sec-alt" id="s6" data-label="What we don't do">
+<div class="fi">
+<h2 class="sec-h">What we don't do</h2>
+<div class="body">
+<p>So you know what's NOT included:</p>
+<ul class="dlist">
+<li>Sales calls and closing (you've got a sales team for that)</li>
+<li>Customer service or facilitator support (your team handles this)</li>
+<li>Training your in-house team in copywriting or AI (we'll work alongside Carrie and Dawn and will offer some guidance, but full-on training would be something we'd have to discuss)</li>
+<li>Coaching delivery, programme delivery, anything client-facing on the certification side</li>
+</ul>
+<p>We're a marketing department. We make the marketing work. The business is yours.</p>
+</div>
+</div>
+</section>
+
+<section class="sec" id="s7" data-label="The half-day next week">
+<div class="fi">
+<h2 class="sec-h">The half-day next week</h2>
+<div class="body">
+<p>You asked for a half-day. Two ways to do it:</p>
+<p style="font-weight:700;margin-top:16px;margin-bottom:4px;">Option A: Half-day BEFORE signing.</p>
+<p>£2,500+VAT, no commitment. We dig into the VSL, the challenge, the list. You leave with a 90-day plan you can use even if we don't continue. If you sign within two weeks, we credit the £2,500 against month one.</p>
+<p style="font-weight:700;margin-top:16px;margin-bottom:4px;">Option B: Half-day ON signing.</p>
+<p>Included as day one of the engagement. We use it to align on priorities and start building. No separate fee.</p>
+<p>Whichever fits how you want to play it.</p>
+</div>
+</div>
+</section>
+
+<section class="sec sec-alt" id="s8" data-label="Investment summary">
+<div class="fi">
+<h2 class="sec-h">Investment summary</h2>
+<div class="body">
+<table>
+<tr><th></th><th>Option 1</th><th>Option 2</th></tr>
+<tr><td>Monthly retainer</td><td>£4,200+VAT</td><td>£4,850+VAT</td></tr>
+<tr><td>Half-day pre-signing (optional)</td><td>£1,500+VAT (credited)</td><td>£1,500+VAT (credited)</td></tr>
+<tr><td>Ad spend</td><td>Paid directly to platform</td><td>Paid directly to platform</td></tr>
+<tr><td>Initial term</td><td>3 months</td><td>3 months</td></tr>
+<tr><td>After initial term</td><td>Rolling monthly, by mutual agreement</td><td>Rolling monthly, by mutual agreement</td></tr>
+</table>
+<p>Payment is monthly in advance. Standalone of deliverables - we agree the work in 90-day cycles, but you pay the retainer regardless of which campaign is mid-build that week. Avoids the awkward conversation we've both had with previous agencies.</p>
+</div>
+</div>
+</section>
+
+<section class="sec" id="s9" data-label="Why us, briefly">
+<div class="fi">
+<h2 class="sec-h">Why us, briefly</h2>
+<div class="body">
+<p>You've already had the long version on the page we sent. Two things worth restating:</p>
+<p>We've done this before. Katie's coaching business grew during her three-month maternity leave because we ran the marketing. You're heading toward a similar moment. We know what that looks like and how to get you there.</p>
+<p>We won't fuck it up. Ad's been doing this for over a decade, including running marketing for one of the UK's biggest live events alongside speakers including your mentor Russell Brunson. I've cut my teeth across hundreds of email and ad campaigns and have written for some big hitters (and made them £millions in the process). Grace lives in GHL backends. Wayne ships fast. Gabriella writes copy that converts. Dante makes videos that hold attention. We're UK-based, all full-time, all on Slack right now.</p>
+</div>
+</div>
+</section>
+
+<section class="sec sec-alt" id="s10" data-label="What happens next">
+<div class="fi">
+<h2 class="sec-h">What happens next</h2>
+<div class="body">
+<ol class="steps">
+<li><div class="step-n">1</div><span>You read this. WhatsApp me with any questions or pushback.</span></li>
+<li><div class="step-n">2</div><span>If you want the half-day before signing, we book it for next week.</span></li>
+<li><div class="step-n">3</div><span>If you want to just sign and start, we send the contract today and the half-day becomes day one.</span></li>
+<li><div class="step-n">4</div><span>We start work the moment the contract's signed.</span></li>
+</ol>
+<p>We can be live, in your stack, with hands on the VSL by next Monday if that's what you want.</p>
+<div class="sign-off">
+<span class="name">Fish</span>
+<span class="details">Test Tube Marketing</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- LOCKED: ABOUT US — hardcoded, never generated                       -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<section class="sec about-sec" data-label="About Us"><div class="fi about-wrap"><div><h2 class="about-h"><span class="about-word">About</span><span class="brand">Test Tube<br/>Marketing</span></h2><div class="body"><p><strong>Hi, we're Ad and Fish, the founders of Test Tube Marketing.</strong></p><p>Between us, we've been running marketing campaigns, building funnels, and making sales online for over 25 years.</p><p>Unlike other agencies, who will try and force your business to fit their model, we take a completely unique approach to every client we work with. Our experienced team takes the time to understand your business, your goals, and your unique skills, to ensure we can deliver the results you're looking for.</p></div></div><div class="team-col"><div class="team-header">THE TEAM</div><div class="team-row"><img class="team-photo" src="https://proposals.testtubemarketing.com/assets/sm_Adam.jpg" alt="Adam Ashburn"/><div><div class="t-name">Adam Ashburn</div><div class="t-role">Co-Founder</div></div></div><div class="team-row"><img class="team-photo" src="https://proposals.testtubemarketing.com/assets/sm_Fish.jpg" alt="Nick Fisher"/><div><div class="t-name">Nick 'Big Fish' Fisher</div><div class="t-role">Co-Founder</div></div></div><div class="team-row"><img class="team-photo" src="https://proposals.testtubemarketing.com/assets/Grace.png" alt="Grace Harrold"/><div><div class="t-name">Grace Harrold</div><div class="t-role">Head of Client Happiness</div></div></div><div class="team-row"><img class="team-photo" src="https://proposals.testtubemarketing.com/assets/sm_Gabriella.jpg" alt="Gabriella"/><div><div class="t-name">Gabriella Neocleous</div><div class="t-role">Head of Copywriting</div></div></div><div class="team-row"><img class="team-photo" src="https://proposals.testtubemarketing.com/assets/Wayne.jpeg" alt="Wayne Naldo"/><div><div class="t-name">Wayne Naldo</div><div class="t-role">Head of Design</div></div></div><div class="team-row"><img class="team-photo" src="https://proposals.testtubemarketing.com/assets/Emma_Garcia.jpg" alt="Emma Garcia"/><div><div class="t-name">Emma Garcia</div><div class="t-role">Head of Finance</div></div></div><div class="team-row"><img class="team-photo" src="https://proposals.testtubemarketing.com/assets/Dante.png" alt="Dante Nyugen"/><div><div class="t-name">Dante Nyugen</div><div class="t-role">Head of Video</div></div></div><div class="team-row"><img class="team-photo" src="https://proposals.testtubemarketing.com/assets/sm_Cooper_fixed.jpg" alt="Cooper"/><div><div class="t-name">Cooper</div><div class="t-role">Head of Security</div></div></div><div class="team-row"><img class="team-photo" src="https://proposals.testtubemarketing.com/assets/sm_Thula_correct.jpg" alt="Thula"/><div><div class="t-name">Thula</div><div class="t-role">Head of Treats</div></div></div></div></div></section>
+
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<!-- LOCKED: RESULTS — hardcoded, never generated                        -->
+<!-- ══════════════════════════════════════════════════════════════════════ -->
+<section class="sec testi-sec" data-label="Results"><div class="fi"><h2 class="sec-h">Results.</h2><div class="testi-grid"><div class="tcard"><div class="tresult">$6K PER MONTH</div><p class="tquote">"When I heard the guys were starting a marketing agency, I KNEW I wanted to work with them. They've not only helped provide me with the strategic insights I was looking for, but helped me launch my membership programme which now generates over $6,000 per month - Thanks Ad and Fish!"</p><div class="tperson"><img class="tphoto" src="https://proposals.testtubemarketing.com/assets/sm_Mike_Maher.jpg" alt="Mike Maher"/><div><div class="tname">Mike Maher</div><div class="tco">Take A Deep Breath</div></div></div></div><div class="tcard"><div class="tresult">£30K IN RECURRING REVENUE</div><p class="tquote">"On my first launch, Fish's emails performed so well, we not only had to open up more spots, we also had to 'close doors' early due to selling out. A few months later, the guys helped me launch my mobile app, and within 30 days, we'd signed up over 1,000 members paying £29.99 each."</p><div class="tperson"><img class="tphoto" src="https://proposals.testtubemarketing.com/assets/sm_Steve_Keane.jpg" alt="Steve Keane"/><div><div class="tname">Steve Keane</div><div class="tco">Kraft Coaching</div></div></div></div><div class="tcard"><div class="tresult">OVER £130,000 IN NEW BUSINESS</div><p class="tquote">"I turned to Ad and Fish when my marketing manager took a new role, because I wanted to keep up my regular emails. I was stunned when the first 4 emails they wrote generated more calls and replies than anything we'd done previously! Since then, they've helped me generated over £130,000 in sales I can't recommend them enough."</p><div class="tperson"><img class="tphoto" src="https://proposals.testtubemarketing.com/assets/Kirsty_Darkins.jpeg" alt="Kirsty Darkins"/><div><div class="tname">Kirsty Darkins</div><div class="tco">KD Commercial</div></div></div></div><div class="tcard"><div class="tresult">THEY JUST GET IT</div><p class="tquote">"It's safe to say that our 'basement pump' business isn't the most exciting, and is quite technical in its nature. But the team at TTM have been able to rapidly understand our offering, and craft compelling marketing that makes people take action. In fact, we had more replies to the first couple of emails they sent, than we'd had in all the emails in the entire 2 years prior."</p><div class="tperson"><img class="tphoto" src="https://proposals.testtubemarketing.com/assets/Ian_Davis.webp" alt="Ian Davies"/><div><div class="tname">Ian Davies</div><div class="tco">PPS Pumps</div></div></div></div><div class="tcard"><div class="tresult">40% GROWTH YEAR ON YEAR</div><p class="tquote">"I came to the Test Tube Marketing team not because I was struggling, but because I wanted to have a clearly defined marketing strategy in place. We've been working together almost 2 years now, and my revenue grew 40% vs last year, and I've just surpassed 7 figures for the first time ever. Thank you, TTM team!"</p><div class="tperson"><img class="tphoto" src="https://proposals.testtubemarketing.com/assets/sm_Tess_Cope.jpg" alt="Tess Cope"/><div><div class="tname">Tess Cope</div><div class="tco">The Transformation Agency</div></div></div></div><div class="tcard"><div class="tresult">6 FIGURES IN REVENUE</div><p class="tquote">"The first launch Ad, Fish and the team worked on with us generated over £30,000 in sales from a 5-Day Facebook Challenge. Better yet, we were able to leverage the assets they created and re-run the challenge multiple times, and generate a total of 6 figures in revenue."</p><div class="tperson"><img class="tphoto" src="https://proposals.testtubemarketing.com/assets/sm_Aran_Curry.jpg" alt="Aran Curry"/><div><div class="tname">Aran Curry</div><div class="tco">Insight Education</div></div></div></div><div class="tcard"><div class="tresult">250 CALLS BOOKED!</div><p class="tquote">"On the first campaign Fish and Ad ran for us, we'd set a target of booking 50 calls. The first 2 emails they sent exceeded our target, and we had over 250 calls booked in total. Plus we've been able to re-run the campaign since, and get even more calls booked!"</p><div class="tperson"><img class="tphoto" src="https://proposals.testtubemarketing.com/assets/Michelle_Walker.jpg" alt="Michelle Clarke"/><div><div class="tname">Michelle Clarke</div><div class="tco">Veblen Directors</div></div></div></div><div class="tcard"><div class="tresult">AN ABSOLUTE JOY TO WORK WITH</div><p class="tquote">"What an amazing impact the Test Tube Marketing team has had on our business and more importantly on our thinking. Ad, Fish and Grace have been a total joy to work with and we all feel very inspired walking away from a session with these guys. We love their copywriting style and they get our tone of voice absolutely right."</p><div class="tperson"><img class="tphoto" src="https://proposals.testtubemarketing.com/assets/sm_Richard_Parsons.jpg" alt="Richard Parsons"/><div><div class="tname">Richard Parsons</div><div class="tco">Platinum Commercial Academy</div></div></div></div><div class="tcard"><div class="tresult">I'VE NEVER HAD A RESPONSE LIKE THIS</div><p class="tquote">"We've been sending emails to our database pretty consistently for years, but when the TTM team took over, we saw a difference in response almost immediately. More opens, more replies, and more prospects moving towards us - one of which has now turned into a massive contract for us!!"</p><div class="tperson"><img class="tphoto" src="https://proposals.testtubemarketing.com/assets/Steve_Hindley.png" alt="Steve Hindley"/><div><div class="tname">Steve Hindley</div><div class="tco">iNarrator</div></div></div></div></div></div></section>
+
+<!-- FOOTER -->
+<footer class="footer"><p>TEST TUBE MARKETING - Prepared exclusively for Jess Cunningham</p><p style="margin-top:8px;"><a href="https://www.testtubemarketing.com">www.testtubemarketing.com</a></p></footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});},{threshold:.1});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+const secs=document.querySelectorAll('section[id],section[data-label]');const dc=document.getElementById('navDots');
+secs.forEach(s=>{const d=document.createElement('button');d.className='dot';d.title=s.dataset.label||'';d.onclick=()=>s.scrollIntoView({behavior:'smooth'});dc.appendChild(d);});
+const dots=dc.querySelectorAll('.dot');
+const no=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>.5){const i=Array.from(secs).indexOf(e.target);dots.forEach((d,j)=>d.classList.toggle('active',j===i));}});},{threshold:.5});
+secs.forEach(s=>no.observe(s));
+</script></body></html>
